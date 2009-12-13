@@ -15,7 +15,7 @@
 				Attach="false"
 				DebuggerType="3"
 				Remote="1"
-				RemoteMachine=""
+				RemoteMachine="LEON"
 				RemoteCommand=""
 				HttpUrl=""
 				PDBPath=""
@@ -38,12 +38,12 @@
 			>
 			<DebugSettings
 				Command="$(TargetPath)"
-				WorkingDirectory=""
+				WorkingDirectory="C:\Documents\Tahiti Bob\Bureau\Python3D\Release"
 				CommandArguments=""
 				Attach="false"
 				DebuggerType="3"
 				Remote="1"
-				RemoteMachine=""
+				RemoteMachine="LEON"
 				RemoteCommand=""
 				HttpUrl=""
 				PDBPath=""

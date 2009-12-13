@@ -52,7 +52,7 @@ void Python3D::loadResources()
 
 void Python3D::createFrameListener()
 {
-	GameListener *listener = new GameListener(_SceneManager, _Keyboard, _Mouse);
+	EventListener *listener = new EventListener(_SceneManager, _Keyboard, _Mouse);
 	_Root->addFrameListener(listener);
 }
 

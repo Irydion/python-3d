@@ -1,16 +1,7 @@
 #include "gameListener.h"
 
-GameListener::GameListener(Ogre::SceneManager *sceneMgr, OIS::Keyboard *keyboard, OIS::Mouse *mouse)
+GameListener::GameListener()
 {
-	_SceneManager = sceneMgr;
-
-	_Keyboard = keyboard;
-	_Mouse = mouse;
-
-    _Keyboard->setEventCallback(this);
-    _Mouse->setEventCallback(this);
-
-	_Continue = true;
 }
 
 GameListener::~GameListener()
@@ -19,10 +10,7 @@ GameListener::~GameListener()
 
 bool GameListener::frameStarted(const Ogre::FrameEvent &evt)
 {
-	_Keyboard->capture();
-	_Mouse->capture();
-
-	return _Continue;
+	return true;
 }
 
 bool GameListener::keyPressed(const OIS::KeyEvent &e)
@@ -35,7 +23,7 @@ bool GameListener::keyReleased(const OIS::KeyEvent &e)
 	switch (e.key)
     {
         case OIS::KC_ESCAPE:
-            _Continue = false;
+            return false;
             break;
 
         default:
