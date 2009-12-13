@@ -1,5 +1,3 @@
-#include <cstdlib>
-
 #include "windows.h"
 #include "ogre.h"
 #include "python3d.h"

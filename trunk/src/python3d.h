@@ -2,8 +2,9 @@
 #define PYTHON3D_H
 
 #include "ogre.h"
-#include "gameListener.h"
 #include <OIS/OIS.h>
+
+#include "eventListener.h"
 
 class Python3D
 {
