@@ -22,4 +22,3 @@ INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR strCmdLine, INT )
 
     return EXIT_SUCCESS;
 }
-				
