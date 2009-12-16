@@ -1,9 +1,20 @@
+/**
+ * \file gameListener.h
+ * \brief Le frame listener qui s'occupe de la gestion des événements "in-game"
+ * \author Emilien Dupont
+ */
+
 #ifndef GAMELISTENER_H
 #define GAMELISTENER_H
 
 #include "ogre.h"
 #include <OIS/OIS.h>
 
+/*! \class GameListener
+ * \brief frame listener de jeu
+ *
+ *  Cette classe s'occupe de récupérer les entrées clavier/souris et de les traiter selon le déroulement actuel de la partie
+ */
 class GameListener
 {
     public:
