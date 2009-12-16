@@ -1,3 +1,9 @@
+/**
+ * \file eventListener.h
+ * \brief Le frame listener principal qui contient les sous-listeners et s'occupe de relier les informations vers eux
+ * \author Emilien Dupont
+ */
+
 #ifndef EVENTLISTENER_H
 #define EVENTLISTENER_H
 
@@ -7,6 +13,11 @@
 #include "gameListener.h"
 #include "menuListener.h"
 
+/*! \class EventListener
+ * \brief frame listener principal
+ *
+ *  Cette classe s'occupe de récupérer les entrées clavier/souris et de les transferer au frame listener actif à chaque frame.
+ */
 class EventListener : public Ogre::FrameListener, public OIS::KeyListener, public OIS::MouseListener
 {
 	public:

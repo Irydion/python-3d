@@ -1,3 +1,9 @@
+/**
+ * \file python3d.h
+ * \brief Python3D : le jeu lui même
+ * \author Emilien Dupont
+ */
+
 #ifndef PYTHON3D_H
 #define PYTHON3D_H
 
@@ -6,6 +12,11 @@
 
 #include "eventListener.h"
 
+/*! \class Python3D
+ * \brief classe principale du jeu
+ *
+ *  Cette classe s'occupe d'initialiser les librairies tierces et de charger les ressources avant de lancer le jeu.
+ */
 class Python3D
 {
 	public :
