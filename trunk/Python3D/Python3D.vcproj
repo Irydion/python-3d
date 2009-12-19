@@ -136,7 +136,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				UseUnicodeResponseFiles="true"
-				AdditionalDependencies="OgreMain.lib OIS.lib"
+				AdditionalDependencies="OgreMain.lib OIS.lib CEGUIBase.lib OgreGUIRenderer.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;C:\Documents\Tahiti Bob\Bureau\Python3D\lib&quot;"
 				GenerateDebugInformation="true"

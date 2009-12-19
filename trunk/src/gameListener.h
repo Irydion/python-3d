@@ -29,7 +29,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #ifndef GAMELISTENER_H
 #define GAMELISTENER_H
 
-#include "ogre.h"
+#include <ogre.h>
 #include <OIS/OIS.h>
 
 /**

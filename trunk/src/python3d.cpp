@@ -33,6 +33,9 @@ Python3D::Python3D()
 	_InputManager = NULL;
 	_Keyboard = NULL;
 	_Mouse = NULL;
+
+	_GUISystem = NULL;
+	_GUIRenderer = NULL;
 }
 
 Python3D::~Python3D()
@@ -53,33 +56,35 @@ void Python3D::start()
 	loadResources();
 
 	_RenderWindow = _Root->initialise(true,"Python3D  -   By #undefined team");
-	_SceneManager = _Root->createSceneManager("BspSceneManager");
+	_SceneManager = _Root->createSceneManager(Ogre::ST_INTERIOR, "MainSceneManager");
 
 	_Camera = _SceneManager->createCamera("Camera");
 	_Viewport = _RenderWindow->addViewport(_Camera);
 
 	initOIS();
+	initCEGUI();
+
 	createFrameListener();
 }
 
 void Python3D::exit()
 {
-	delete _Camera;
-	delete _Viewport;
-	delete _SceneManager;
-	delete _RenderWindow;
+	delete _GUISystem;
+	delete _GUIRenderer;
+
 	delete _Root;
 }
 
 void Python3D::loadResources()
 {
 	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../media/","FileSystem","General");
+	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../media/gui/","FileSystem","General");
 	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
 }
 
 void Python3D::createFrameListener()
 {
-	EventListener *listener = new EventListener(_SceneManager, _Keyboard, _Mouse);
+	EventListener *listener = new EventListener(_SceneManager, _Keyboard, _Mouse, _GUISystem, _GUIRenderer);
 	_Root->addFrameListener(listener);
 }
 
@@ -97,4 +102,16 @@ void Python3D::initOIS()
 
     _Keyboard = static_cast<OIS::Keyboard*>(_InputManager->createInputObject(OIS::OISKeyboard, true));
     _Mouse = static_cast<OIS::Mouse*>(_InputManager->createInputObject(OIS::OISMouse, true));
+}
+
+void Python3D::initCEGUI()
+{
+	_GUIRenderer = new CEGUI::OgreCEGUIRenderer(_RenderWindow, Ogre::RENDER_QUEUE_OVERLAY, false, 3000, _SceneManager);
+	_GUISystem = new CEGUI::System(_GUIRenderer, NULL, NULL, NULL, (CEGUI::utf8*)"cegui.config");
+
+	CEGUI::Logger::getSingleton().setLoggingLevel(CEGUI::Insane);
+	CEGUI::Logger::getSingleton().setLogFilename("cegui.log");
+
+	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"SleekSpace", (CEGUI::utf8*)"MouseArrow");
+	//_GUISystem->setDefaultFont((CEGUI::utf8*)"bluehighway-8");
 }
