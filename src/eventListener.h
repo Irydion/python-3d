@@ -1,3 +1,25 @@
+/*
+-------------------------------------------------------------------------------
+This file is part of Python3D.
+
+Copyright (c) 2009 Emilien Dupont
+Also see acknowledgements in COPYING.txt
+
+Python3D is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Python3D is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Python3D. If not, see <http://www.gnu.org/licenses/>.
+-------------------------------------------------------------------------------
+*/
+
 /**
  * \file eventListener.h
  * \brief Le frame listener principal qui contient les sous-listeners et s'occupe de relier les informations vers eux
@@ -13,7 +35,8 @@
 #include "gameListener.h"
 #include "menuListener.h"
 
-/*! \class EventListener
+/**
+ * \class EventListener
  * \brief frame listener principal
  *
  *  Cette classe s'occupe de récupérer les entrées clavier/souris et de les transferer au frame listener actif à chaque frame.
@@ -21,28 +44,99 @@
 class EventListener : public Ogre::FrameListener, public OIS::KeyListener, public OIS::MouseListener
 {
 	public:
+		/**
+		 * \brief Constructeur
+		 *
+		 * Constructeur de la classe EventListener
+		 *
+		 * \param sceneMgr : un pointeur vers le scene manager principal du jeu
+		 * \param keyboard : clavier initialisé dans Python3D
+		 * \param mouse : souris initialisée dans Python3D
+		 */
 		EventListener(Ogre::SceneManager *sceneMgr, OIS::Keyboard *keyboard, OIS::Mouse *mouse);
+		/**
+		 * \brief Destructeur
+		 *
+		 * Destructeur de la classe EventListener
+		 */
         ~EventListener();
 
+		/**
+		 * \brief Callback de début d'image
+		 *
+		 * Méthode appelée avant l'affichage de chaque image
+		 *
+		 * \param evt : informations sur l'image qui va être dessinée
+		 * \return true pour continuer, false pour sortir de la boucle de rendu
+		 */
 		bool frameStarted(const Ogre::FrameEvent &evt);
 
+		/**
+		 * \brief Une touche est appuyée
+		 *
+		 * Méthode appelée lorsqu'une touche du clavier est appuyée
+		 *
+		 * \param e : informations sur la touche appuyée
+		 * \return true pour continuer, false pour sortir de la boucle de rendu
+		 */
 		bool keyPressed(const OIS::KeyEvent &e);
+		/**
+		 * \brief Une touche est relachée
+		 *
+		 * Méthode appelée lorsqu'une touche du clavier est relachée
+		 *
+		 * \param e : informations sur la touche relachée
+		 * \return true pour continuer, false pour sortir de la boucle de rendu
+		 */
         bool keyReleased(const OIS::KeyEvent &e);
 
+		/**
+		 * \brief La souris a bougé
+		 *
+		 * Méthode appelée lorsque la souris a bougé
+		 *
+		 * \param e : informations sur le mouvement de la souris
+		 * \return true pour continuer, false pour sortir de la boucle de rendu
+		 */
         bool mouseMoved(const OIS::MouseEvent &e);
+		/**
+		 * \brief Un bouton de la souris est cliqué
+		 *
+		 * Méthode appelée lorsqu'un des boutons de la souris est appuyé
+		 *
+		 * \param e : informations sur la souris
+		 * \param id : identifiant du bouton appuyé
+		 * \return true pour continuer, false pour sortir de la boucle de rendu
+		 */
         bool mousePressed(const OIS::MouseEvent &e, OIS::MouseButtonID id);
+		/**
+		 * \brief Un bouton de la souris est relaché
+		 *
+		 * Méthode appelée lorsqu'un des boutons de la souris est relaché
+		 *
+		 * \param e : informations sur la souris
+		 * \param id : identifiant du bouton relaché
+		 * \return true pour continuer, false pour sortir de la boucle de rendu
+		 */
         bool mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id);
 
 	protected:
+		/** Scene manager principal */
 		Ogre::SceneManager *_SceneManager;
 
+		/** Clavier */
 		OIS::Keyboard *_Keyboard;
-		OIS::Mouse *_Mouse;
+		/** Souris */
+		OIS::Mouse *_Mouse; 
 
+		/** True pour continuer, false pour sortir de la boucle de rendu */
 		bool _Continue;
 
+		/** détermine quel sous-frameListener est actif \remark 0 : GameListener ; 1 : MenuListener*/
 		int _Actif;
+		/** frame listener du jeu */
 		GameListener *gameListener;
+		/** frame listener du menu */
 		MenuListener *menuListener;
 };
 
