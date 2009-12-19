@@ -22,12 +22,15 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 #include "eventListener.h"
 
-EventListener::EventListener(Ogre::SceneManager *sceneMgr, OIS::Keyboard *keyboard, OIS::Mouse *mouse)
+EventListener::EventListener(Ogre::SceneManager *sceneMgr, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer)
 {
 	_SceneManager = sceneMgr;
 
 	_Keyboard = keyboard;
 	_Mouse = mouse;
+
+	_GUISystem = GUISystem;
+	_GUIRenderer = GUIRenderer;
 
 	gameListener = new GameListener();
 	menuListener = new MenuListener();
@@ -73,6 +76,9 @@ bool EventListener::keyPressed(const OIS::KeyEvent &e)
 			break;
 	}
 
+    _GUISystem->injectKeyDown(e.key);
+	_GUISystem->injectChar(e.text);
+
 	return true;
 }
 
@@ -87,6 +93,8 @@ bool EventListener::keyReleased(const OIS::KeyEvent &e)
 			_Continue = menuListener->keyReleased(e);
 			break;
 	}
+
+	_GUISystem->injectKeyUp(e.key);
 
     return true;
 }
@@ -103,6 +111,9 @@ bool EventListener::mouseMoved(const OIS::MouseEvent &e)
 			break;
 	}
 
+	_GUISystem->injectMouseMove(e.state.X.rel, e.state.Y.rel);
+	_GUISystem->injectMouseWheelChange(e.state.Z.rel);
+
 	return true;
 }
 
@@ -117,6 +128,8 @@ bool EventListener::mousePressed(const OIS::MouseEvent &e, OIS::MouseButtonID id
 			_Continue = menuListener->mousePressed(e, id);
 			break;
 	}
+
+	_GUISystem->injectMouseButtonDown(OISToCEGUI(id));
 
 	return true;
 }
@@ -133,5 +146,19 @@ bool EventListener::mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID i
 			break;
 	}
 
+	_GUISystem->injectMouseButtonUp(OISToCEGUI(id));
+
 	return true;
+}
+
+CEGUI::MouseButton EventListener::OISToCEGUI(int ois_button_id)
+{
+    switch (ois_button_id)
+	{
+		case 0: return CEGUI::LeftButton;
+		case 1: return CEGUI::RightButton;
+		case 2:	return CEGUI::MiddleButton;
+		case 3: return CEGUI::X1Button;
+		default: return CEGUI::NoButton;
+	}
 }

@@ -29,8 +29,10 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #ifndef PYTHON3D_H
 #define PYTHON3D_H
 
-#include "ogre.h"
+#include <ogre.h>
 #include <OIS/OIS.h>
+#include <CEGUI/CEGUI.h>
+#include <OgreCEGUIRenderer.h>
 
 #include "eventListener.h"
 
@@ -103,17 +105,25 @@ class Python3D
 		 */
 		void initOIS();
 
+		/**
+		 * \brief Initialisation de CEGUI
+		 *
+		 * Méthode qui initialise la librairie qui gère l'interface utilisateur : CEGUI
+		 *
+		 */
+		void initCEGUI();
+
 	protected :
 		/** Objet de base d'Ogre */
-		Ogre::Root* _Root;
+		Ogre::Root *_Root;
 		/** Scene manager principal */
-		Ogre::SceneManager* _SceneManager;
+		Ogre::SceneManager *_SceneManager;
 		/** La fenetre dans laquelle on fait le rendu */
-		Ogre::RenderWindow* _RenderWindow;
+		Ogre::RenderWindow *_RenderWindow;
 		/** Viewport principal pour la caméra de jeu */
-		Ogre::Viewport* _Viewport;
+		Ogre::Viewport *_Viewport;
 		/** Caméra du jeu */
-		Ogre::Camera* _Camera;
+		Ogre::Camera *_Camera;
 
 		/** InputManager d'OIS */
 		OIS::InputManager *_InputManager;
@@ -121,6 +131,11 @@ class Python3D
 		OIS::Keyboard *_Keyboard;
 		/** Souris */
 		OIS::Mouse *_Mouse;
+
+		/** Gestionnaire d'interface utilisateur CEGUI */
+		CEGUI::OgreCEGUIRenderer *_GUIRenderer;
+		/** objet système CEGUI */
+		CEGUI::System *_GUISystem;
 };
 
 #endif // PYTHON3D_H

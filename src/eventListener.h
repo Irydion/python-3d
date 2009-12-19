@@ -29,8 +29,10 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #ifndef EVENTLISTENER_H
 #define EVENTLISTENER_H
 
-#include "ogre.h"
+#include <ogre.h>
 #include <OIS/OIS.h>
+#include <CEGUI/CEGUI.h>
+#include <OgreCEGUIRenderer.h>
 
 #include "gameListener.h"
 #include "menuListener.h"
@@ -52,8 +54,10 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * \param sceneMgr : un pointeur vers le scene manager principal du jeu
 		 * \param keyboard : clavier initialisé dans Python3D
 		 * \param mouse : souris initialisée dans Python3D
+		 * \param GUISystem : objet systeme CEGUI
+		 * \param GUIRenderer : Gestionnaire d'interface utilisateur CEGUI
 		 */
-		EventListener(Ogre::SceneManager *sceneMgr, OIS::Keyboard *keyboard, OIS::Mouse *mouse);
+		EventListener(Ogre::SceneManager *sceneMgr, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer);
 		/**
 		 * \brief Destructeur
 		 *
@@ -120,6 +124,16 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 */
         bool mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id);
 
+		/**
+		 * \brief Conversion OIS->CEGUI
+		 *
+		 * Méthode pour convertir un identifiant de bouton de souris OIS en identifiant CEGUI
+		 *
+		 * \param ois_button_id : identifiant OIS du bouton de souris à convertir
+		 * \return CEGUI::LeftButton;CEGUI::RightButton;CEGUI::MiddleButton;CEGUI::X1Button;CEGUI::NoButton
+		 */
+		CEGUI::MouseButton OISToCEGUI(int ois_button_id);
+
 	protected:
 		/** Scene manager principal */
 		Ogre::SceneManager *_SceneManager;
@@ -128,6 +142,11 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		OIS::Keyboard *_Keyboard;
 		/** Souris */
 		OIS::Mouse *_Mouse; 
+
+		/** objet système CEGUI */
+		CEGUI::System *_GUISystem;
+		/** Gestionnaire d'interface utilisateur CEGUI */
+		CEGUI::OgreCEGUIRenderer *_GUIRenderer;
 
 		/** True pour continuer, false pour sortir de la boucle de rendu */
 		bool _Continue;
