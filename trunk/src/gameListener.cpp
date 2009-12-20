@@ -22,8 +22,11 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 #include "gameListener.h"
 
-GameListener::GameListener()
+GameListener::GameListener(Ogre::Camera *camera)
 {
+	_Camera = camera;
+
+	_RightMouse = false;
 }
 
 GameListener::~GameListener()
@@ -57,15 +60,31 @@ bool GameListener::keyReleased(const OIS::KeyEvent &e)
 
 bool GameListener::mouseMoved(const OIS::MouseEvent &e)
 {
+	if(_RightMouse)
+	{
+		_Camera->yaw(Ogre::Degree(e.state.X.rel * -0.1));
+		_Camera->pitch(Ogre::Degree(e.state.Y.rel * -0.1));
+	}
+
 	return true;
 }
 
 bool GameListener::mousePressed(const OIS::MouseEvent &e, OIS::MouseButtonID id)
 {
+	if(id == OIS::MB_Right)
+    {
+        _RightMouse = true;
+    }
+
 	return true;
 }
 
 bool GameListener::mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id)
 {
+	if(id == OIS::MB_Right)
+    {
+        _RightMouse = false;
+    }
+
 	return true;
 }

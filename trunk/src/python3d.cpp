@@ -59,7 +59,14 @@ void Python3D::start()
 	_SceneManager = _Root->createSceneManager(Ogre::ST_INTERIOR, "MainSceneManager");
 
 	_Camera = _SceneManager->createCamera("Camera");
+	_Camera->setNearClipDistance(1);
+	_Camera->setFarClipDistance(2000);
 	_Viewport = _RenderWindow->addViewport(_Camera);
+
+	_SceneManager->setAmbientLight(Ogre::ColourValue(200, 200, 200));
+
+	_SceneManager->getRootSceneNode()->createChildSceneNode("MapNode")->attachObject(_SceneManager->createEntity("Map", "test.mesh"));
+	_SceneManager->getSceneNode("MapNode")->setScale(Ogre::Vector3(100, 100, 100));
 
 	initOIS();
 	initCEGUI();
@@ -79,12 +86,13 @@ void Python3D::loadResources()
 {
 	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../media/","FileSystem","General");
 	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../media/gui/","FileSystem","General");
+	Ogre::ResourceGroupManager::getSingleton().addResourceLocation("../media/models/","FileSystem","General");
 	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
 }
 
 void Python3D::createFrameListener()
 {
-	EventListener *listener = new EventListener(_SceneManager, _Keyboard, _Mouse, _GUISystem, _GUIRenderer);
+	EventListener *listener = new EventListener(_SceneManager, _RenderWindow, _Keyboard, _Mouse, _GUISystem, _GUIRenderer);
 	_Root->addFrameListener(listener);
 }
 
@@ -112,6 +120,5 @@ void Python3D::initCEGUI()
 	CEGUI::Logger::getSingleton().setLoggingLevel(CEGUI::Insane);
 	CEGUI::Logger::getSingleton().setLogFilename("cegui.log");
 
-	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"SleekSpace", (CEGUI::utf8*)"MouseArrow");
-	//_GUISystem->setDefaultFont((CEGUI::utf8*)"bluehighway-8");
+	//_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
 }

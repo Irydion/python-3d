@@ -22,9 +22,10 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 #include "eventListener.h"
 
-EventListener::EventListener(Ogre::SceneManager *sceneMgr, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer)
+EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer)
 {
 	_SceneManager = sceneMgr;
+	_RenderWindow = renderWindow;
 
 	_Keyboard = keyboard;
 	_Mouse = mouse;
@@ -32,7 +33,11 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, OIS::Keyboard *keyboa
 	_GUISystem = GUISystem;
 	_GUIRenderer = GUIRenderer;
 
-	gameListener = new GameListener();
+	_FPSWindow = CEGUI::WindowManager::getSingleton().getWindow("FPSWindow");
+	_FPSUpdateFreq = 50;
+	_FPSSkippedFrames = 0;
+
+	gameListener = new GameListener(_SceneManager->getCamera("Camera"));
 	menuListener = new MenuListener();
 
     _Keyboard->setEventCallback(this);
@@ -61,11 +66,25 @@ bool EventListener::frameStarted(const Ogre::FrameEvent &evt)
 			break;
 	}
 
+	++_FPSSkippedFrames;
+	if(_FPSSkippedFrames >= _FPSUpdateFreq)
+	{
+		_FPSSkippedFrames = 0;
+		_FPSWindow->setText("FPS : " + Ogre::StringConverter::toString(_RenderWindow->getLastFPS()));
+	}
+
 	return _Continue;
 }
 
 bool EventListener::keyPressed(const OIS::KeyEvent &e)
 {
+	switch(e.key)
+	{
+		case OIS::KC_SYSRQ:
+			_RenderWindow->writeContentsToFile("screenshot_" + Ogre::StringConverter::toString((int)time(NULL)) + ".png");
+			break;
+	}
+
 	switch(_Actif)
 	{
 		case 0:
