@@ -65,8 +65,11 @@ void Python3D::start()
 
 	_SceneManager->setAmbientLight(Ogre::ColourValue(200, 200, 200));
 
-	_SceneManager->getRootSceneNode()->createChildSceneNode("MapNode")->attachObject(_SceneManager->createEntity("Map", "test.mesh"));
-	_SceneManager->getSceneNode("MapNode")->setScale(Ogre::Vector3(100, 100, 100));
+	Ogre::Entity *entity = _SceneManager->createEntity("Map", "test.mesh");
+	entity->setMaterialName("test");
+	Ogre::SceneNode *node = _SceneManager->getRootSceneNode()->createChildSceneNode("MapNode");
+	node->attachObject(entity);
+	node->setScale(Ogre::Vector3(100, 100, 100));
 
 	initOIS();
 	initCEGUI();

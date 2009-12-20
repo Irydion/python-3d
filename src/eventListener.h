@@ -36,6 +36,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 #include "gameListener.h"
 #include "menuListener.h"
+#include "soundManager.h"
 
 /**
  * \class EventListener
@@ -162,9 +163,12 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		/** détermine quel sous-frameListener est actif \remark 0 : GameListener ; 1 : MenuListener*/
 		int _Actif;
 		/** frame listener du jeu */
-		GameListener *gameListener;
+		GameListener *_GameListener;
 		/** frame listener du menu */
-		MenuListener *menuListener;
+		MenuListener *_MenuListener;
+		
+		/** gestionnaire de son */
+		SoundManager *_SoundManager;
 };
 
 #endif // EVENTLISTENER_H

@@ -33,12 +33,14 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 	_GUISystem = GUISystem;
 	_GUIRenderer = GUIRenderer;
 
+	_SoundManager = new SoundManager();
+
 	_FPSWindow = CEGUI::WindowManager::getSingleton().getWindow("FPSWindow");
 	_FPSUpdateFreq = 50;
 	_FPSSkippedFrames = 0;
 
-	gameListener = new GameListener(_SceneManager->getCamera("Camera"));
-	menuListener = new MenuListener();
+	_GameListener = new GameListener(_SceneManager->getCamera("Camera"));
+	_MenuListener = new MenuListener();
 
     _Keyboard->setEventCallback(this);
     _Mouse->setEventCallback(this);
@@ -59,10 +61,10 @@ bool EventListener::frameStarted(const Ogre::FrameEvent &evt)
 	switch(_Actif)
 	{
 		case 0:
-			gameListener->frameStarted(evt);
+			_GameListener->frameStarted(evt);
 			break;
 		case 1:
-			menuListener->frameStarted(evt);
+			_MenuListener->frameStarted(evt);
 			break;
 	}
 
@@ -88,10 +90,10 @@ bool EventListener::keyPressed(const OIS::KeyEvent &e)
 	switch(_Actif)
 	{
 		case 0:
-			_Continue = gameListener->keyPressed(e);
+			_Continue = _GameListener->keyPressed(e);
 			break;
 		case 1:
-			_Continue = menuListener->keyPressed(e);
+			_Continue = _MenuListener->keyPressed(e);
 			break;
 	}
 
@@ -106,10 +108,10 @@ bool EventListener::keyReleased(const OIS::KeyEvent &e)
 	switch(_Actif)
 	{
 		case 0:
-			_Continue = gameListener->keyReleased(e);
+			_Continue = _GameListener->keyReleased(e);
 			break;
 		case 1:
-			_Continue = menuListener->keyReleased(e);
+			_Continue = _MenuListener->keyReleased(e);
 			break;
 	}
 
@@ -123,10 +125,10 @@ bool EventListener::mouseMoved(const OIS::MouseEvent &e)
 	switch(_Actif)
 	{
 		case 0:
-			_Continue = gameListener->mouseMoved(e);
+			_Continue = _GameListener->mouseMoved(e);
 			break;
 		case 1:
-			_Continue = menuListener->mouseMoved(e);
+			_Continue = _MenuListener->mouseMoved(e);
 			break;
 	}
 
@@ -141,10 +143,10 @@ bool EventListener::mousePressed(const OIS::MouseEvent &e, OIS::MouseButtonID id
 	switch(_Actif)
 	{
 		case 0:
-			_Continue = gameListener->mousePressed(e, id);
+			_Continue = _GameListener->mousePressed(e, id);
 			break;
 		case 1:
-			_Continue = menuListener->mousePressed(e, id);
+			_Continue = _MenuListener->mousePressed(e, id);
 			break;
 	}
 
@@ -158,10 +160,10 @@ bool EventListener::mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID i
 	switch(_Actif)
 	{
 		case 0:
-			_Continue = gameListener->mouseReleased(e, id);
+			_Continue = _GameListener->mouseReleased(e, id);
 			break;
 		case 1:
-			_Continue = menuListener->mouseReleased(e, id);
+			_Continue = _MenuListener->mouseReleased(e, id);
 			break;
 	}
 
