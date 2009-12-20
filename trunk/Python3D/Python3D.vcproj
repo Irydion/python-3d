@@ -136,7 +136,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				UseUnicodeResponseFiles="true"
-				AdditionalDependencies="OgreMain.lib OIS.lib CEGUIBase.lib OgreGUIRenderer.lib"
+				AdditionalDependencies="OgreMain.lib OIS.lib CEGUIBase.lib OgreGUIRenderer.lib fmodex_vc.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;C:\Documents\Tahiti Bob\Bureau\Python3D\lib&quot;"
 				GenerateDebugInformation="true"
@@ -196,6 +196,10 @@
 				RelativePath="..\src\python3d.cpp"
 				>
 			</File>
+			<File
+				RelativePath="..\src\soundManager.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Fichiers d&apos;en-tête"
@@ -216,6 +220,10 @@
 			</File>
 			<File
 				RelativePath="..\src\python3d.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\soundManager.h"
 				>
 			</File>
 		</Filter>
