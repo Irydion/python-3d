@@ -45,7 +45,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
  */
 class EventListener : public Ogre::FrameListener, public OIS::KeyListener, public OIS::MouseListener
 {
-	public:
+	public :
 		/**
 		 * \brief Constructeur
 		 *
@@ -57,7 +57,7 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * \param GUISystem : objet systeme CEGUI
 		 * \param GUIRenderer : Gestionnaire d'interface utilisateur CEGUI
 		 */
-		EventListener(Ogre::SceneManager *sceneMgr, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer);
+		EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer);
 		/**
 		 * \brief Destructeur
 		 *
@@ -134,9 +134,11 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 */
 		CEGUI::MouseButton OISToCEGUI(int ois_button_id);
 
-	protected:
+	protected :
 		/** Scene manager principal */
 		Ogre::SceneManager *_SceneManager;
+		/** Fenetre de rendu */
+		Ogre::RenderWindow *_RenderWindow;
 
 		/** Clavier */
 		OIS::Keyboard *_Keyboard;
@@ -147,6 +149,12 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		CEGUI::System *_GUISystem;
 		/** Gestionnaire d'interface utilisateur CEGUI */
 		CEGUI::OgreCEGUIRenderer *_GUIRenderer;
+		/** <DEBUG ONLY> la fenêtre d'affichage des FPS */
+		CEGUI::Window *_FPSWindow;
+		/** <DEBUG ONLY> la fréquence de rafraichissement de l'affichage des FPS */
+		int _FPSUpdateFreq;
+		/** <DEBUG ONLY> compteur de frame avant rafraichissement de l'affichage des FPS */
+		int _FPSSkippedFrames;
 
 		/** True pour continuer, false pour sortir de la boucle de rendu */
 		bool _Continue;

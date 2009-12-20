@@ -1,44 +1,33 @@
-19/12/2009 20:05:48 (Error)	Exception: There is no Property named 'NormalTextColour' available in the set.
-19/12/2009 20:06:00 (Error)	Exception: There is no Property named 'HoverTextColour' available in the set.
-19/12/2009 20:06:00 (Error)	Exception: There is no Property named 'NormalTextColour' available in the set.
-19/12/2009 20:06:05 (Error)	Exception: There is no Property named 'HoverTextColour' available in the set.
-19/12/2009 20:06:05 (Error)	Exception: There is no Property named 'NormalTextColour' available in the set.
-19/12/2009 20:06:17 (Error)	Exception: There is no Property named 'HoverTextColour' available in the set.
-19/12/2009 20:06:17 (Error)	Exception: There is no Property named 'PushedTextColour' available in the set.
-19/12/2009 20:06:17 (Error)	Exception: There is no Property named 'HoverTextColour' available in the set.
-19/12/2009 20:06:17 (Error)	Exception: There is no Property named 'NormalTextColour' available in the set.
-19/12/2009 20:06:18 (Error)	Exception: There is no Property named 'HoverTextColour' available in the set.
-19/12/2009 20:06:18 (Error)	Exception: There is no Property named 'NormalTextColour' available in the set.
-19/12/2009 20:06:18 (Error)	Exception: There is no Property named 'HoverTextColour' available in the set.
-19/12/2009 20:06:18 (Error)	Exception: There is no Property named 'NormalTextColour' available in the set.
-19/12/2009 20:06:19 (Error)	Exception: There is no Property named 'HoverTextColour' available in the set.
-19/12/2009 20:06:19 (Error)	Exception: There is no Property named 'PushedTextColour' available in the set.
-19/12/2009 20:06:19 (Error)	Exception: There is no Property named 'HoverTextColour' available in the set.
-19/12/2009 20:06:19 (Error)	Exception: There is no Property named 'PushedTextColour' available in the set.
-19/12/2009 20:06:19 (Error)	Exception: There is no Property named 'HoverTextColour' available in the set.
-19/12/2009 20:06:19 (Error)	Exception: There is no Property named 'NormalTextColour' available in the set.
-19/12/2009 20:06:21 (InfL1)	---- Begining CEGUI System destruction ----
-19/12/2009 20:06:21 (InfL2)	Window 'testWindow__auto_titlebar__' has been added to dead pool.
-19/12/2009 20:06:21 (InfL2)	Window 'testWindow__auto_closebutton__' has been added to dead pool.
-19/12/2009 20:06:21 (InfL2)	Window 'testWindow' has been added to dead pool.
-19/12/2009 20:06:21 (InfL2)	Window 'root' has been added to dead pool.
-19/12/2009 20:06:21 (InfL1)	---- Begining cleanup of GUI Scheme system ----
-19/12/2009 20:06:21 (InfL2)	---- Begining resource cleanup for GUI scheme 'SleekSpace' ----
-19/12/2009 20:06:21 (InfL2)	Imageset 'SleekSpace' has been destroyed.
-19/12/2009 20:06:21 (InfL2)	---- Resource cleanup for GUI scheme 'SleekSpace' completed ----
-19/12/2009 20:06:21 (InfL2)	GUI scheme 'SleekSpace' has been unloaded.
-19/12/2009 20:06:21 (InfL1)	Scheme 'SleekSpace' has been unloaded.
-19/12/2009 20:06:21 (InfL1)	CEGUI::SchemeManager singleton destroyed.
-19/12/2009 20:06:21 (InfL1)	CEGUI::WindowManager singleton destroyed
-19/12/2009 20:06:21 (InfL1)	CEGUI::WindowFactoryManager singleton destroyed
-19/12/2009 20:06:21 (InfL1)	CEGUI::WidgetLookManager singleton destroyed.
-19/12/2009 20:06:21 (InfL1)	CEGUI::WindowRendererManager singleton destroyed
-19/12/2009 20:06:21 (InfL1)	---- Begining cleanup of Font system ----
-19/12/2009 20:06:21 (InfL1)	CEGUI::FontManager singleton destroyed.
-19/12/2009 20:06:21 (InfL1)	CEGUI::MouseCursor singleton destroyed.
-19/12/2009 20:06:21 (InfL1)	---- Begining cleanup of Imageset system ----
-19/12/2009 20:06:21 (InfL1)	CEGUI::ImagesetManager singleton destroyed
-19/12/2009 20:06:21 (InfL1)	CEGUI::GlobalEventSet singleton destroyed.
-19/12/2009 20:06:21 (InfL1)	CEGUI::System singleton destroyed.
-19/12/2009 20:06:21 (InfL1)	---- CEGUI System destruction completed ----
-19/12/2009 20:06:21 (InfL1)	CEGUI::Logger singleton destroyed.
+20/12/2009 19:38:12 (InfL1)	---- Begining CEGUI System destruction ----
+20/12/2009 19:38:12 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
+20/12/2009 19:38:12 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
+20/12/2009 19:38:12 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' has been added to dead pool.
+20/12/2009 19:38:12 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' has been added to dead pool.
+20/12/2009 19:38:12 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
+20/12/2009 19:38:12 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
+20/12/2009 19:38:12 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' has been added to dead pool.
+20/12/2009 19:38:12 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' has been added to dead pool.
+20/12/2009 19:38:12 (InfL2)	Window 'FPSWindow' has been added to dead pool.
+20/12/2009 19:38:12 (InfL2)	Window 'root' has been added to dead pool.
+20/12/2009 19:38:12 (InfL1)	---- Begining cleanup of GUI Scheme system ----
+20/12/2009 19:38:12 (InfL2)	---- Begining resource cleanup for GUI scheme 'TaharezLook' ----
+20/12/2009 19:38:12 (InfL2)	Imageset 'solo_auto_glyph_images_ ' has been destroyed.
+20/12/2009 19:38:12 (InfL1)	Font 'solo' has been destroyed.
+20/12/2009 19:38:12 (InfL2)	Imageset 'TaharezLook' has been destroyed.
+20/12/2009 19:38:12 (InfL2)	---- Resource cleanup for GUI scheme 'TaharezLook' completed ----
+20/12/2009 19:38:12 (InfL2)	GUI scheme 'TaharezLook' has been unloaded.
+20/12/2009 19:38:12 (InfL1)	Scheme 'TaharezLook' has been unloaded.
+20/12/2009 19:38:12 (InfL1)	CEGUI::SchemeManager singleton destroyed.
+20/12/2009 19:38:12 (InfL1)	CEGUI::WindowManager singleton destroyed
+20/12/2009 19:38:12 (InfL1)	CEGUI::WindowFactoryManager singleton destroyed
+20/12/2009 19:38:12 (InfL1)	CEGUI::WidgetLookManager singleton destroyed.
+20/12/2009 19:38:12 (InfL1)	CEGUI::WindowRendererManager singleton destroyed
+20/12/2009 19:38:12 (InfL1)	---- Begining cleanup of Font system ----
+20/12/2009 19:38:12 (InfL1)	CEGUI::FontManager singleton destroyed.
+20/12/2009 19:38:12 (InfL1)	CEGUI::MouseCursor singleton destroyed.
+20/12/2009 19:38:12 (InfL1)	---- Begining cleanup of Imageset system ----
+20/12/2009 19:38:12 (InfL1)	CEGUI::ImagesetManager singleton destroyed
+20/12/2009 19:38:12 (InfL1)	CEGUI::GlobalEventSet singleton destroyed.
+20/12/2009 19:38:12 (InfL1)	CEGUI::System singleton destroyed.
+20/12/2009 19:38:12 (InfL1)	---- CEGUI System destruction completed ----
+20/12/2009 19:38:12 (InfL1)	CEGUI::Logger singleton destroyed.

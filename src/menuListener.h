@@ -40,7 +40,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
  */
 class MenuListener
 {
-    public:
+    public :
 		/**
 		 * \brief Constructeur
 		 *

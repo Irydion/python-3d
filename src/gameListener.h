@@ -40,13 +40,13 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
  */
 class GameListener
 {
-    public:
+    public :
 		/**
 		 * \brief Constructeur
 		 *
 		 * Constructeur de la classe GameListener
 		 */
-		GameListener();
+		GameListener(Ogre::Camera *camera);
 		/**
 		 * \brief Destructeur
 		 *
@@ -112,6 +112,13 @@ class GameListener
 		 * \return true pour continuer, false pour sortir de la boucle de rendu
 		 */
         bool mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id);
+
+	protected :
+		/** Caméra du jeu */
+		Ogre::Camera *_Camera;
+
+		/** True si le bouton droit de la souris est enfoncé, false sinon */
+		bool _RightMouse;
 };
 
 #endif // GAMELISTENER_H
