@@ -52,8 +52,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="class_game_listener-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#a166836ee94c912bfe66f289a1c6bedc9">GameListener</a> ()</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#a166836ee94c912bfe66f289a1c6bedc9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#a82f53019ecb4eea00d5ad2640292c44b">GameListener</a> (Ogre::Camera *camera)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#a82f53019ecb4eea00d5ad2640292c44b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#a38d6d2e064dacb2e0969ce7fd6b5e53e">~GameListener</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructeur.  <a href="#a38d6d2e064dacb2e0969ce7fd6b5e53e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#aab0ee3d837ae435b972efd008e6ae849">frameStarted</a> (const Ogre::FrameEvent &amp;evt)</td></tr>
@@ -68,19 +68,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Un bouton de la souris est cliqué.  <a href="#acb1fcef213664c093e71a4c2f3982fc4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#ada075b4b6666ebeec424bb53832c9db1">mouseReleased</a> (const OIS::MouseEvent &amp;e, OIS::MouseButtonID id)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Un bouton de la souris est relaché.  <a href="#ada075b4b6666ebeec424bb53832c9db1"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Ogre::Camera *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#abc9435e6b5e413e1c999141b1aebc4c7">_Camera</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#a3eb63fce13e53c31c526db916e220c42">_RightMouse</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>frame listener de jeu </p>
 <p>Cette classe s'occupe de récupérer les entrées clavier/souris et de les traiter selon le déroulement actuel de la partie </p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a166836ee94c912bfe66f289a1c6bedc9"></a><!-- doxytag: member="GameListener::GameListener" ref="a166836ee94c912bfe66f289a1c6bedc9" args="()" -->
+<a class="anchor" id="a82f53019ecb4eea00d5ad2640292c44b"></a><!-- doxytag: member="GameListener::GameListener" ref="a82f53019ecb4eea00d5ad2640292c44b" args="(Ogre::Camera *camera)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">GameListener::GameListener </td>
           <td>(</td>
-          <td class="paramname"></td>
+          <td class="paramtype">Ogre::Camera *&nbsp;</td>
+          <td class="paramname"> <em>camera</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -302,6 +306,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="abc9435e6b5e413e1c999141b1aebc4c7"></a><!-- doxytag: member="GameListener::_Camera" ref="abc9435e6b5e413e1c999141b1aebc4c7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ogre::Camera* <a class="el" href="class_game_listener.html#abc9435e6b5e413e1c999141b1aebc4c7">GameListener::_Camera</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Caméra du jeu </p>
+
+</div>
+</div>
+<a class="anchor" id="a3eb63fce13e53c31c526db916e220c42"></a><!-- doxytag: member="GameListener::_RightMouse" ref="a3eb63fce13e53c31c526db916e220c42" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_game_listener.html#a3eb63fce13e53c31c526db916e220c42">GameListener::_RightMouse</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>True si le bouton droit de la souris est enfoncé, false sinon </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Documents/Tahiti Bob/Bureau/Python3D/src/<a class="el" href="game_listener_8h_source.html">gameListener.h</a></li>
 <li>C:/Documents/Tahiti Bob/Bureau/Python3D/src/gameListener.cpp</li>
@@ -321,7 +354,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Sat Dec 19 20:09:26 2009 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 21 19:24:43 2009 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

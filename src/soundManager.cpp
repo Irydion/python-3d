@@ -24,10 +24,36 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 SoundManager::SoundManager()
 {
+	FMOD::System_Create(&_FMODSystem);
+	_FMODSystem->init(10, FMOD_INIT_NORMAL, 0);
 
+	_FMODSystem->createSound("../media/audio/test_son_1.wav", FMOD_3D, 0, &_Sound[0]);
+	_FMODSystem->createSound("../media/audio/test_son_2.wav", FMOD_3D, 0, &_Sound[1]);
+	_FMODSystem->createStream("../media/audio/test_music_1.ogg", FMOD_3D, 0, &_Music[0]);
+	_FMODSystem->createStream("../media/audio/test_music_2.ogg", FMOD_3D, 0, &_Music[1]);
 }
 
 SoundManager::~SoundManager()
 {
+	_Sound[0]->release();
+	_Sound[1]->release();
+	_Music[0]->release();
+	_Music[1]->release();
 
+	_FMODSystem->release();
+}
+
+void SoundManager::playSound(int sound)
+{
+	_FMODSystem->playSound(FMOD_CHANNEL_FREE, _Sound[sound], false, 0);
+}
+
+void SoundManager::playStream(int track)
+{
+	_FMODSystem->playSound(FMOD_CHANNEL_FREE, _Music[track], false, &_MusicChan[track]);
+}
+
+void SoundManager::update()
+{
+	_FMODSystem->update();
 }

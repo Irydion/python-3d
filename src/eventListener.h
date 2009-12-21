@@ -53,6 +53,7 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * Constructeur de la classe EventListener
 		 *
 		 * \param sceneMgr : un pointeur vers le scene manager principal du jeu
+		 * \param renderWindow : fenetre de rendu du jeu
 		 * \param keyboard : clavier initialisé dans Python3D
 		 * \param mouse : souris initialisée dans Python3D
 		 * \param GUISystem : objet systeme CEGUI
@@ -150,11 +151,11 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		CEGUI::System *_GUISystem;
 		/** Gestionnaire d'interface utilisateur CEGUI */
 		CEGUI::OgreCEGUIRenderer *_GUIRenderer;
-		/** <DEBUG ONLY> la fenêtre d'affichage des FPS */
+		/** DEBUG ONLY - la fenêtre d'affichage des FPS */
 		CEGUI::Window *_FPSWindow;
-		/** <DEBUG ONLY> la fréquence de rafraichissement de l'affichage des FPS */
+		/** DEBUG ONLY - la fréquence de rafraichissement de l'affichage des FPS */
 		int _FPSUpdateFreq;
-		/** <DEBUG ONLY> compteur de frame avant rafraichissement de l'affichage des FPS */
+		/** DEBUG ONLY - compteur de frame avant rafraichissement de l'affichage des FPS */
 		int _FPSSkippedFrames;
 
 		/** True pour continuer, false pour sortir de la boucle de rendu */

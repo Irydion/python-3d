@@ -124,6 +124,8 @@ class Python3D
 		Ogre::Viewport *_Viewport;
 		/** Caméra du jeu */
 		Ogre::Camera *_Camera;
+		/** frame listener principal */
+		EventListener *_Listener;
 
 		/** InputManager d'OIS */
 		OIS::InputManager *_InputManager;
