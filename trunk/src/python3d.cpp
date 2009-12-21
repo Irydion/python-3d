@@ -24,18 +24,18 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 Python3D::Python3D()
 {
-	_Root = NULL;
-	_SceneManager = NULL;
-	_RenderWindow = NULL;
-	_Viewport = NULL;
-	_Camera = NULL;
+	_Root = 0;
+	_SceneManager = 0;
+	_RenderWindow = 0;
+	_Viewport = 0;
+	_Camera = 0;
 
-	_InputManager = NULL;
-	_Keyboard = NULL;
-	_Mouse = NULL;
+	_InputManager = 0;
+	_Keyboard = 0;
+	_Mouse = 0;
 
-	_GUISystem = NULL;
-	_GUIRenderer = NULL;
+	_GUISystem = 0;
+	_GUIRenderer = 0;
 }
 
 Python3D::~Python3D()
@@ -79,6 +79,8 @@ void Python3D::start()
 
 void Python3D::exit()
 {
+	delete _Listener;
+
 	delete _GUISystem;
 	delete _GUIRenderer;
 
@@ -95,8 +97,8 @@ void Python3D::loadResources()
 
 void Python3D::createFrameListener()
 {
-	EventListener *listener = new EventListener(_SceneManager, _RenderWindow, _Keyboard, _Mouse, _GUISystem, _GUIRenderer);
-	_Root->addFrameListener(listener);
+	_Listener = new EventListener(_SceneManager, _RenderWindow, _Keyboard, _Mouse, _GUISystem, _GUIRenderer);
+	_Root->addFrameListener(_Listener);
 }
 
 void Python3D::initOIS()
@@ -118,7 +120,7 @@ void Python3D::initOIS()
 void Python3D::initCEGUI()
 {
 	_GUIRenderer = new CEGUI::OgreCEGUIRenderer(_RenderWindow, Ogre::RENDER_QUEUE_OVERLAY, false, 3000, _SceneManager);
-	_GUISystem = new CEGUI::System(_GUIRenderer, NULL, NULL, NULL, (CEGUI::utf8*)"cegui.config");
+	_GUISystem = new CEGUI::System(_GUIRenderer, 0, 0, 0, (CEGUI::utf8*)"cegui.config");
 
 	CEGUI::Logger::getSingleton().setLoggingLevel(CEGUI::Insane);
 	CEGUI::Logger::getSingleton().setLogFilename("cegui.log");
