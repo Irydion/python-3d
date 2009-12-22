@@ -25,6 +25,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 GameListener::GameListener(Ogre::Camera *camera)
 {
 	_Camera = camera;
+	_Direction = Ogre::Vector3(0, 0, 0);
 
 	_RightMouse = false;
 }
@@ -35,11 +36,28 @@ GameListener::~GameListener()
 
 bool GameListener::frameStarted(const Ogre::FrameEvent &evt)
 {
+	_Camera->moveRelative(_Direction * evt.timeSinceLastFrame);
 	return true;
 }
 
 bool GameListener::keyPressed(const OIS::KeyEvent &e)
 {
+	switch(e.key)
+	{
+		case OIS::KC_UP:
+			_Direction.z -= 100;
+			break;
+		case OIS::KC_DOWN:
+			_Direction.z += 100;
+			break;
+		case OIS::KC_LEFT:
+			_Direction.x -= 100;
+			break;
+		case OIS::KC_RIGHT:
+			_Direction.x += 100;
+			break;
+
+	}
 	return true;
 }
 
@@ -47,6 +65,18 @@ bool GameListener::keyReleased(const OIS::KeyEvent &e)
 {
 	switch (e.key)
     {
+		case OIS::KC_UP:
+			_Direction.z += 100;
+			break;
+		case OIS::KC_DOWN:
+			_Direction.z -= 100;
+			break;
+		case OIS::KC_LEFT:
+			_Direction.x += 100;
+			break;
+		case OIS::KC_RIGHT:
+			_Direction.x -= 100;
+			break;
         case OIS::KC_ESCAPE:
             return false;
             break;

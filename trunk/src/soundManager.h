@@ -29,6 +29,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #ifndef SOUNDMANAGER_H
 #define SOUNDMANAGER_H
 
+#include <ogre.h>
 #include <FMOD/fmod.hpp>
 #include <FMOD/fmod_errors.h>
 
@@ -55,13 +56,12 @@ class SoundManager
 		~SoundManager();
 
 		/**
-		 * \brief Jouer une musique
+		 * \brief Chargement des ressources
 		 *
-		 * Méthode appelée pour lancer la lecture d'une musique.
-		 *
-		 * \param track : numéro de la musique à jouer
+		 * Méthode qui charge tous les sons et toutes les musiques
 		 */
-		void playStream(int track);
+		void loadResources();
+
 		/**
 		 * \brief Jouer un son
 		 *
@@ -70,6 +70,22 @@ class SoundManager
 		 * \param sound : numéro du son à jouer.
 		 */
 		void playSound(int sound);
+		/**
+		 * \brief Jouer une musique
+		 *
+		 * Méthode appelée pour lancer la lecture d'une musique.
+		 *
+		 * \param track : numéro de la musique à jouer
+		 */
+		void playStream(int track);
+		/**
+		 * \brief Stopper une musique
+		 *
+		 * Méthode appelée pour stopper une musique
+		 *
+		 * \param track : numéro de la musique à arreter
+		 */
+		void stopStream(int track);
 
 		/**
 		 * \brief Mettre à jour le gestionnaire de son
