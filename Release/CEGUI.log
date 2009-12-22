@@ -1,33 +1,33 @@
-21/12/2009 19:15:59 (InfL1)	---- Begining CEGUI System destruction ----
-21/12/2009 19:15:59 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
-21/12/2009 19:15:59 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
-21/12/2009 19:15:59 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' has been added to dead pool.
-21/12/2009 19:15:59 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' has been added to dead pool.
-21/12/2009 19:15:59 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
-21/12/2009 19:15:59 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
-21/12/2009 19:15:59 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' has been added to dead pool.
-21/12/2009 19:15:59 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' has been added to dead pool.
-21/12/2009 19:15:59 (InfL2)	Window 'FPSWindow' has been added to dead pool.
-21/12/2009 19:15:59 (InfL2)	Window 'root' has been added to dead pool.
-21/12/2009 19:15:59 (InfL1)	---- Begining cleanup of GUI Scheme system ----
-21/12/2009 19:15:59 (InfL2)	---- Begining resource cleanup for GUI scheme 'TaharezLook' ----
-21/12/2009 19:15:59 (InfL2)	Imageset 'solo_auto_glyph_images_ ' has been destroyed.
-21/12/2009 19:15:59 (InfL1)	Font 'solo' has been destroyed.
-21/12/2009 19:15:59 (InfL2)	Imageset 'TaharezLook' has been destroyed.
-21/12/2009 19:15:59 (InfL2)	---- Resource cleanup for GUI scheme 'TaharezLook' completed ----
-21/12/2009 19:15:59 (InfL2)	GUI scheme 'TaharezLook' has been unloaded.
-21/12/2009 19:15:59 (InfL1)	Scheme 'TaharezLook' has been unloaded.
-21/12/2009 19:15:59 (InfL1)	CEGUI::SchemeManager singleton destroyed.
-21/12/2009 19:15:59 (InfL1)	CEGUI::WindowManager singleton destroyed
-21/12/2009 19:15:59 (InfL1)	CEGUI::WindowFactoryManager singleton destroyed
-21/12/2009 19:15:59 (InfL1)	CEGUI::WidgetLookManager singleton destroyed.
-21/12/2009 19:15:59 (InfL1)	CEGUI::WindowRendererManager singleton destroyed
-21/12/2009 19:15:59 (InfL1)	---- Begining cleanup of Font system ----
-21/12/2009 19:15:59 (InfL1)	CEGUI::FontManager singleton destroyed.
-21/12/2009 19:15:59 (InfL1)	CEGUI::MouseCursor singleton destroyed.
-21/12/2009 19:15:59 (InfL1)	---- Begining cleanup of Imageset system ----
-21/12/2009 19:15:59 (InfL1)	CEGUI::ImagesetManager singleton destroyed
-21/12/2009 19:15:59 (InfL1)	CEGUI::GlobalEventSet singleton destroyed.
-21/12/2009 19:15:59 (InfL1)	CEGUI::System singleton destroyed.
-21/12/2009 19:15:59 (InfL1)	---- CEGUI System destruction completed ----
-21/12/2009 19:15:59 (InfL1)	CEGUI::Logger singleton destroyed.
+23/12/2009 00:58:06 (InfL1)	---- Begining CEGUI System destruction ----
+23/12/2009 00:58:06 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
+23/12/2009 00:58:06 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
+23/12/2009 00:58:06 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' has been added to dead pool.
+23/12/2009 00:58:06 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' has been added to dead pool.
+23/12/2009 00:58:06 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
+23/12/2009 00:58:06 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
+23/12/2009 00:58:06 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' has been added to dead pool.
+23/12/2009 00:58:06 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' has been added to dead pool.
+23/12/2009 00:58:06 (InfL2)	Window 'FPSWindow' has been added to dead pool.
+23/12/2009 00:58:06 (InfL2)	Window 'root' has been added to dead pool.
+23/12/2009 00:58:06 (InfL1)	---- Begining cleanup of GUI Scheme system ----
+23/12/2009 00:58:06 (InfL2)	---- Begining resource cleanup for GUI scheme 'TaharezLook' ----
+23/12/2009 00:58:06 (InfL2)	Imageset 'solo_auto_glyph_images_ ' has been destroyed.
+23/12/2009 00:58:06 (InfL1)	Font 'solo' has been destroyed.
+23/12/2009 00:58:06 (InfL2)	Imageset 'TaharezLook' has been destroyed.
+23/12/2009 00:58:06 (InfL2)	---- Resource cleanup for GUI scheme 'TaharezLook' completed ----
+23/12/2009 00:58:06 (InfL2)	GUI scheme 'TaharezLook' has been unloaded.
+23/12/2009 00:58:06 (InfL1)	Scheme 'TaharezLook' has been unloaded.
+23/12/2009 00:58:06 (InfL1)	CEGUI::SchemeManager singleton destroyed.
+23/12/2009 00:58:06 (InfL1)	CEGUI::WindowManager singleton destroyed
+23/12/2009 00:58:06 (InfL1)	CEGUI::WindowFactoryManager singleton destroyed
+23/12/2009 00:58:06 (InfL1)	CEGUI::WidgetLookManager singleton destroyed.
+23/12/2009 00:58:06 (InfL1)	CEGUI::WindowRendererManager singleton destroyed
+23/12/2009 00:58:06 (InfL1)	---- Begining cleanup of Font system ----
+23/12/2009 00:58:06 (InfL1)	CEGUI::FontManager singleton destroyed.
+23/12/2009 00:58:06 (InfL1)	CEGUI::MouseCursor singleton destroyed.
+23/12/2009 00:58:06 (InfL1)	---- Begining cleanup of Imageset system ----
+23/12/2009 00:58:06 (InfL1)	CEGUI::ImagesetManager singleton destroyed
+23/12/2009 00:58:06 (InfL1)	CEGUI::GlobalEventSet singleton destroyed.
+23/12/2009 00:58:06 (InfL1)	CEGUI::System singleton destroyed.
+23/12/2009 00:58:06 (InfL1)	---- CEGUI System destruction completed ----
+23/12/2009 00:58:06 (InfL1)	CEGUI::Logger singleton destroyed.

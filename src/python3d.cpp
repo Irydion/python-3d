@@ -69,7 +69,7 @@ void Python3D::start()
 	entity->setMaterialName("test");
 	Ogre::SceneNode *node = _SceneManager->getRootSceneNode()->createChildSceneNode("MapNode");
 	node->attachObject(entity);
-	node->setScale(Ogre::Vector3(100, 100, 100));
+	node->setScale(Ogre::Vector3(10, 10, 10));
 
 	initOIS();
 	initCEGUI();

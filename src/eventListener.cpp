@@ -90,18 +90,6 @@ bool EventListener::keyPressed(const OIS::KeyEvent &e)
 		case OIS::KC_SYSRQ:
 			_RenderWindow->writeContentsToFile("screenshot_" + Ogre::StringConverter::toString((int)time(NULL)) + ".png");
 			break;
-		case OIS::KC_A:
-			_SoundManager->playSound(0);
-			break;
-		case OIS::KC_Z:
-			_SoundManager->playSound(1);
-			break;
-		case OIS::KC_E:
-			_SoundManager->playStream(0);
-			break;
-		case OIS::KC_R:
-			_SoundManager->playStream(1);
-			break;
 	}
 
 	switch(_Actif)
