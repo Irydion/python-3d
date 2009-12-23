@@ -34,6 +34,7 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 	_GUIRenderer = GUIRenderer;
 
 	_SoundManager = new SoundManager();
+	_SoundManager->playStream("game", 0);
 
 	_FPSWindow = CEGUI::WindowManager::getSingleton().getWindow("FPSWindow");
 	_FPSUpdateFreq = 50;

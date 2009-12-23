@@ -33,6 +33,10 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include <FMOD/fmod.hpp>
 #include <FMOD/fmod_errors.h>
 
+#define TRACK_MENU 1
+#define TRACK_GAME 2
+#define NB_SOUND 2
+
 /**
  * \class SoundManager
  * \brief gestionnaire de son
@@ -76,16 +80,18 @@ class SoundManager
 		 * Méthode appelée pour lancer la lecture d'une musique.
 		 *
 		 * \param track : numéro de la musique à jouer
+		 * \param type : type de musique à jouer (game ou menu)
 		 */
-		void playStream(int track);
+		void playStream(std::string type, int track);
 		/**
 		 * \brief Stopper une musique
 		 *
 		 * Méthode appelée pour stopper une musique
 		 *
 		 * \param track : numéro de la musique à arreter
+		 * \param type : type de musique à jouer (game ou menu)
 		 */
-		void stopStream(int track);
+		void stopStream(std::string type, int track);
 
 		/**
 		 * \brief Mettre à jour le gestionnaire de son
@@ -97,12 +103,20 @@ class SoundManager
 	protected:
 		/** Objet système FMOD */
 		FMOD::System *_FMODSystem;
-		/** Tableau contenant les flux vers les musiques du jeu (sons longs)*/
-		FMOD::Sound *_Music[2];
-		/** Canaux dans lesquels sont joués les flux */
-		FMOD::Channel *_MusicChan[2];
-		/** Tableau contenant les sons du jeu (sons courts)*/
-		FMOD::Sound *_Sound[2];
+		/** Tableau contenant les flux vers les musiques du jeu (sons longs) */
+		FMOD::Sound *_GameMusic[TRACK_GAME];
+		/** Tableau contenant les flux vers les musiques du menu (sons longs) */
+		FMOD::Sound *_MenuMusic[TRACK_MENU];
+		/** Canaux dans lesquels sont joués les flux des musiques du jeu */
+		FMOD::Channel *_GameMusicChan[TRACK_GAME];
+		/** Canaux dans lesquels sont joués les flux des musiques du menu */
+		FMOD::Channel *_MenuMusicChan[TRACK_MENU];
+		/** Tableau contenant les sons du jeu (sons courts) */
+		FMOD::Sound *_Sound[NB_SOUND];
+		/** numéro de la musique qui est jouée (-1 si aucune musique est jouée) */
+		int _Track;
+		/** type de la musique qui est jouée (menu, game ou none) */
+		std::string _Type;
 };
 
 #endif // SOUNDMANAGER_H

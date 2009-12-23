@@ -62,43 +62,128 @@ SoundManager::SoundManager()
         ERRCHECK(_FMODSystem->init(16, FMOD_INIT_NORMAL, 0));
     }
 
+	_Track = -1;
+	_Type = "none";
 	loadResources();
 }
 
 SoundManager::~SoundManager()
 {
-	ERRCHECK(_Sound[0]->release());
-	ERRCHECK(_Sound[1]->release());
-	ERRCHECK(_Music[0]->release());
-	ERRCHECK(_Music[1]->release());
+	for(int i = 0; i < NB_SOUND; ++i)
+		ERRCHECK(_Sound[i]->release());
+	for(int i = 0; i < TRACK_MENU; ++i)
+		ERRCHECK(_MenuMusic[i]->release());
+	for(int i = 0; i < TRACK_GAME; ++i)
+		ERRCHECK(_GameMusic[i]->release());
 
 	ERRCHECK(_FMODSystem->release());
 }
 
 void SoundManager::loadResources()
 {
-	ERRCHECK(_FMODSystem->createSound("../media/audio/test_son_1.wav", FMOD_3D, 0, &_Sound[0]));
-	ERRCHECK(_FMODSystem->createSound("../media/audio/test_son_2.wav", FMOD_3D, 0, &_Sound[1]));
-	ERRCHECK(_FMODSystem->createStream("../media/audio/test_music_1.ogg", FMOD_3D, 0, &_Music[0]));
-	ERRCHECK(_FMODSystem->createStream("../media/audio/test_music_2.ogg", FMOD_3D, 0, &_Music[1]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/test_son_1.wav", FMOD_DEFAULT, 0, &_Sound[0]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/test_son_2.wav", FMOD_DEFAULT, 0, &_Sound[1]));
+
+	std::string filename;
+	for(int i = 0; i < TRACK_MENU; ++i)
+	{
+		filename = "../media/audio/menu" + Ogre::StringConverter::toString(i) + ".ogg";
+		ERRCHECK(_FMODSystem->createStream(filename.c_str(), FMOD_DEFAULT, 0, &_MenuMusic[i]));
+	}
+
+	for(int i = 0; i < TRACK_GAME; ++i)
+	{
+		filename = "../media/audio/game" + Ogre::StringConverter::toString(i) + ".ogg";
+		ERRCHECK(_FMODSystem->createStream(filename.c_str(), FMOD_DEFAULT, 0, &_GameMusic[i]));
+	}
 }
 
 void SoundManager::playSound(int sound)
 {
-	ERRCHECK(_FMODSystem->playSound(FMOD_CHANNEL_FREE, _Sound[sound], false, 0));
+	if(sound < NB_SOUND)
+		ERRCHECK(_FMODSystem->playSound(FMOD_CHANNEL_FREE, _Sound[sound], false, 0));
 }
 
-void SoundManager::playStream(int track)
+void SoundManager::playStream(std::string type, int track)
 {
-	ERRCHECK(_FMODSystem->playSound(FMOD_CHANNEL_FREE, _Music[track], false, &_MusicChan[track]));
+	if(type == "menu")
+	{
+		if(track < TRACK_MENU)
+			ERRCHECK(_FMODSystem->playSound(FMOD_CHANNEL_FREE, _MenuMusic[track], false, &_MenuMusicChan[track]));
+	}
+	else if(type == "game")
+	{
+		if(track < TRACK_GAME)
+			ERRCHECK(_FMODSystem->playSound(FMOD_CHANNEL_FREE, _GameMusic[track], false, &_GameMusicChan[track]));
+	}
+
+	_Track = track;
+	_Type = type;
 }
 
-void SoundManager::stopStream(int track)
+void SoundManager::stopStream(std::string type, int track)
 {
-	ERRCHECK(_MusicChan[track]->stop());
+	if(type == "menu")
+	{
+		if(track < TRACK_MENU)
+		{
+			bool playing;
+			_MenuMusicChan[track]->isPlaying(&playing);
+			if(playing)
+				ERRCHECK(_MenuMusicChan[track]->stop());
+		}
+	}
+	else if(type == "game")
+	{
+		if(track < TRACK_GAME)
+		{
+			bool playing;
+			_GameMusicChan[track]->isPlaying(&playing);
+			if(playing)
+				ERRCHECK(_GameMusicChan[track]->stop());
+		}
+	}
+	_Track = -1;
+	_Type = "none";
 }
 
 void SoundManager::update()
 {
+	if(_Track != -1)
+	{
+		if(_Type == "menu")
+		{
+			bool playing;
+			_MenuMusicChan[_Track]->isPlaying(&playing);
+			if(!playing)
+			{
+				if(_Track >= TRACK_MENU - 1)
+				{
+					playStream("menu", 0);
+				}
+				else
+				{
+					playStream("menu", _Track + 1);
+				}
+			}
+		}
+		else if(_Type == "game")
+		{
+			bool playing;
+			_GameMusicChan[_Track]->isPlaying(&playing);
+			if(!playing)
+			{
+				if(_Track >= TRACK_GAME - 1)
+				{
+					playStream("game", 0);
+				}
+				else
+				{
+					playStream("game", _Track + 1);
+				}
+			}
+		}
+	}
+
 	_FMODSystem->update();
 }
