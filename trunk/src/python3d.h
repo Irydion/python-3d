@@ -35,6 +35,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include <OgreCEGUIRenderer.h>
 
 #include "eventListener.h"
+#include "snake.h"
 
 /**
  * \class Python3D
@@ -138,6 +139,9 @@ class Python3D
 		CEGUI::OgreCEGUIRenderer *_GUIRenderer;
 		/** objet système CEGUI */
 		CEGUI::System *_GUISystem;
+
+		/** Le serpent */
+		Snake *_Snake;
 };
 
 #endif // PYTHON3D_H

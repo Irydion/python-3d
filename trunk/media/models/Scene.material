@@ -1,0 +1,13 @@
+material SOLID/TEX/tex.png
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture tex.png
+			}
+		}
+	}
+}

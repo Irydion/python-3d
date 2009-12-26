@@ -32,6 +32,8 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include <ogre.h>
 #include <OIS/OIS.h>
 
+#include "snake.h"
+
 /**
  * \class GameListener
  * \brief frame listener de jeu
@@ -46,7 +48,7 @@ class GameListener
 		 *
 		 * Constructeur de la classe GameListener
 		 */
-		GameListener(Ogre::Camera *camera);
+		GameListener(Snake *snake);
 		/**
 		 * \brief Destructeur
 		 *
@@ -121,6 +123,9 @@ class GameListener
 
 		/** True si le bouton droit de la souris est enfoncé, false sinon */
 		bool _RightMouse;
+
+		/** le serpent */
+		Snake *_Snake;
 };
 
 #endif // GAMELISTENER_H

@@ -65,11 +65,12 @@ void Python3D::start()
 
 	_SceneManager->setAmbientLight(Ogre::ColourValue(200, 200, 200));
 
-	Ogre::Entity *entity = _SceneManager->createEntity("Map", "test.mesh");
-	entity->setMaterialName("test");
-	Ogre::SceneNode *node = _SceneManager->getRootSceneNode()->createChildSceneNode("MapNode");
+	Ogre::Entity *entity = _SceneManager->createEntity("Map", "Plane.mesh");
+	Ogre::SceneNode *node = _SceneManager->getRootSceneNode()->createChildSceneNode("General_MapNode");
 	node->attachObject(entity);
 	node->setScale(Ogre::Vector3(10, 10, 10));
+
+	_Snake = new Snake(_SceneManager->getRootSceneNode()->createChildSceneNode("Snake_HeadNode"), _Camera, 42);
 
 	initOIS();
 	initCEGUI();
@@ -97,7 +98,7 @@ void Python3D::loadResources()
 
 void Python3D::createFrameListener()
 {
-	_Listener = new EventListener(_SceneManager, _RenderWindow, _Keyboard, _Mouse, _GUISystem, _GUIRenderer);
+	_Listener = new EventListener(_SceneManager, _RenderWindow, _Keyboard, _Mouse, _GUISystem, _GUIRenderer, _Snake);
 	_Root->addFrameListener(_Listener);
 }
 

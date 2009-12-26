@@ -197,6 +197,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\snake.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\src\soundManager.cpp"
 				>
 			</File>
@@ -220,6 +224,10 @@
 			</File>
 			<File
 				RelativePath="..\src\python3d.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\snake.h"
 				>
 			</File>
 			<File
