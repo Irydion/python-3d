@@ -45,17 +45,23 @@ class Snake
 		 *
 		 * Constructeur de la classe Snake.
 		 *
+		 * \param sceneMgr : un pointeur vers le scene manager principal du jeu
 		 * \param head : node de la tete
 		 * \param cam : camera qui doit etre rattachée à la tete
 		 * \param taille : taille initiale du serpent
 		 */
-		Snake(Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size);
+		Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size);
 		/**
 		 * \brief Destructeur
 		 *
 		 * Destructeur de la classe Snake.
 		 */
 		~Snake();
+
+		void turnUp();
+		void turnDown();
+		void turnRight();
+		void turnLeft();
 
 		/**
 		 * \brief Mise à jour du serpent
@@ -69,12 +75,23 @@ class Snake
 	public:
 		/** Node de la tête */
 		Ogre::SceneNode *_Head;
-		/** Direction actuelle du serpent */
-		Ogre::Vector3 _Direction;
 
 	protected:
+		/** Direction actuelle du serpent */
+		Ogre::Vector3 _Direction;
 		/** Taille */
 		unsigned int _Size;
+		/** 0 si le snake tourne pas ; 1:haut 2:bas 3:droite 4:gauche */
+		int _IsTurning;
+		/** Indique, si on est en train de tourner, à quel angle on en est */
+		Ogre::Real _ActualAngle;
+		/** Vitesse de rotation */
+		Ogre::Real _TurnSpeed;
+
+		/** Requête pour récupérer les informations le long d'un rayon */
+		Ogre::RaySceneQuery *_RayQuery;
+		/** Rayon de détection de collision avec la tete */
+		Ogre::Ray _Ray;
 };
 
 #endif // SNAKE_H

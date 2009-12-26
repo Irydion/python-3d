@@ -118,8 +118,6 @@ class GameListener
 	protected :
 		/** Caméra du jeu */
 		Ogre::Camera *_Camera;
-		/** Vecteur de la direction de la caméra */
-		Ogre::Vector3 _Direction;
 
 		/** True si le bouton droit de la souris est enfoncé, false sinon */
 		bool _RightMouse;

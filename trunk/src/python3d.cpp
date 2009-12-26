@@ -68,9 +68,9 @@ void Python3D::start()
 	Ogre::Entity *entity = _SceneManager->createEntity("Map", "Plane.mesh");
 	Ogre::SceneNode *node = _SceneManager->getRootSceneNode()->createChildSceneNode("General_MapNode");
 	node->attachObject(entity);
-	node->setScale(Ogre::Vector3(10, 10, 10));
+	node->setScale(Ogre::Vector3(20, 20, 20));
 
-	_Snake = new Snake(_SceneManager->getRootSceneNode()->createChildSceneNode("Snake_HeadNode"), _Camera, 42);
+	_Snake = new Snake(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Snake_HeadNode"), _Camera, 42);
 
 	initOIS();
 	initCEGUI();
