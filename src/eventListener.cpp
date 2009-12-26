@@ -22,7 +22,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 #include "eventListener.h"
 
-EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer)
+EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer, Snake *snake)
 {
 	_SceneManager = sceneMgr;
 	_RenderWindow = renderWindow;
@@ -40,7 +40,7 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 	_FPSUpdateFreq = 50;
 	_FPSSkippedFrames = 0;
 
-	_GameListener = new GameListener(_SceneManager->getCamera("Camera"));
+	_GameListener = new GameListener(snake);
 	_MenuListener = new MenuListener();
 
     _Keyboard->setEventCallback(this);
@@ -48,6 +48,8 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 
 	_Continue = true;
 	_Actif = 0;
+
+	_Snake = snake;
 }
 
 EventListener::~EventListener()

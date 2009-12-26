@@ -37,6 +37,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include "gameListener.h"
 #include "menuListener.h"
 #include "soundManager.h"
+#include "snake.h"
 
 /**
  * \class EventListener
@@ -58,8 +59,9 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * \param mouse : souris initialisée dans Python3D
 		 * \param GUISystem : objet systeme CEGUI
 		 * \param GUIRenderer : Gestionnaire d'interface utilisateur CEGUI
+		 * \param snake : le serpent
 		 */
-		EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer);
+		EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer, Snake *snake);
 		/**
 		 * \brief Destructeur
 		 *
@@ -170,6 +172,9 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		
 		/** gestionnaire de son */
 		SoundManager *_SoundManager;
+
+		/** le serpent */
+		Snake *_Snake;
 };
 
 #endif // EVENTLISTENER_H
