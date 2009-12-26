@@ -27,7 +27,6 @@ GameListener::GameListener(Snake *snake)
 	_Snake = snake;
 	_Camera = (Ogre::Camera *)(_Snake->_Head->getAttachedObject("Camera"));
 
-	_Direction = Ogre::Vector3(0, 0, 0);
 	_RightMouse = false;
 }
 
@@ -46,16 +45,20 @@ bool GameListener::keyPressed(const OIS::KeyEvent &e)
 	switch(e.key)
 	{
 		case OIS::KC_UP:
-			_Snake->_Direction.y += 100;
+		case OIS::KC_W:
+			_Snake->turnUp();
 			break;
 		case OIS::KC_DOWN:
-			_Snake->_Direction.y -= 100;
+		case OIS::KC_S:
+			_Snake->turnDown();
 			break;
 		case OIS::KC_RIGHT:
-			_Snake->_Direction.x += 100;
+		case OIS::KC_D:
+			_Snake->turnRight();
 			break;
 		case OIS::KC_LEFT:
-			_Snake->_Direction.x -= 100;
+		case OIS::KC_A:
+			_Snake->turnLeft();
 			break;
 	}
 	return true;
@@ -65,18 +68,6 @@ bool GameListener::keyReleased(const OIS::KeyEvent &e)
 {
 	switch (e.key)
     {
-		case OIS::KC_UP:
-			_Snake->_Direction.y -= 100;
-			break;
-		case OIS::KC_DOWN:
-			_Snake->_Direction.y += 100;
-			break;
-		case OIS::KC_RIGHT:
-			_Snake->_Direction.x -= 100;
-			break;
-		case OIS::KC_LEFT:
-			_Snake->_Direction.x += 100;
-			break;
         case OIS::KC_ESCAPE:
             return false;
             break;
