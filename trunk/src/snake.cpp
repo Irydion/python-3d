@@ -29,19 +29,20 @@ Snake::Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *
 	_TurnSpeed = 0;
 	_IsTurning = 0;
 	_ActualAngle = 0;
+	_NextTurn = 0;
+	_LastPosition = Ogre::Vector3(0, 0, 0);
+
+	_CollisionTools = new MOC::CollisionTools(sceneMgr);
 
 	_Head->attachObject(cam);
 	_Head->translate(Ogre::Vector3(0, 200, 0));
 
 	_Direction = Ogre::Vector3(0, 0, -100);
-
-	_RayQuery = sceneMgr->createRayQuery(Ogre::Ray(_Head->getPosition(), _Head->getOrientation().zAxis()));
-	_RayQuery->setWorldFragmentType(Ogre::SceneQuery::WFT_SINGLE_INTERSECTION);
 }
 
 Snake::~Snake()
 {
-
+	delete _CollisionTools;
 }
 
 void Snake::turnUp()
@@ -50,6 +51,10 @@ void Snake::turnUp()
 	{
 		_IsTurning = 1;
 		_TurnSpeed = 200;
+	}
+	else
+	{
+		_NextTurn = 1;
 	}
 }
 
@@ -60,6 +65,10 @@ void Snake::turnDown()
 		_IsTurning = 2;
 		_TurnSpeed = -200;
 	}
+	else
+	{
+		_NextTurn = 2;
+	}
 }
 
 void Snake::turnRight()
@@ -68,6 +77,10 @@ void Snake::turnRight()
 	{
 		_IsTurning = 3;
 		_TurnSpeed = -200;
+	}
+	else
+	{
+		_NextTurn = 3;
 	}
 }
 
@@ -78,10 +91,15 @@ void Snake::turnLeft()
 		_IsTurning = 4;
 		_TurnSpeed = 200;
 	}
+	else
+	{
+		_NextTurn = 4;
+	}
 }
 
 void Snake::update(Ogre::Real timeSinceLastFrame)
 {
+	_LastPosition = _Head->getPosition();
 	_Head->translate(_Direction * timeSinceLastFrame, Ogre::Node::TS_LOCAL);
 
 	if(_IsTurning)
@@ -101,21 +119,34 @@ void Snake::update(Ogre::Real timeSinceLastFrame)
 		{
 			_ActualAngle = 0;
 			_IsTurning = 0;
+			switch(_NextTurn)
+			{
+				case 0:
+					break;
+				case 1:
+					turnUp();
+					break;
+				case 2:
+					turnDown();
+					break;
+				case 3:
+					turnRight();
+					break;
+				case 4:
+					turnLeft();
+					break;
+			}
+			_NextTurn = 0;
 		}
 	}
 
-	_Ray.setOrigin(_Head->getPosition());
-    _Ray.setDirection(-(_Head->getOrientation().zAxis()));
-
-	_RayQuery->setRay(_Ray);
-	Ogre::RaySceneQueryResult &_QueryResult = _RayQuery->execute();
-	Ogre::RaySceneQueryResult::iterator i = _QueryResult.begin();
-
-    if (i != _QueryResult.end() && i->worldFragment)
-    {
-        if(i->distance < 35)
-        {
-			MessageBoxA(NULL, "Boom ! collision ...", "An exception has occurred!", MB_OK | MB_ICONERROR | MB_TASKMODAL);
-        }
-    }
+	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 10, 0, MAP_QUERY_FLAG))
+	{
+		// COLLISION MAP -> fin de partie
+		_Head->setPosition(_LastPosition);
+	}
+	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 10, 0, BONUS_QUERY_FLAG))
+	{
+		// COLLISION BONUS -> agrandir
+	}
 }

@@ -52,8 +52,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="class_game_listener-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#a82f53019ecb4eea00d5ad2640292c44b">GameListener</a> (Ogre::Camera *camera)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#a82f53019ecb4eea00d5ad2640292c44b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#a3fa8a04d521e3280d91924d7097bfea6">GameListener</a> (<a class="el" href="class_snake.html">Snake</a> *snake)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#a3fa8a04d521e3280d91924d7097bfea6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#a38d6d2e064dacb2e0969ce7fd6b5e53e">~GameListener</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructeur.  <a href="#a38d6d2e064dacb2e0969ce7fd6b5e53e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#aab0ee3d837ae435b972efd008e6ae849">frameStarted</a> (const Ogre::FrameEvent &amp;evt)</td></tr>
@@ -71,20 +71,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2>Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::Camera *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#abc9435e6b5e413e1c999141b1aebc4c7">_Camera</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#a3eb63fce13e53c31c526db916e220c42">_RightMouse</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_snake.html">Snake</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_listener.html#ae6d9bfa7a2e86f3541ce304723bbadf2">_Snake</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>frame listener de jeu </p>
 <p>Cette classe s'occupe de récupérer les entrées clavier/souris et de les traiter selon le déroulement actuel de la partie </p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a82f53019ecb4eea00d5ad2640292c44b"></a><!-- doxytag: member="GameListener::GameListener" ref="a82f53019ecb4eea00d5ad2640292c44b" args="(Ogre::Camera *camera)" -->
+<a class="anchor" id="a3fa8a04d521e3280d91924d7097bfea6"></a><!-- doxytag: member="GameListener::GameListener" ref="a3fa8a04d521e3280d91924d7097bfea6" args="(Snake *snake)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">GameListener::GameListener </td>
           <td>(</td>
-          <td class="paramtype">Ogre::Camera *&nbsp;</td>
-          <td class="paramname"> <em>camera</em></td>
+          <td class="paramtype"><a class="el" href="class_snake.html">Snake</a> *&nbsp;</td>
+          <td class="paramname"> <em>snake</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -335,6 +336,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="ae6d9bfa7a2e86f3541ce304723bbadf2"></a><!-- doxytag: member="GameListener::_Snake" ref="ae6d9bfa7a2e86f3541ce304723bbadf2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_snake.html">Snake</a>* <a class="el" href="class_game_listener.html#ae6d9bfa7a2e86f3541ce304723bbadf2">GameListener::_Snake</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>le serpent </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Documents/Tahiti Bob/Bureau/Python3D/src/<a class="el" href="game_listener_8h_source.html">gameListener.h</a></li>
 <li>C:/Documents/Tahiti Bob/Bureau/Python3D/src/gameListener.cpp</li>
@@ -345,7 +360,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -354,7 +369,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 21 19:24:43 2009 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 28 01:37:41 2009 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

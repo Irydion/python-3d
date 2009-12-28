@@ -57,8 +57,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr class="memlist"><td><a class="el" href="class_event_listener.html#a1f6735a7cd9313951650a20803888cae">_Mouse</a></td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_event_listener.html#ac10a499ff8a5c40904379557a26bcddd">_RenderWindow</a></td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_event_listener.html#afc58aa6376388ff5d66b26fb14c13ad6">_SceneManager</a></td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_event_listener.html#a4612b941c77d2a4b1d0a98e02947a380">_Snake</a></td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_event_listener.html#a9e6d12ae46ed795be0a3b2e8015de836">_SoundManager</a></td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td><code> [protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_event_listener.html#a6f9a751fcc1dd59da3ad16a8f5c07217">EventListener</a>(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer)</td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_event_listener.html#ac34ead9d74a9bb7e04dab28edebf0d5b">EventListener</a>(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer, Snake *snake)</td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_event_listener.html#ac4462e33f186e33e91fe1148c002b9b3">frameStarted</a>(const Ogre::FrameEvent &amp;evt)</td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_event_listener.html#a0a9ed10fca20943ab32cb44d7f75fcc8">keyPressed</a>(const OIS::KeyEvent &amp;e)</td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_event_listener.html#a79c5137e4d499af18ea3dbb560de6dfc">keyReleased</a>(const OIS::KeyEvent &amp;e)</td><td><a class="el" href="class_event_listener.html">EventListener</a></td><td></td></tr>
@@ -73,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 21 19:24:43 2009 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 28 01:37:41 2009 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

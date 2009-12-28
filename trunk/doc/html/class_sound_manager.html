@@ -56,17 +56,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#abcc1fbf3488be5788a42c9a4fe56df35"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#ad5dbf8eab22db48ff8f3db51b02f8938">~SoundManager</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructeur.  <a href="#ad5dbf8eab22db48ff8f3db51b02f8938"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a3f1be3383ee9d64140efb76d5b8063d1">playStream</a> (int track)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Jouer une musique.  <a href="#a3f1be3383ee9d64140efb76d5b8063d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#ab8e45d9c5533fbf30c8cefd03c129861">loadResources</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Chargement des ressources.  <a href="#ab8e45d9c5533fbf30c8cefd03c129861"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a5b67249c855a6e25fc0bfbe26263efa4">playSound</a> (int sound)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Jouer un son.  <a href="#a5b67249c855a6e25fc0bfbe26263efa4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a9d20bf67e82af818acd7f992da7635b2">playStream</a> (std::string type, int track)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Jouer une musique.  <a href="#a9d20bf67e82af818acd7f992da7635b2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a56d3b77165e5273b8814afc7844650e8">stopStream</a> (std::string type, int track)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stopper une musique.  <a href="#a56d3b77165e5273b8814afc7844650e8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a05cb0697f1a993704821098883a291f5">update</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mettre à jour le gestionnaire de son.  <a href="#a05cb0697f1a993704821098883a291f5"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">FMOD::System *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#ab7e51991749f997ddf0b68aef40e654b">_FMODSystem</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">FMOD::Sound *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#aea041992bc15cd86621dfcb7457b529b">_Music</a> [2]</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">FMOD::Channel *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a034e8c287ce58ae49edb62adc965c534">_MusicChan</a> [2]</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">FMOD::Sound *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#aa2b13cbcddbeb63788c17d8e84ff7f10">_Sound</a> [2]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">FMOD::Sound *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#af9ed6609e13a0f4b6481e6d1dbb4cbc2">_GameMusic</a> [TRACK_GAME]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">FMOD::Sound *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a22f076e4bbe9894c43141521eab13ecc">_MenuMusic</a> [TRACK_MENU]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">FMOD::Channel *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#ab2dabc91c0437126acb89272498b306d">_GameMusicChan</a> [TRACK_GAME]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">FMOD::Channel *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#af1521b9c9d217912aed64b0f0bea764b">_MenuMusicChan</a> [TRACK_MENU]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">FMOD::Sound *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#a44b9961c3a526bfd6eefb6183c81f37f">_Sound</a> [NB_SOUND]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#af3e87d7734cb620ef26c150f8491ded4">_Track</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sound_manager.html#aa3442849ff827656dc454e90378e1955">_Type</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>gestionnaire de son </p>
@@ -113,6 +121,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ab8e45d9c5533fbf30c8cefd03c129861"></a><!-- doxytag: member="SoundManager::loadResources" ref="ab8e45d9c5533fbf30c8cefd03c129861" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SoundManager::loadResources </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Chargement des ressources. </p>
+<p>Méthode qui charge tous les sons et toutes les musiques </p>
+
+</div>
+</div>
 <a class="anchor" id="a5b67249c855a6e25fc0bfbe26263efa4"></a><!-- doxytag: member="SoundManager::playSound" ref="a5b67249c855a6e25fc0bfbe26263efa4" args="(int sound)" -->
 <div class="memitem">
 <div class="memproto">
@@ -140,17 +168,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
-<a class="anchor" id="a3f1be3383ee9d64140efb76d5b8063d1"></a><!-- doxytag: member="SoundManager::playStream" ref="a3f1be3383ee9d64140efb76d5b8063d1" args="(int track)" -->
+<a class="anchor" id="a9d20bf67e82af818acd7f992da7635b2"></a><!-- doxytag: member="SoundManager::playStream" ref="a9d20bf67e82af818acd7f992da7635b2" args="(std::string type, int track)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void SoundManager::playStream </td>
           <td>(</td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>track</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>track</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
@@ -161,6 +198,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>track</em>&nbsp;</td><td>: numéro de la musique à jouer </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>: type de musique à jouer (game ou menu) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a56d3b77165e5273b8814afc7844650e8"></a><!-- doxytag: member="SoundManager::stopStream" ref="a56d3b77165e5273b8814afc7844650e8" args="(std::string type, int track)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SoundManager::stopStream </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>track</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stopper une musique. </p>
+<p>Méthode appelée pour stopper une musique</p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>track</em>&nbsp;</td><td>: numéro de la musique à arreter </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>type</em>&nbsp;</td><td>: type de musique à jouer (game ou menu) </td></tr>
   </table>
   </dd>
 </dl>
@@ -202,12 +277,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
-<a class="anchor" id="aea041992bc15cd86621dfcb7457b529b"></a><!-- doxytag: member="SoundManager::_Music" ref="aea041992bc15cd86621dfcb7457b529b" args="[2]" -->
+<a class="anchor" id="af9ed6609e13a0f4b6481e6d1dbb4cbc2"></a><!-- doxytag: member="SoundManager::_GameMusic" ref="af9ed6609e13a0f4b6481e6d1dbb4cbc2" args="[TRACK_GAME]" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">FMOD::Sound* <a class="el" href="class_sound_manager.html#aea041992bc15cd86621dfcb7457b529b">SoundManager::_Music</a>[2]<code> [protected]</code></td>
+          <td class="memname">FMOD::Sound* <a class="el" href="class_sound_manager.html#af9ed6609e13a0f4b6481e6d1dbb4cbc2">SoundManager::_GameMusic</a>[TRACK_GAME]<code> [protected]</code></td>
         </tr>
       </table>
 </div>
@@ -216,31 +291,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
-<a class="anchor" id="a034e8c287ce58ae49edb62adc965c534"></a><!-- doxytag: member="SoundManager::_MusicChan" ref="a034e8c287ce58ae49edb62adc965c534" args="[2]" -->
+<a class="anchor" id="ab2dabc91c0437126acb89272498b306d"></a><!-- doxytag: member="SoundManager::_GameMusicChan" ref="ab2dabc91c0437126acb89272498b306d" args="[TRACK_GAME]" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">FMOD::Channel* <a class="el" href="class_sound_manager.html#a034e8c287ce58ae49edb62adc965c534">SoundManager::_MusicChan</a>[2]<code> [protected]</code></td>
+          <td class="memname">FMOD::Channel* <a class="el" href="class_sound_manager.html#ab2dabc91c0437126acb89272498b306d">SoundManager::_GameMusicChan</a>[TRACK_GAME]<code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Canaux dans lesquels sont joués les flux </p>
+<p>Canaux dans lesquels sont joués les flux des musiques du jeu </p>
 
 </div>
 </div>
-<a class="anchor" id="aa2b13cbcddbeb63788c17d8e84ff7f10"></a><!-- doxytag: member="SoundManager::_Sound" ref="aa2b13cbcddbeb63788c17d8e84ff7f10" args="[2]" -->
+<a class="anchor" id="a22f076e4bbe9894c43141521eab13ecc"></a><!-- doxytag: member="SoundManager::_MenuMusic" ref="a22f076e4bbe9894c43141521eab13ecc" args="[TRACK_MENU]" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">FMOD::Sound* <a class="el" href="class_sound_manager.html#aa2b13cbcddbeb63788c17d8e84ff7f10">SoundManager::_Sound</a>[2]<code> [protected]</code></td>
+          <td class="memname">FMOD::Sound* <a class="el" href="class_sound_manager.html#a22f076e4bbe9894c43141521eab13ecc">SoundManager::_MenuMusic</a>[TRACK_MENU]<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Tableau contenant les flux vers les musiques du menu (sons longs) </p>
+
+</div>
+</div>
+<a class="anchor" id="af1521b9c9d217912aed64b0f0bea764b"></a><!-- doxytag: member="SoundManager::_MenuMusicChan" ref="af1521b9c9d217912aed64b0f0bea764b" args="[TRACK_MENU]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FMOD::Channel* <a class="el" href="class_sound_manager.html#af1521b9c9d217912aed64b0f0bea764b">SoundManager::_MenuMusicChan</a>[TRACK_MENU]<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Canaux dans lesquels sont joués les flux des musiques du menu </p>
+
+</div>
+</div>
+<a class="anchor" id="a44b9961c3a526bfd6eefb6183c81f37f"></a><!-- doxytag: member="SoundManager::_Sound" ref="a44b9961c3a526bfd6eefb6183c81f37f" args="[NB_SOUND]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FMOD::Sound* <a class="el" href="class_sound_manager.html#a44b9961c3a526bfd6eefb6183c81f37f">SoundManager::_Sound</a>[NB_SOUND]<code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>Tableau contenant les sons du jeu (sons courts) </p>
+
+</div>
+</div>
+<a class="anchor" id="af3e87d7734cb620ef26c150f8491ded4"></a><!-- doxytag: member="SoundManager::_Track" ref="af3e87d7734cb620ef26c150f8491ded4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_sound_manager.html#af3e87d7734cb620ef26c150f8491ded4">SoundManager::_Track</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>numéro de la musique qui est jouée (-1 si aucune musique est jouée) </p>
+
+</div>
+</div>
+<a class="anchor" id="aa3442849ff827656dc454e90378e1955"></a><!-- doxytag: member="SoundManager::_Type" ref="aa3442849ff827656dc454e90378e1955" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_sound_manager.html#aa3442849ff827656dc454e90378e1955">SoundManager::_Type</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>type de la musique qui est jouée (menu, game ou none) </p>
 
 </div>
 </div>
@@ -254,7 +385,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -263,7 +394,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 21 19:24:43 2009 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 28 01:37:41 2009 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
