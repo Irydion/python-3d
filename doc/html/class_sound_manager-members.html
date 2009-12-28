@@ -45,12 +45,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <h1>SoundManager Member List</h1>This is the complete list of members for <a class="el" href="class_sound_manager.html">SoundManager</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="class_sound_manager.html#ab7e51991749f997ddf0b68aef40e654b">_FMODSystem</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#aea041992bc15cd86621dfcb7457b529b">_Music</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#a034e8c287ce58ae49edb62adc965c534">_MusicChan</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#aa2b13cbcddbeb63788c17d8e84ff7f10">_Sound</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#af9ed6609e13a0f4b6481e6d1dbb4cbc2">_GameMusic</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#ab2dabc91c0437126acb89272498b306d">_GameMusicChan</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#a22f076e4bbe9894c43141521eab13ecc">_MenuMusic</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#af1521b9c9d217912aed64b0f0bea764b">_MenuMusicChan</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#a44b9961c3a526bfd6eefb6183c81f37f">_Sound</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#af3e87d7734cb620ef26c150f8491ded4">_Track</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#aa3442849ff827656dc454e90378e1955">_Type</a></td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#ab8e45d9c5533fbf30c8cefd03c129861">loadResources</a>()</td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_sound_manager.html#a5b67249c855a6e25fc0bfbe26263efa4">playSound</a>(int sound)</td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#a3f1be3383ee9d64140efb76d5b8063d1">playStream</a>(int track)</td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#a9d20bf67e82af818acd7f992da7635b2">playStream</a>(std::string type, int track)</td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_sound_manager.html#abcc1fbf3488be5788a42c9a4fe56df35">SoundManager</a>()</td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_sound_manager.html#a56d3b77165e5273b8814afc7844650e8">stopStream</a>(std::string type, int track)</td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_sound_manager.html#a05cb0697f1a993704821098883a291f5">update</a>()</td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_sound_manager.html#ad5dbf8eab22db48ff8f3db51b02f8938">~SoundManager</a>()</td><td><a class="el" href="class_sound_manager.html">SoundManager</a></td><td></td></tr>
 </table></div>
@@ -59,7 +65,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -68,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 21 19:24:43 2009 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 28 01:37:41 2009 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

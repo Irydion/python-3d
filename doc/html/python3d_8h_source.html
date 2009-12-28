@@ -72,51 +72,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 <span class="preprocessor">#include &lt;OgreCEGUIRenderer.h&gt;</span>
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037 <span class="preprocessor">#include &quot;<a class="code" href="event_listener_8h.html" title="Le frame listener principal qui contient les sous-listeners et s&amp;#39;occupe de relier...">eventListener.h</a>&quot;</span>
-<a name="l00038"></a>00038 
-<a name="l00045"></a><a class="code" href="class_python3_d.html">00045</a> <span class="keyword">class </span><a class="code" href="class_python3_d.html" title="classe principale du jeu">Python3D</a>
-<a name="l00046"></a>00046 {
-<a name="l00047"></a>00047         <span class="keyword">public</span> :
-<a name="l00053"></a>00053                 <a class="code" href="class_python3_d.html#ad28399322a47c089caaf6fadb0bc0d63" title="Constructeur.">Python3D</a>();
-<a name="l00054"></a>00054 
-<a name="l00060"></a>00060                 <a class="code" href="class_python3_d.html#aea95047fa5bc1f7feea22e09543778b0" title="Destructeur.">~Python3D</a>();
-<a name="l00061"></a>00061                 
-<a name="l00067"></a>00067                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#ade6074d53ee542326c1787b47dc4f43d" title="Initialisation.">start</a>();
-<a name="l00073"></a>00073                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a6002c47089a67aea8ea95d6650ae11e0" title="Lancement.">run</a>();
-<a name="l00079"></a>00079                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a8cb6334f2b9b2b6a0b74d16b1426ddd0" title="Arret.">exit</a>();
-<a name="l00080"></a>00080                 
-<a name="l00081"></a>00081         <span class="keyword">protected</span> :
-<a name="l00090"></a>00090                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a4e487c18927b93666957f614b08cd554" title="Chargement des ressources.">loadResources</a>();
-<a name="l00091"></a>00091 
-<a name="l00098"></a>00098                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a9799a3cd39608e80711f476d5d637c20" title="Création du FrameListener.">createFrameListener</a>();
-<a name="l00099"></a>00099 
-<a name="l00106"></a>00106                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a11bea93f43243358fb1652b6861dc472" title="Initialisation d&amp;#39;OIS.">initOIS</a>();
-<a name="l00107"></a>00107 
-<a name="l00114"></a>00114                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#ac087b11e5689cd3f242703f87b3b3f91" title="Initialisation de CEGUI.">initCEGUI</a>();
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116         <span class="keyword">protected</span> :
-<a name="l00118"></a><a class="code" href="class_python3_d.html#a4bb752b836e74bd74e7edef1e22fe044">00118</a>                 Ogre::Root *<a class="code" href="class_python3_d.html#a4bb752b836e74bd74e7edef1e22fe044">_Root</a>;
-<a name="l00120"></a><a class="code" href="class_python3_d.html#aafe50d0f43462b2f9daaaf3e6143476b">00120</a>                 Ogre::SceneManager *<a class="code" href="class_python3_d.html#aafe50d0f43462b2f9daaaf3e6143476b">_SceneManager</a>;
-<a name="l00122"></a><a class="code" href="class_python3_d.html#ade48c674264dd430476d01f274b998cc">00122</a>                 Ogre::RenderWindow *<a class="code" href="class_python3_d.html#ade48c674264dd430476d01f274b998cc">_RenderWindow</a>;
-<a name="l00124"></a><a class="code" href="class_python3_d.html#a38fb27c23abd13e9b94e51e0dbea9f24">00124</a>                 Ogre::Viewport *<a class="code" href="class_python3_d.html#a38fb27c23abd13e9b94e51e0dbea9f24">_Viewport</a>;
-<a name="l00126"></a><a class="code" href="class_python3_d.html#a2a0c72e8a497a1a6a9e30a50273c5172">00126</a>                 Ogre::Camera *<a class="code" href="class_python3_d.html#a2a0c72e8a497a1a6a9e30a50273c5172">_Camera</a>;
-<a name="l00128"></a><a class="code" href="class_python3_d.html#ac2188b69d055fcbe6a18a465cb754695">00128</a>                 <a class="code" href="class_event_listener.html" title="frame listener principal">EventListener</a> *<a class="code" href="class_python3_d.html#ac2188b69d055fcbe6a18a465cb754695">_Listener</a>;
-<a name="l00129"></a>00129 
-<a name="l00131"></a><a class="code" href="class_python3_d.html#a6e92a75b2207922c345d5ac60e4a5eea">00131</a>                 OIS::InputManager *<a class="code" href="class_python3_d.html#a6e92a75b2207922c345d5ac60e4a5eea">_InputManager</a>;
-<a name="l00133"></a><a class="code" href="class_python3_d.html#a2778ae0aa80b5933d8a1a3c73b269483">00133</a>                 OIS::Keyboard *<a class="code" href="class_python3_d.html#a2778ae0aa80b5933d8a1a3c73b269483">_Keyboard</a>;
-<a name="l00135"></a><a class="code" href="class_python3_d.html#a737f4d2415287f7ed2a643f0ad766a69">00135</a>                 OIS::Mouse *<a class="code" href="class_python3_d.html#a737f4d2415287f7ed2a643f0ad766a69">_Mouse</a>;
-<a name="l00136"></a>00136 
-<a name="l00138"></a><a class="code" href="class_python3_d.html#ad347c3e6dcb2fd7fec00956eff20e544">00138</a>                 CEGUI::OgreCEGUIRenderer *<a class="code" href="class_python3_d.html#ad347c3e6dcb2fd7fec00956eff20e544">_GUIRenderer</a>;
-<a name="l00140"></a><a class="code" href="class_python3_d.html#a9520a3a9ba302b1631b76abda2ae4f48">00140</a>                 CEGUI::System *<a class="code" href="class_python3_d.html#a9520a3a9ba302b1631b76abda2ae4f48">_GUISystem</a>;
-<a name="l00141"></a>00141 };
+<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;<a class="code" href="snake_8h.html" title="Snake : le serpent.">snake.h</a>&quot;</span>
+<a name="l00039"></a>00039 
+<a name="l00046"></a><a class="code" href="class_python3_d.html">00046</a> <span class="keyword">class </span><a class="code" href="class_python3_d.html" title="classe principale du jeu">Python3D</a>
+<a name="l00047"></a>00047 {
+<a name="l00048"></a>00048         <span class="keyword">public</span> :
+<a name="l00054"></a>00054                 <a class="code" href="class_python3_d.html#ad28399322a47c089caaf6fadb0bc0d63" title="Constructeur.">Python3D</a>();
+<a name="l00055"></a>00055 
+<a name="l00061"></a>00061                 <a class="code" href="class_python3_d.html#aea95047fa5bc1f7feea22e09543778b0" title="Destructeur.">~Python3D</a>();
+<a name="l00062"></a>00062                 
+<a name="l00068"></a>00068                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#ade6074d53ee542326c1787b47dc4f43d" title="Initialisation.">start</a>();
+<a name="l00074"></a>00074                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a6002c47089a67aea8ea95d6650ae11e0" title="Lancement.">run</a>();
+<a name="l00080"></a>00080                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a8cb6334f2b9b2b6a0b74d16b1426ddd0" title="Arret.">exit</a>();
+<a name="l00081"></a>00081                 
+<a name="l00082"></a>00082         <span class="keyword">protected</span> :
+<a name="l00091"></a>00091                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a4e487c18927b93666957f614b08cd554" title="Chargement des ressources.">loadResources</a>();
+<a name="l00092"></a>00092 
+<a name="l00099"></a>00099                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a9799a3cd39608e80711f476d5d637c20" title="Création du FrameListener.">createFrameListener</a>();
+<a name="l00100"></a>00100 
+<a name="l00107"></a>00107                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#a11bea93f43243358fb1652b6861dc472" title="Initialisation d&amp;#39;OIS.">initOIS</a>();
+<a name="l00108"></a>00108 
+<a name="l00115"></a>00115                 <span class="keywordtype">void</span> <a class="code" href="class_python3_d.html#ac087b11e5689cd3f242703f87b3b3f91" title="Initialisation de CEGUI.">initCEGUI</a>();
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117         <span class="keyword">protected</span> :
+<a name="l00119"></a><a class="code" href="class_python3_d.html#a4bb752b836e74bd74e7edef1e22fe044">00119</a>                 Ogre::Root *<a class="code" href="class_python3_d.html#a4bb752b836e74bd74e7edef1e22fe044">_Root</a>;
+<a name="l00121"></a><a class="code" href="class_python3_d.html#aafe50d0f43462b2f9daaaf3e6143476b">00121</a>                 Ogre::SceneManager *<a class="code" href="class_python3_d.html#aafe50d0f43462b2f9daaaf3e6143476b">_SceneManager</a>;
+<a name="l00123"></a><a class="code" href="class_python3_d.html#ade48c674264dd430476d01f274b998cc">00123</a>                 Ogre::RenderWindow *<a class="code" href="class_python3_d.html#ade48c674264dd430476d01f274b998cc">_RenderWindow</a>;
+<a name="l00125"></a><a class="code" href="class_python3_d.html#a38fb27c23abd13e9b94e51e0dbea9f24">00125</a>                 Ogre::Viewport *<a class="code" href="class_python3_d.html#a38fb27c23abd13e9b94e51e0dbea9f24">_Viewport</a>;
+<a name="l00127"></a><a class="code" href="class_python3_d.html#a2a0c72e8a497a1a6a9e30a50273c5172">00127</a>                 Ogre::Camera *<a class="code" href="class_python3_d.html#a2a0c72e8a497a1a6a9e30a50273c5172">_Camera</a>;
+<a name="l00129"></a><a class="code" href="class_python3_d.html#ac2188b69d055fcbe6a18a465cb754695">00129</a>                 <a class="code" href="class_event_listener.html" title="frame listener principal">EventListener</a> *<a class="code" href="class_python3_d.html#ac2188b69d055fcbe6a18a465cb754695">_Listener</a>;
+<a name="l00130"></a>00130 
+<a name="l00132"></a><a class="code" href="class_python3_d.html#a6e92a75b2207922c345d5ac60e4a5eea">00132</a>                 OIS::InputManager *<a class="code" href="class_python3_d.html#a6e92a75b2207922c345d5ac60e4a5eea">_InputManager</a>;
+<a name="l00134"></a><a class="code" href="class_python3_d.html#a2778ae0aa80b5933d8a1a3c73b269483">00134</a>                 OIS::Keyboard *<a class="code" href="class_python3_d.html#a2778ae0aa80b5933d8a1a3c73b269483">_Keyboard</a>;
+<a name="l00136"></a><a class="code" href="class_python3_d.html#a737f4d2415287f7ed2a643f0ad766a69">00136</a>                 OIS::Mouse *<a class="code" href="class_python3_d.html#a737f4d2415287f7ed2a643f0ad766a69">_Mouse</a>;
+<a name="l00137"></a>00137 
+<a name="l00139"></a><a class="code" href="class_python3_d.html#ad347c3e6dcb2fd7fec00956eff20e544">00139</a>                 CEGUI::OgreCEGUIRenderer *<a class="code" href="class_python3_d.html#ad347c3e6dcb2fd7fec00956eff20e544">_GUIRenderer</a>;
+<a name="l00141"></a><a class="code" href="class_python3_d.html#a9520a3a9ba302b1631b76abda2ae4f48">00141</a>                 CEGUI::System *<a class="code" href="class_python3_d.html#a9520a3a9ba302b1631b76abda2ae4f48">_GUISystem</a>;
 <a name="l00142"></a>00142 
-<a name="l00143"></a>00143 <span class="preprocessor">#endif // PYTHON3D_H</span>
+<a name="l00144"></a><a class="code" href="class_python3_d.html#a82985be1bca47a954f2e1ba4547abb0b">00144</a>                 <a class="code" href="class_snake.html" title="le serpent">Snake</a> *<a class="code" href="class_python3_d.html#a82985be1bca47a954f2e1ba4547abb0b">_Snake</a>;
+<a name="l00145"></a>00145 };
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147 <span class="preprocessor">#endif // PYTHON3D_H</span>
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -125,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 21 19:24:43 2009 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 28 01:37:40 2009 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

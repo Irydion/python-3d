@@ -33,8 +33,11 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include <FMOD/fmod.hpp>
 #include <FMOD/fmod_errors.h>
 
+/** nombre de musiques pour le menu */
 #define TRACK_MENU 1
+/** nombre de musiques pour le jeu */
 #define TRACK_GAME 2
+/** nombre de sons */
 #define NB_SOUND 2
 
 /**
