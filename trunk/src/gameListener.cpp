@@ -82,6 +82,8 @@ bool GameListener::mouseMoved(const OIS::MouseEvent &e)
 	{
 		_Camera->yaw(Ogre::Degree(e.state.X.rel * -0.1));
 		_Camera->pitch(Ogre::Degree(e.state.Y.rel * -0.1));
+		yaw += e.state.X.rel * 0.1;
+		pitch += e.state.Y.rel * 0.1;
 	}
 
 	return true;
@@ -92,6 +94,8 @@ bool GameListener::mousePressed(const OIS::MouseEvent &e, OIS::MouseButtonID id)
 	if(id == OIS::MB_Right)
     {
         _RightMouse = true;
+		yaw = 0;
+		pitch = 0;
     }
 
 	return true;
@@ -102,6 +106,8 @@ bool GameListener::mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id
 	if(id == OIS::MB_Right)
     {
         _RightMouse = false;
+		_Camera->yaw(Ogre::Degree(yaw));
+		_Camera->pitch(Ogre::Degree(pitch));
     }
 
 	return true;

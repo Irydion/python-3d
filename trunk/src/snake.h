@@ -30,13 +30,9 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #define SNAKE_H
 
 #include <ogre.h>
+#include <CollisionTools.h>
 
-#include "CollisionTools.h"
-
-/** le flag associé à la map pour la détection de collision */
-#define MAP_QUERY_FLAG 1<<0
-/** le flag associé aux bonus pour la détection de collision */
-#define BONUS_QUERY_FLAG 1<<1
+#include "bonus.h"
 
 /**
  * \class Snake
@@ -57,7 +53,7 @@ class Snake
 		 * \param cam : camera qui doit etre rattachée à la tete
 		 * \param size : taille initiale du serpent
 		 */
-		Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size);
+		Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size, Bonus *b);
 		/**
 		 * \brief Destructeur
 		 *
@@ -121,6 +117,8 @@ class Snake
 		MOC::CollisionTools *_CollisionTools;
 		/** derniere position prise par la tete du snake */
 		Ogre::Vector3 _LastPosition;
+
+		Bonus *_Bonus;
 };
 
 #endif // SNAKE_H

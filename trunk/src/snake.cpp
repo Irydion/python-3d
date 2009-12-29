@@ -22,7 +22,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 #include "snake.h"
 
-Snake::Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size)
+Snake::Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size, Bonus *b)
 {
 	_Head = head;
 	_Size = size;
@@ -31,6 +31,7 @@ Snake::Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *
 	_ActualAngle = 0;
 	_NextTurn = 0;
 	_LastPosition = Ogre::Vector3(0, 0, 0);
+	_Bonus = b;
 
 	_CollisionTools = new MOC::CollisionTools(sceneMgr);
 
@@ -140,13 +141,15 @@ void Snake::update(Ogre::Real timeSinceLastFrame)
 		}
 	}
 
-	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 10, 0, MAP_QUERY_FLAG))
+	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 15, 0, MAP_QUERY_FLAG))
 	{
 		// COLLISION MAP -> fin de partie
 		_Head->setPosition(_LastPosition);
 	}
-	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 10, 0, BONUS_QUERY_FLAG))
+	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 20, 0, BONUS_QUERY_FLAG))
 	{
 		// COLLISION BONUS -> agrandir
+		_Size += _Size/5;
+		_Bonus->changeBonus();
 	}
 }
