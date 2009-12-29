@@ -36,6 +36,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 #include "eventListener.h"
 #include "snake.h"
+#include "bonus.h"
 
 /**
  * \class Python3D

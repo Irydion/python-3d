@@ -121,6 +121,10 @@ class GameListener
 
 		/** True si le bouton droit de la souris est enfoncé, false sinon */
 		bool _RightMouse;
+		/** De combien de degrés on a tourné */
+		Ogre::Real yaw;
+		/** De combien de degrés on a tourné */
+		Ogre::Real pitch;
 
 		/** le serpent */
 		Snake *_Snake;

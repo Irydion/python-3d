@@ -63,7 +63,7 @@ void Python3D::start()
 	_Camera->setFarClipDistance(2000);
 	_Viewport = _RenderWindow->addViewport(_Camera);
 
-	_SceneManager->setAmbientLight(Ogre::ColourValue(200, 200, 200));
+	_SceneManager->setAmbientLight(Ogre::ColourValue(255, 255, 255));
 
 	Ogre::Entity *map = _SceneManager->createEntity("Map", "Plane.mesh");
 	map->setQueryFlags(MAP_QUERY_FLAG);
@@ -71,7 +71,17 @@ void Python3D::start()
 	node->attachObject(map);
 	node->setScale(Ogre::Vector3(20, 20, 20));
 
-	_Snake = new Snake(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Snake_HeadNode"), _Camera, 42);
+	Bonus *b = new Bonus(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Bonus_Node"));
+	_Snake = new Snake(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Snake_HeadNode"), _Camera, 42, b);
+
+	/*Ogre::Light *light = _SceneManager->createLight("SnakeLight");
+	light->setType(Ogre::Light::LT_POINT);
+	light->setDiffuseColour(1.0, 1.0, 1.0);
+	light->setSpecularColour(1.0, 1.0, 1.0);
+	light->setPosition(_Camera->getPosition());
+	light->setDirection(_Camera->getDirection());
+	light->setSpotlightRange(Ogre::Degree(50), Ogre::Degree(90));
+	_Snake->_Head->attachObject(light);*/
 
 	initOIS();
 	initCEGUI();
