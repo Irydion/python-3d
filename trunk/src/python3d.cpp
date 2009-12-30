@@ -65,11 +65,11 @@ void Python3D::start()
 
 	_SceneManager->setAmbientLight(Ogre::ColourValue(255, 255, 255));
 
-	Ogre::Entity *map = _SceneManager->createEntity("Map", "Plane.mesh");
+	Ogre::Entity *map = _SceneManager->createEntity("Map", "map_test2.mesh");
 	map->setQueryFlags(MAP_QUERY_FLAG);
 	Ogre::SceneNode *node = _SceneManager->getRootSceneNode()->createChildSceneNode("General_MapNode");
 	node->attachObject(map);
-	node->setScale(Ogre::Vector3(20, 20, 20));
+	node->setScale(Ogre::Vector3(200, 200, 200));
 
 	Bonus *b = new Bonus(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Bonus_Node"));
 	_Snake = new Snake(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Snake_HeadNode"), _Camera, 42, b);

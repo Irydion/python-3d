@@ -1,0 +1,26 @@
+material SOLID/TEX/earth.jpg
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture earth.jpg
+			}
+		}
+	}
+}
+material SOLID/TEX/test_texture.png
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture test_texture.png
+			}
+		}
+	}
+}
