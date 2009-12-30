@@ -43,6 +43,8 @@ class Bonus
 	protected:
 		Ogre::Entity *_Entity;
 		Ogre::SceneNode *_Node;
+
+		MOC::CollisionTools *_CollisionTool;
 };
 
 #endif // BONUS_H
