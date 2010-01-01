@@ -2,7 +2,7 @@
 -------------------------------------------------------------------------------
 This file is part of Python3D.
 
-Copyright (c) 2009 Emilien Dupont
+Copyright (c) 2009-2010 Emilien Dupont
 Also see acknowledgements in COPYING.txt
 
 Python3D is free software: you can redistribute it and/or modify
@@ -60,12 +60,17 @@ void Python3D::start()
 
 	_Camera = _SceneManager->createCamera("Camera");
 	_Camera->setNearClipDistance(1);
-	_Camera->setFarClipDistance(2000);
+
+	if (_Root->getRenderSystem()->getCapabilities()->hasCapability(Ogre::RSC_INFINITE_FAR_PLANE))
+        _Camera->setFarClipDistance(0);
+	else
+		_Camera->setFarClipDistance(5000);
+
 	_Viewport = _RenderWindow->addViewport(_Camera);
 
 	_SceneManager->setAmbientLight(Ogre::ColourValue(255, 255, 255));
 
-	Ogre::Entity *map = _SceneManager->createEntity("Map", "map_test2.mesh");
+	Ogre::Entity *map = _SceneManager->createEntity("Map", "map1.mesh");
 	map->setQueryFlags(MAP_QUERY_FLAG);
 	Ogre::SceneNode *node = _SceneManager->getRootSceneNode()->createChildSceneNode("General_MapNode");
 	node->attachObject(map);

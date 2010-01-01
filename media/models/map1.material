@@ -1,0 +1,65 @@
+material SOLID/TEX/map_global.png
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture map_global.png
+			}
+		}
+	}
+}
+material SOLID/TEX/map_g.png
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture map_global.png
+			}
+		}
+	}
+}
+material SOLID/TEX/ogrehead.png
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture ogrehead.png
+			}
+		}
+	}
+}
+material SOLID/TEX/fmod.png
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture fmod.png
+			}
+		}
+	}
+}
+material SOLID/TEX/Crate_Texture_by_ivanjs.jpg
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture crate.jpg
+			}
+		}
+	}
+}

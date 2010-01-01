@@ -2,7 +2,7 @@
 -------------------------------------------------------------------------------
 This file is part of Python3D.
 
-Copyright (c) 2009 Emilien Dupont
+Copyright (c) 2009-2010 Emilien Dupont
 Also see acknowledgements in COPYING.txt
 
 Python3D is free software: you can redistribute it and/or modify
@@ -32,18 +32,45 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include <ogre.h>
 #include <CollisionTools.h>
 
+/**
+ * \class Bonus
+ * \brief la classe qui gère le bonus
+ *
+ *  Cette classe s'occupe de gérer l'affichage et le positionnement du bonus
+ */
 class Bonus
 {
 	public:
+		/**
+		 * \brief Constructeur
+		 *
+		 * Constructeur de la classe bonus
+		 *
+		 * \param sceneMgr : un pointeur vers le scene manager principal du jeu
+		 * \param node : un pointeur vers le scene node créée pour l'affichage du bonus
+		 */
 		Bonus(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *node);
+		/**
+		 * \brief Destructeur
+		 *
+		 * Destructeur de la classe bonus
+		 */
 		~Bonus();
 
+		/**
+		 * \brief Repositionne le bonus
+		 *
+		 * Méthode qui calcul une nouvelle position pour le bonus une fois qu'il a été pris
+		 */
 		void changeBonus();
 
 	protected:
+		/** L'entité du bonus */
 		Ogre::Entity *_Entity;
+		/** Le scene node auquel est rattaché le bonus */
 		Ogre::SceneNode *_Node;
 
+		/** outils de MOC pour détecter les collisions pour le repositionnement */
 		MOC::CollisionTools *_CollisionTool;
 };
 

@@ -2,7 +2,7 @@
 -------------------------------------------------------------------------------
 This file is part of Python3D.
 
-Copyright (c) 2009 Emilien Dupont
+Copyright (c) 2009-2010 Emilien Dupont
 Also see acknowledgements in COPYING.txt
 
 Python3D is free software: you can redistribute it and/or modify
@@ -52,6 +52,7 @@ class Snake
 		 * \param head : node de la tete
 		 * \param cam : camera qui doit etre rattachée à la tete
 		 * \param size : taille initiale du serpent
+		 * \param b : un pointeur vers le bonus à prendre
 		 */
 		Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size, Bonus *b);
 		/**
@@ -103,22 +104,33 @@ class Snake
 		/** Direction actuelle du serpent */
 		Ogre::Vector3 _Direction;
 		/** Taille */
-		unsigned int _Size;
+		int _Size;
 		/** 0 si le snake tourne pas ; 1:haut 2:bas 3:droite 4:gauche */
 		int _IsTurning;
 		/** Indique, si on est en train de tourner, à quel angle on en est */
 		Ogre::Real _ActualAngle;
 		/** Vitesse de rotation */
 		Ogre::Real _TurnSpeed;
-		/** prochain mouvement à effectuer */
+		/** Prochain mouvement à effectuer */
 		int _NextTurn;
+		/** Temps restant avant l'apparition de la prochaine entité pour la queue du serpent */
+		Ogre::Real _NextEnt;
+		/** Nombre de node actuels pour la queue du serpent */
+		int _NbNode;
+		/** L'ordre des nodes dans la queue du serpent */
+		std::deque<int> _ListNode;
+		/** Dernier node de la queue du serpent (celui à faire "disparaître" au prochain changement dans la deque) */
+		Ogre::SceneNode *_TailNode;
 
 		/** outil de MOC pour détecter les collisions */
 		MOC::CollisionTools *_CollisionTools;
 		/** derniere position prise par la tete du snake */
 		Ogre::Vector3 _LastPosition;
 
+		/** Bonus à attraper pour grandir */
 		Bonus *_Bonus;
+		/** Scene manager principal */
+		Ogre::SceneManager *_SceneManager;
 };
 
 #endif // SNAKE_H

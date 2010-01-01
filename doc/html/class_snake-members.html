@@ -45,15 +45,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <h1>Snake Member List</h1>This is the complete list of members for <a class="el" href="class_snake.html">Snake</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="class_snake.html#aaf79fcb5936ad59df2ba2cf75c3a7ae1">_ActualAngle</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_snake.html#a837cd882ee30af4efc6689b7eece4a15">_Bonus</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#a129ae498d204c13814c1a4ba8dac2237">_CollisionTools</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#aaba3ee11c41eaf21b112d1198f04761b">_Direction</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#a6f63c3b9afb33bea530af0295d8b8eff">_Head</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#ac0d7ad186a6e1890f3766d85a2178588">_IsTurning</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#aba910de70c5d55fc67c2f6b261130719">_LastPosition</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_snake.html#a64522bba5ab4b1e00c6a97e66e37678d">_ListNode</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_snake.html#aefab5774e722c572e59bc681a801a0c2">_NbNode</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_snake.html#ae7d65de713835495a2dc1dd6f57cfd6f">_NextEnt</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#a979acd66f20f0b6d1c178607b7e0c98b">_NextTurn</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_snake.html#a603ac0779c0d0f37ecb0d6ef8e93e3ad">_Size</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_snake.html#a1ebda9bef5de78e6859dc290614ac3c3">_SceneManager</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_snake.html#a371f47112049ef1588b5ce8f8919e7f2">_Size</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_snake.html#a79a762795b89849ca5be81cfc3e81959">_TailNode</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#a0485e041821fac10e48fc268a4efdac0">_TurnSpeed</a></td><td><a class="el" href="class_snake.html">Snake</a></td><td><code> [protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_snake.html#a32d4f27913ce998f673027c3e40738f1">Snake</a>(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size)</td><td><a class="el" href="class_snake.html">Snake</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_snake.html#a38886956eae80a8dd22315250382fac9">Snake</a>(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size, Bonus *b)</td><td><a class="el" href="class_snake.html">Snake</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#aac03ab94e6e6895abe121d8464cddb8f">turnDown</a>()</td><td><a class="el" href="class_snake.html">Snake</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#af64b861030850c0f660d50fb0c58801f">turnLeft</a>()</td><td><a class="el" href="class_snake.html">Snake</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_snake.html#a9574cebf257afe6e2d7f1fc34143a46d">turnRight</a>()</td><td><a class="el" href="class_snake.html">Snake</a></td><td></td></tr>
@@ -75,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon Dec 28 01:37:41 2009 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Fri Jan 1 23:25:45 2010 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
