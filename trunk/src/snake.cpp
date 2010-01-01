@@ -2,7 +2,7 @@
 -------------------------------------------------------------------------------
 This file is part of Python3D.
 
-Copyright (c) 2009 Emilien Dupont
+Copyright (c) 2009-2010 Emilien Dupont
 Also see acknowledgements in COPYING.txt
 
 Python3D is free software: you can redistribute it and/or modify
@@ -32,8 +32,11 @@ Snake::Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *
 	_NextTurn = 0;
 	_LastPosition = Ogre::Vector3(0, 0, 0);
 	_Bonus = b;
+	_NextEnt = 0;
+	_NbNode = -1;
 
 	_CollisionTools = new MOC::CollisionTools(sceneMgr);
+	_SceneManager = sceneMgr;
 
 	_Head->attachObject(cam);
 	_Head->translate(Ogre::Vector3(0, 200, 0));
@@ -141,14 +144,45 @@ void Snake::update(Ogre::Real timeSinceLastFrame)
 		}
 	}
 
-	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 15, 0, MAP_QUERY_FLAG))
+	if(_NextEnt <= 0)
 	{
-		// COLLISION MAP -> fin de partie
+		_NextEnt = 0.25;
+		if(_NbNode < _Size)
+		{
+			++_NbNode;
+			Ogre::Entity *ent = _SceneManager->createEntity("snakeEnt" + Ogre::StringConverter::toString(_NbNode), "snake.mesh");
+			ent->setQueryFlags(SNAKE_QUERY_FLAG);
+			_TailNode = _SceneManager->getRootSceneNode()->createChildSceneNode("snakeNode" + Ogre::StringConverter::toString(_NbNode));
+			_TailNode->attachObject(ent);
+			_TailNode->setPosition(_LastPosition);
+			_TailNode->setScale(10, 10, 10);
+
+			_ListNode.push_back(_NbNode);
+			_TailNode = _SceneManager->getSceneNode("snakeNode" + Ogre::StringConverter::toString(_ListNode.front()));
+		}
+		else
+		{
+			_TailNode = _SceneManager->getSceneNode("snakeNode" + Ogre::StringConverter::toString(_ListNode.front()));
+			_TailNode->setPosition(_LastPosition);
+			_TailNode->setScale(10, 10, 10);
+
+			_ListNode.push_back(_ListNode.front());
+			_ListNode.pop_front();
+			_TailNode = _SceneManager->getSceneNode("snakeNode" + Ogre::StringConverter::toString(_ListNode.front()));
+		}
+	}
+	else if(_NbNode == _Size)
+	{
+		_TailNode->setScale(_TailNode->getScale().x - 40 * timeSinceLastFrame, _TailNode->getScale().y - 40 * timeSinceLastFrame, _TailNode->getScale().z - 40 * timeSinceLastFrame);
+	}
+	_NextEnt -= timeSinceLastFrame;
+
+	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 15, 0, MAP_QUERY_FLAG | SNAKE_QUERY_FLAG))
+	{
 		_Head->setPosition(_LastPosition);
 	}
 	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 20, 0, BONUS_QUERY_FLAG))
 	{
-		// COLLISION BONUS -> agrandir
 		_Size += _Size/5;
 		_Bonus->changeBonus();
 	}

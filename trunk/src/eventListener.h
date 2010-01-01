@@ -2,7 +2,7 @@
 -------------------------------------------------------------------------------
 This file is part of Python3D.
 
-Copyright (c) 2009 Emilien Dupont
+Copyright (c) 2009-2010 Emilien Dupont
 Also see acknowledgements in COPYING.txt
 
 Python3D is free software: you can redistribute it and/or modify
