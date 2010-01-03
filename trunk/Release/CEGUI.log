@@ -1,33 +1,83 @@
-01/01/2010 23:13:35 (InfL1)	---- Begining CEGUI System destruction ----
-01/01/2010 23:13:35 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
-01/01/2010 23:13:35 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
-01/01/2010 23:13:35 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' has been added to dead pool.
-01/01/2010 23:13:35 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' has been added to dead pool.
-01/01/2010 23:13:35 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
-01/01/2010 23:13:35 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
-01/01/2010 23:13:35 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' has been added to dead pool.
-01/01/2010 23:13:35 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' has been added to dead pool.
-01/01/2010 23:13:35 (InfL2)	Window 'FPSWindow' has been added to dead pool.
-01/01/2010 23:13:35 (InfL2)	Window 'root' has been added to dead pool.
-01/01/2010 23:13:35 (InfL1)	---- Begining cleanup of GUI Scheme system ----
-01/01/2010 23:13:35 (InfL2)	---- Begining resource cleanup for GUI scheme 'TaharezLook' ----
-01/01/2010 23:13:35 (InfL2)	Imageset 'solo_auto_glyph_images_ ' has been destroyed.
-01/01/2010 23:13:35 (InfL1)	Font 'solo' has been destroyed.
-01/01/2010 23:13:35 (InfL2)	Imageset 'TaharezLook' has been destroyed.
-01/01/2010 23:13:35 (InfL2)	---- Resource cleanup for GUI scheme 'TaharezLook' completed ----
-01/01/2010 23:13:35 (InfL2)	GUI scheme 'TaharezLook' has been unloaded.
-01/01/2010 23:13:35 (InfL1)	Scheme 'TaharezLook' has been unloaded.
-01/01/2010 23:13:35 (InfL1)	CEGUI::SchemeManager singleton destroyed.
-01/01/2010 23:13:35 (InfL1)	CEGUI::WindowManager singleton destroyed
-01/01/2010 23:13:35 (InfL1)	CEGUI::WindowFactoryManager singleton destroyed
-01/01/2010 23:13:35 (InfL1)	CEGUI::WidgetLookManager singleton destroyed.
-01/01/2010 23:13:35 (InfL1)	CEGUI::WindowRendererManager singleton destroyed
-01/01/2010 23:13:35 (InfL1)	---- Begining cleanup of Font system ----
-01/01/2010 23:13:35 (InfL1)	CEGUI::FontManager singleton destroyed.
-01/01/2010 23:13:35 (InfL1)	CEGUI::MouseCursor singleton destroyed.
-01/01/2010 23:13:35 (InfL1)	---- Begining cleanup of Imageset system ----
-01/01/2010 23:13:35 (InfL1)	CEGUI::ImagesetManager singleton destroyed
-01/01/2010 23:13:35 (InfL1)	CEGUI::GlobalEventSet singleton destroyed.
-01/01/2010 23:13:35 (InfL1)	CEGUI::System singleton destroyed.
-01/01/2010 23:13:35 (InfL1)	---- CEGUI System destruction completed ----
-01/01/2010 23:13:35 (InfL1)	CEGUI::Logger singleton destroyed.
+03/01/2010 23:55:49 (InfL2)	---- Beginning loading of GUI layout from 'menu.layout' ----
+03/01/2010 23:55:49 (InfL2)	Window 'root2' of type 'DefaultWindow' has been created.
+03/01/2010 23:55:49 (InfL2)	Window 'fond' of type 'TaharezLook/StaticImage' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/StaticImage' to the window 'fond'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticImage' to window 'fond'.
+03/01/2010 23:55:49 (Error)	Exception: ImagesetManager::getImageset - No Imageset named '' is present in the system.
+03/01/2010 23:55:49 (InfL2)	Window 'jouer' of type 'TaharezLook/Button' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'jouer'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'jouer'.
+03/01/2010 23:55:49 (InfL2)	Window 'quitter' of type 'TaharezLook/Button' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'quitter'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'quitter'.
+03/01/2010 23:55:49 (InfL1)	---- Successfully completed loading of GUI layout from 'menu.layout' ----
+03/01/2010 23:55:49 (InfL2)	---- Beginning loading of GUI layout from 'game.layout' ----
+03/01/2010 23:55:49 (InfL2)	Window 'root' of type 'DefaultWindow' has been created.
+03/01/2010 23:55:49 (InfL2)	Window 'FPSWindow' of type 'TaharezLook/StaticText' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'FPSWindow'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'FPSWindow'.
+03/01/2010 23:55:49 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'FPSWindow__auto_hscrollbar__'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'FPSWindow__auto_hscrollbar__'.
+03/01/2010 23:55:49 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_hscrollbar____auto_incbtn__'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_hscrollbar____auto_incbtn__'.
+03/01/2010 23:55:49 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_hscrollbar____auto_decbtn__'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_hscrollbar____auto_decbtn__'.
+03/01/2010 23:55:49 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_hscrollbar____auto_thumb__'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'FPSWindow__auto_hscrollbar____auto_thumb__'.
+03/01/2010 23:55:49 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'FPSWindow__auto_vscrollbar__'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'FPSWindow__auto_vscrollbar__'.
+03/01/2010 23:55:49 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_vscrollbar____auto_incbtn__'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_vscrollbar____auto_incbtn__'.
+03/01/2010 23:55:49 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_vscrollbar____auto_decbtn__'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_vscrollbar____auto_decbtn__'.
+03/01/2010 23:55:49 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
+03/01/2010 23:55:49 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_vscrollbar____auto_thumb__'
+03/01/2010 23:55:49 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'FPSWindow__auto_vscrollbar____auto_thumb__'.
+03/01/2010 23:55:49 (InfL1)	Attempting to create Imageset 'solo_auto_glyph_images_ ' with texture only.
+03/01/2010 23:55:49 (InfL1)	---- Successfully completed loading of GUI layout from 'game.layout' ----
+03/01/2010 23:55:49 (InfL1)	Attempting to create Imageset 'image_fond' using image file 'fond.png'.
+03/01/2010 23:56:15 (InfL1)	---- Begining CEGUI System destruction ----
+03/01/2010 23:56:15 (InfL2)	Window 'fond' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'FPSWindow' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'root' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'jouer' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'quitter' has been added to dead pool.
+03/01/2010 23:56:15 (InfL2)	Window 'root2' has been added to dead pool.
+03/01/2010 23:56:15 (InfL1)	---- Begining cleanup of GUI Scheme system ----
+03/01/2010 23:56:15 (InfL2)	---- Begining resource cleanup for GUI scheme 'TaharezLook' ----
+03/01/2010 23:56:15 (InfL2)	Imageset 'solo_auto_glyph_images_ ' has been destroyed.
+03/01/2010 23:56:15 (InfL1)	Font 'solo' has been destroyed.
+03/01/2010 23:56:15 (InfL2)	Imageset 'TaharezLook' has been destroyed.
+03/01/2010 23:56:15 (InfL2)	---- Resource cleanup for GUI scheme 'TaharezLook' completed ----
+03/01/2010 23:56:15 (InfL2)	GUI scheme 'TaharezLook' has been unloaded.
+03/01/2010 23:56:15 (InfL1)	Scheme 'TaharezLook' has been unloaded.
+03/01/2010 23:56:15 (InfL1)	CEGUI::SchemeManager singleton destroyed.
+03/01/2010 23:56:15 (InfL1)	CEGUI::WindowManager singleton destroyed
+03/01/2010 23:56:15 (InfL1)	CEGUI::WindowFactoryManager singleton destroyed
+03/01/2010 23:56:15 (InfL1)	CEGUI::WidgetLookManager singleton destroyed.
+03/01/2010 23:56:15 (InfL1)	CEGUI::WindowRendererManager singleton destroyed
+03/01/2010 23:56:15 (InfL1)	---- Begining cleanup of Font system ----
+03/01/2010 23:56:15 (InfL1)	CEGUI::FontManager singleton destroyed.
+03/01/2010 23:56:15 (InfL1)	CEGUI::MouseCursor singleton destroyed.
+03/01/2010 23:56:15 (InfL1)	---- Begining cleanup of Imageset system ----
+03/01/2010 23:56:15 (InfL2)	Imageset 'image_fond' has been destroyed.
+03/01/2010 23:56:15 (InfL1)	CEGUI::ImagesetManager singleton destroyed
+03/01/2010 23:56:15 (InfL1)	CEGUI::GlobalEventSet singleton destroyed.
+03/01/2010 23:56:15 (InfL1)	CEGUI::System singleton destroyed.
+03/01/2010 23:56:15 (InfL1)	---- CEGUI System destruction completed ----
+03/01/2010 23:56:15 (InfL1)	CEGUI::Logger singleton destroyed.

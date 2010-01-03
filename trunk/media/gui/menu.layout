@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="DefaultWindow" Name="root2" >
+        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Window Type="TaharezLook/StaticImage" Name="fond" >
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+			<Property Name="Image" Value="ClientBrush" />
+		</Window>
+		<Window Type="TaharezLook/Button" Name="jouer" >
+			<Property Name="Text" Value="Jouer" />
+			<Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+			<Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.425,0},{0.6,0},{0.475,0}}" />
+		</Window>
+		<Window Type="TaharezLook/Button" Name="quitter" >
+			<Property Name="Text" Value="Quitter" />
+			<Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+			<Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.525,0},{0.6,0},{0.575,0}}" />
+		</Window>
+    </Window>
+</GUILayout>

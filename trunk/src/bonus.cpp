@@ -37,7 +37,7 @@ Bonus::Bonus(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *node)
 
 Bonus::~Bonus()
 {
-	delete _CollisionTools;
+	delete _CollisionTool;
 }
 
 void Bonus::changeBonus()

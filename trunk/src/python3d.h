@@ -140,9 +140,6 @@ class Python3D
 		CEGUI::OgreCEGUIRenderer *_GUIRenderer;
 		/** objet système CEGUI */
 		CEGUI::System *_GUISystem;
-
-		/** Le serpent */
-		Snake *_Snake;
 };
 
 #endif // PYTHON3D_H

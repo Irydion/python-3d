@@ -36,8 +36,7 @@ GameListener::~GameListener()
 
 bool GameListener::frameStarted(const Ogre::FrameEvent &evt)
 {
-	_Snake->update(evt.timeSinceLastFrame);
-	return true;
+	return _Snake->update(evt.timeSinceLastFrame);
 }
 
 bool GameListener::keyPressed(const OIS::KeyEvent &e)
@@ -66,13 +65,6 @@ bool GameListener::keyPressed(const OIS::KeyEvent &e)
 
 bool GameListener::keyReleased(const OIS::KeyEvent &e)
 {
-	switch (e.key)
-    {
-        case OIS::KC_ESCAPE:
-            return false;
-            break;
-    }
-
     return true;
 }
 

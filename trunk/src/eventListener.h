@@ -61,7 +61,7 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * \param GUIRenderer : Gestionnaire d'interface utilisateur CEGUI
 		 * \param snake : le serpent
 		 */
-		EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer, Snake *snake);
+		EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer);
 		/**
 		 * \brief Destructeur
 		 *
@@ -138,6 +138,11 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 */
 		CEGUI::MouseButton OISToCEGUI(int ois_button_id);
 
+		bool onQuit(const CEGUI::EventArgs& e);
+		bool onCredits(const CEGUI::EventArgs& e);
+		bool onPlay(const CEGUI::EventArgs& e);
+		void toMenu();
+
 	protected :
 		/** Scene manager principal */
 		Ogre::SceneManager *_SceneManager;
@@ -159,6 +164,8 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		int _FPSUpdateFreq;
 		/** DEBUG ONLY - compteur de frame avant rafraichissement de l'affichage des FPS */
 		int _FPSSkippedFrames;
+		CEGUI::Window *_GameLayout;
+		CEGUI::Window *_MenuLayout;
 
 		/** True pour continuer, false pour sortir de la boucle de rendu */
 		bool _Continue;

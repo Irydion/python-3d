@@ -81,8 +81,15 @@ SoundManager::~SoundManager()
 
 void SoundManager::loadResources()
 {
-	ERRCHECK(_FMODSystem->createSound("../media/audio/test_son_1.wav", FMOD_DEFAULT, 0, &_Sound[0]));
-	ERRCHECK(_FMODSystem->createSound("../media/audio/test_son_2.wav", FMOD_DEFAULT, 0, &_Sound[1]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/click.wav", FMOD_DEFAULT, 0, &_Sound[0]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/click1.wav", FMOD_DEFAULT, 0, &_Sound[1]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/screenshot.wav", FMOD_DEFAULT, 0, &_Sound[2]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/ready_go.wav", FMOD_DEFAULT, 0, &_Sound[3]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/game_over.wav", FMOD_DEFAULT, 0, &_Sound[4]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/game_over_boom.wav", FMOD_DEFAULT, 0, &_Sound[5]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/bip1.wav", FMOD_DEFAULT, 0, &_Sound[6]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/bip2.wav", FMOD_DEFAULT, 0, &_Sound[7]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/bip3.wav", FMOD_DEFAULT, 0, &_Sound[8]));
 
 	std::string filename;
 	for(int i = 0; i < TRACK_MENU; ++i)
@@ -121,28 +128,28 @@ void SoundManager::playStream(std::string type, int track)
 	_Type = type;
 }
 
-void SoundManager::stopStream(std::string type, int track)
+void SoundManager::stopStream()
 {
-	if(type == "menu")
+	int track = 0;
+	while(track < TRACK_MENU)
 	{
-		if(track < TRACK_MENU)
-		{
-			bool playing;
-			_MenuMusicChan[track]->isPlaying(&playing);
-			if(playing)
-				ERRCHECK(_MenuMusicChan[track]->stop());
-		}
+		bool playing;
+		_MenuMusicChan[track]->isPlaying(&playing);
+		if(playing)
+			ERRCHECK(_MenuMusicChan[track]->stop());
+		++track;
 	}
-	else if(type == "game")
+
+	track = 0;
+	while(track < TRACK_GAME)
 	{
-		if(track < TRACK_GAME)
-		{
-			bool playing;
-			_GameMusicChan[track]->isPlaying(&playing);
-			if(playing)
-				ERRCHECK(_GameMusicChan[track]->stop());
-		}
+		bool playing;
+		_GameMusicChan[track]->isPlaying(&playing);
+		if(playing)
+			ERRCHECK(_GameMusicChan[track]->stop());
+		++track;
 	}
+
 	_Track = -1;
 	_Type = "none";
 }

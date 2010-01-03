@@ -38,7 +38,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 /** nombre de musiques pour le jeu */
 #define TRACK_GAME 2
 /** nombre de sons */
-#define NB_SOUND 2
+#define NB_SOUND 9
 
 /**
  * \class SoundManager
@@ -90,11 +90,8 @@ class SoundManager
 		 * \brief Stopper une musique
 		 *
 		 * Méthode appelée pour stopper une musique
-		 *
-		 * \param track : numéro de la musique à arreter
-		 * \param type : type de musique à jouer (game ou menu)
 		 */
-		void stopStream(std::string type, int track);
+		void stopStream();
 
 		/**
 		 * \brief Mettre à jour le gestionnaire de son

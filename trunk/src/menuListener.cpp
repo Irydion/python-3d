@@ -42,16 +42,6 @@ bool MenuListener::keyPressed(const OIS::KeyEvent &e)
 
 bool MenuListener::keyReleased(const OIS::KeyEvent &e)
 {
-	switch (e.key)
-    {
-        case OIS::KC_ESCAPE:
-            return false;
-            break;
-
-        default:
-			;
-    }
-
     return true;
 }
 
