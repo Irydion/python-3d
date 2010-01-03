@@ -33,6 +33,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include <CollisionTools.h>
 
 #include "bonus.h"
+#include "SoundManager.h"
 
 /**
  * \class Snake
@@ -54,13 +55,16 @@ class Snake
 		 * \param size : taille initiale du serpent
 		 * \param b : un pointeur vers le bonus à prendre
 		 */
-		Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size, Bonus *b);
+		Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, Bonus *b, SoundManager *soundMgr);
 		/**
 		 * \brief Destructeur
 		 *
 		 * Destructeur de la classe Snake.
 		 */
 		~Snake();
+
+		void reInit();
+		void stop();
 
 		/**
 		 * \brief Tourner vers le haut
@@ -94,7 +98,7 @@ class Snake
 		 *
 		 * \remark méthode à appeler une fois par image
 		 */
-		void update(Ogre::Real timeSinceLastFrame);
+		bool update(Ogre::Real timeSinceLastFrame);
 
 	public:
 		/** Node de la tête */
@@ -131,6 +135,7 @@ class Snake
 		Bonus *_Bonus;
 		/** Scene manager principal */
 		Ogre::SceneManager *_SceneManager;
+		SoundManager *_SoundManager;
 };
 
 #endif // SNAKE_H

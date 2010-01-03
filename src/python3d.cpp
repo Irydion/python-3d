@@ -76,18 +76,6 @@ void Python3D::start()
 	node->attachObject(map);
 	node->setScale(Ogre::Vector3(200, 200, 200));
 
-	Bonus *b = new Bonus(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Bonus_Node"));
-	_Snake = new Snake(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Snake_HeadNode"), _Camera, 42, b);
-
-	/*Ogre::Light *light = _SceneManager->createLight("SnakeLight");
-	light->setType(Ogre::Light::LT_POINT);
-	light->setDiffuseColour(1.0, 1.0, 1.0);
-	light->setSpecularColour(1.0, 1.0, 1.0);
-	light->setPosition(_Camera->getPosition());
-	light->setDirection(_Camera->getDirection());
-	light->setSpotlightRange(Ogre::Degree(50), Ogre::Degree(90));
-	_Snake->_Head->attachObject(light);*/
-
 	initOIS();
 	initCEGUI();
 
@@ -114,7 +102,7 @@ void Python3D::loadResources()
 
 void Python3D::createFrameListener()
 {
-	_Listener = new EventListener(_SceneManager, _RenderWindow, _Keyboard, _Mouse, _GUISystem, _GUIRenderer, _Snake);
+	_Listener = new EventListener(_SceneManager, _RenderWindow, _Keyboard, _Mouse, _GUISystem, _GUIRenderer);
 	_Root->addFrameListener(_Listener);
 }
 
@@ -137,10 +125,10 @@ void Python3D::initOIS()
 void Python3D::initCEGUI()
 {
 	_GUIRenderer = new CEGUI::OgreCEGUIRenderer(_RenderWindow, Ogre::RENDER_QUEUE_OVERLAY, false, 3000, _SceneManager);
-	_GUISystem = new CEGUI::System(_GUIRenderer, 0, 0, 0, (CEGUI::utf8*)"cegui.config");
+	_GUISystem = new CEGUI::System(_GUIRenderer);
+	CEGUI::SchemeManager::getSingleton().loadScheme((CEGUI::utf8*)"TaharezLookSkin.scheme");
+	_GUISystem->setDefaultFont((CEGUI::utf8*)"solo");
 
 	CEGUI::Logger::getSingleton().setLoggingLevel(CEGUI::Insane);
 	CEGUI::Logger::getSingleton().setLogFilename("cegui.log");
-
-	//_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
 }
