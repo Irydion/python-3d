@@ -74,3 +74,8 @@ void Bonus::changeBonus()
 			_Node->setPosition(next);
 	}
 }
+
+Ogre::Vector3 Bonus::getPosition()
+{
+	return _Node->getPosition();
+}

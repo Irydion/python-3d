@@ -115,6 +115,8 @@ class GameListener
 		 */
         bool mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id);
 
+		void stop();
+
 	protected :
 		/** Caméra du jeu */
 		Ogre::Camera *_Camera;

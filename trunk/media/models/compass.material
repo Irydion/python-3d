@@ -1,0 +1,13 @@
+material SOLID/TEX/ogrehead.png
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture ogrehead.png
+			}
+		}
+	}
+}
