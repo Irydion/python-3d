@@ -43,6 +43,12 @@ Snake::Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *
 	_Head->setPosition(Ogre::Vector3(-400, 0, 0));
 
 	_Direction = Ogre::Vector3(0, 0, -100);
+
+	_CompassNode = _Head->createChildSceneNode("snakeNodeCompass");
+	Ogre::Entity *ent = _SceneManager->createEntity("compass", "compass.mesh");
+	ent->setQueryFlags(COMPASS_QUERY_FLAG);
+	_CompassNode->scale(0.05, 0.05, 0.05);
+	_CompassNode->setPosition(0, 0, -10); // 4;-4 en largeur et 3;-3 en hauteur
 }
 
 Snake::~Snake()
@@ -57,7 +63,7 @@ void Snake::reInit()
 	_IsTurning = 0;
 	_ActualAngle = 0;
 	_NextTurn = 0;
-	_LastPosition = Ogre::Vector3(0, 0, 0);
+	_LastPosition = Ogre::Vector3(-400, 0, 0);
 	_NextEnt = 0;
 	_NbNode = -1;
 	_ListNode.empty();
@@ -67,6 +73,8 @@ void Snake::reInit()
 	_Head->setOrientation(Ogre::Quaternion::IDENTITY);
 
 	_Direction = Ogre::Vector3(0, 0, -100);
+
+	_CompassNode->attachObject(_SceneManager->getEntity("compass"));
 
 	_SoundManager->playSound(3);
 	Sleep(1000);
@@ -81,6 +89,7 @@ void Snake::stop()
 		n->detachAllObjects();
 		_ListNode.pop_front();
 	}
+	_CompassNode->detachAllObjects();
 }
 
 void Snake::turnUp()
@@ -144,19 +153,33 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 	{
 		_ActualAngle += _TurnSpeed * timeSinceLastFrame;
 
-		if(_IsTurning < 3)
-		{
-			_Head->pitch(Ogre::Degree(_TurnSpeed * timeSinceLastFrame));
-		}
-		else
-		{
-			_Head->yaw(Ogre::Degree(_TurnSpeed * timeSinceLastFrame));
-		}
-
 		if(_ActualAngle >= 90 || _ActualAngle <= -90)
 		{
+			if(_ActualAngle >= 90)
+			{
+				if(_IsTurning < 3)
+				{
+					_Head->pitch(Ogre::Degree((Ogre::Real)90 - _ActualAngle));
+				}
+				else
+				{
+					_Head->yaw(Ogre::Degree((Ogre::Real)90 - _ActualAngle));
+				}
+			}
+			else
+			{
+				if(_IsTurning < 3)
+				{
+					_Head->pitch(Ogre::Degree((Ogre::Real)90 + _ActualAngle));
+				}
+				else
+				{
+					_Head->yaw(Ogre::Degree((Ogre::Real)90 + _ActualAngle));
+				}
+			}
 			_ActualAngle = 0;
 			_IsTurning = 0;
+
 			switch(_NextTurn)
 			{
 				case 0:
@@ -175,6 +198,17 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 					break;
 			}
 			_NextTurn = 0;
+		}
+		else
+		{
+			if(_IsTurning < 3)
+			{
+				_Head->pitch(Ogre::Degree(_TurnSpeed * timeSinceLastFrame));
+			}
+			else
+			{
+				_Head->yaw(Ogre::Degree(_TurnSpeed * timeSinceLastFrame));
+			}
 		}
 	}
 

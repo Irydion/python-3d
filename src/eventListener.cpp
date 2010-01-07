@@ -241,11 +241,11 @@ bool EventListener::onPlay(const CEGUI::EventArgs& e)
 void EventListener::toMenu()
 {
 	_Snake->stop();
+	_GameListener->stop();
 
 	_SoundManager->stopStream();
 	_SoundManager->playStream("menu", 0);
 
-	_SceneManager->getCamera("Camera")->setPosition(-10000, 0, 0);
 	_GUISystem->setGUISheet(_MenuLayout);
 
 	_Actif = 1;

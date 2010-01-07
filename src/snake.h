@@ -125,6 +125,7 @@ class Snake
 		std::deque<int> _ListNode;
 		/** Dernier node de la queue du serpent (celui à faire "disparaître" au prochain changement dans la deque) */
 		Ogre::SceneNode *_TailNode;
+		Ogre::SceneNode *_CompassNode;
 
 		/** outil de MOC pour détecter les collisions */
 		MOC::CollisionTools *_CollisionTools;

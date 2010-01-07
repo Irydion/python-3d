@@ -64,6 +64,8 @@ class Bonus
 		 */
 		void changeBonus();
 
+		Ogre::Vector3 getPosition();
+
 	protected:
 		/** L'entité du bonus */
 		Ogre::Entity *_Entity;
