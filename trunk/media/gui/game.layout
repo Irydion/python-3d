@@ -7,7 +7,13 @@
         <Window Type="TaharezLook/StaticText" Name="FPSWindow" >
             <Property Name="Text" Value="FPS : 42424242" />
             <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
-            <Property Name="UnifiedAreaRect" Value="{{0.00595237,0},{0.00651027,0},{0.183333,0},{0.0516016,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.814706,0},{0.0141355,0},{0.992086,0},{0.0592269,0}}" />
+        </Window>
+        <Window Type="TaharezLook/StaticText" Name="StatsWindow" >
+            <Property Name="Text" >Taille : 999999
+Temps : 99:99:99</Property>
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.00979,0},{0.014027,0},{0.166188,0},{0.0994231,0}}" />
         </Window>
     </Window>
 </GUILayout>

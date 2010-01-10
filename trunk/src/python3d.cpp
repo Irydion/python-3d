@@ -22,6 +22,19 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 #include "python3d.h"
 
+class WinListener : public Ogre::WindowEventListener
+{
+	public:
+		WinListener()
+		{
+		}
+
+		bool windowClosing(Ogre::RenderWindow* rw)
+		{
+			return false;
+		}
+};
+
 Python3D::Python3D()
 {
 	_Root = 0;
@@ -40,7 +53,12 @@ Python3D::Python3D()
 
 Python3D::~Python3D()
 {
-	exit();
+	delete _Listener;
+
+	delete _GUISystem;
+	delete _GUIRenderer;
+
+	delete _Root;
 }
 
 void Python3D::run()
@@ -51,7 +69,8 @@ void Python3D::run()
 void Python3D::start()
 {
 	_Root = new Ogre::Root();
-	_Root->showConfigDialog();
+	if(!_Root->showConfigDialog())
+		std::exit(0);
 
 	loadResources();
 
@@ -70,26 +89,22 @@ void Python3D::start()
 
 	_SceneManager->setAmbientLight(Ogre::ColourValue(255, 255, 255));
 
-	Ogre::Entity *map = _SceneManager->createEntity("Map", "map1.mesh");
+	Ogre::Entity *map = _SceneManager->createEntity("Map", "map2.mesh");
 	map->setQueryFlags(MAP_QUERY_FLAG);
 	Ogre::SceneNode *node = _SceneManager->getRootSceneNode()->createChildSceneNode("General_MapNode");
 	node->attachObject(map);
-	node->setScale(Ogre::Vector3(200, 200, 200));
+	node->setScale(Ogre::Vector3(10, 10, 10));
 
 	initOIS();
 	initCEGUI();
+
+	Ogre::WindowEventUtilities::addWindowEventListener(_RenderWindow, new WinListener());
 
 	createFrameListener();
 }
 
 void Python3D::exit()
 {
-	delete _Listener;
-
-	delete _GUISystem;
-	delete _GUIRenderer;
-
-	delete _Root;
 }
 
 void Python3D::loadResources()

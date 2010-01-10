@@ -54,9 +54,9 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 	_GUISystem->setGUISheet(_MenuLayout);
 	CEGUI::ImagesetManager::getSingleton().createImagesetFromImageFile("image_fond", "fond.png");
 	_MenuLayout->getChild("fond")->setProperty("Image", "set:image_fond image:full_image");
-	CEGUI::PushButton *b = (CEGUI::PushButton *)_MenuLayout->getChild("quitter");
+	CEGUI::PushButton *b = (CEGUI::PushButton *)_MenuLayout->getChild("fond")->getChild("quitter");
 	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::onQuit, this));
-	b = (CEGUI::PushButton *)_MenuLayout->getChild("jouer");
+	b = (CEGUI::PushButton *)_MenuLayout->getChild("fond")->getChild("jouer");
 	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::onPlay, this));
 
 	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
@@ -64,6 +64,9 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 	_FPSWindow = CEGUI::WindowManager::getSingleton().getWindow("FPSWindow");
 	_FPSUpdateFreq = 50;
 	_FPSSkippedFrames = 0;
+	_TimerWindow = CEGUI::WindowManager::getSingleton().getWindow("StatsWindow");
+	_Timer = new Ogre::Timer();
+	_Time = 0;
 }
 
 EventListener::~EventListener()
@@ -94,6 +97,12 @@ bool EventListener::frameStarted(const Ogre::FrameEvent &evt)
 	{
 		_FPSSkippedFrames = 0;
 		_FPSWindow->setText("FPS : " + Ogre::StringConverter::toString(_RenderWindow->getLastFPS()));
+	}
+
+	if((int)(_Timer->getMilliseconds() / 1000) != _Time)
+	{
+		_Time = _Timer->getMilliseconds() / 1000;
+		_TimerWindow->setText("Taille : " + Ogre::StringConverter::toString(_Snake->getSize()) + "\nTemps : " + Ogre::StringConverter::toString(_Time));
 	}
 
 	_SoundManager->update();
@@ -219,6 +228,7 @@ CEGUI::MouseButton EventListener::OISToCEGUI(int ois_button_id)
 bool EventListener::onQuit(const CEGUI::EventArgs& e)
 {
 	_SoundManager->playSound(0);
+	Sleep(200);
 	_Continue = false;
 	return true;
 }
@@ -234,6 +244,9 @@ bool EventListener::onPlay(const CEGUI::EventArgs& e)
 	_SoundManager->playStream("game", 0);
 
 	_Actif = 0;
+
+	_Timer->reset();
+	_Time = 0;
 
 	return true;
 }

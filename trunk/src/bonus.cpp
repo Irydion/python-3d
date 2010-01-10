@@ -24,7 +24,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 Bonus::Bonus(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *node)
 {
-	_Entity = sceneMgr->createEntity("Bonus", "Sphere.mesh");
+	_Entity = sceneMgr->createEntity("Bonus", "bonus.mesh");
 	_Entity->setQueryFlags(BONUS_QUERY_FLAG);
 
 	_Node = node;

@@ -40,15 +40,15 @@ Snake::Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *
 	_SoundManager = soundMgr;
 
 	_Head->attachObject(cam);
-	_Head->setPosition(Ogre::Vector3(-400, 0, 0));
+	_Head->setPosition(Ogre::Vector3(0, 0, 0));
 
-	_Direction = Ogre::Vector3(0, 0, -100);
+	_Direction = Ogre::Vector3(0, 0, -150);
 
 	_CompassNode = _Head->createChildSceneNode("snakeNodeCompass");
 	Ogre::Entity *ent = _SceneManager->createEntity("compass", "compass.mesh");
 	ent->setQueryFlags(COMPASS_QUERY_FLAG);
-	_CompassNode->scale(0.05, 0.05, 0.05);
-	_CompassNode->setPosition(0, 0, -10); // 4;-4 en largeur et 3;-3 en hauteur
+	_CompassNode->scale(0.6, 0.1, 0.1);
+	_CompassNode->setPosition(0, -3, -10);
 }
 
 Snake::~Snake()
@@ -63,15 +63,17 @@ void Snake::reInit()
 	_IsTurning = 0;
 	_ActualAngle = 0;
 	_NextTurn = 0;
-	_LastPosition = Ogre::Vector3(-400, 0, 0);
 	_NextEnt = 0;
 	_NbNode = -1;
 	_ListNode.empty();
 
 	_SceneManager->getCamera("Camera")->setPosition(0, 0, 0);
-	_Head->setPosition(Ogre::Vector3(-400, 0, 0));
+	_SceneManager->getCamera("Camera")->setOrientation(Ogre::Quaternion::IDENTITY);
+	_Head->setPosition(Ogre::Vector3(0, 200, 100));
 	_Head->setOrientation(Ogre::Quaternion::IDENTITY);
 
+
+	_LastPosition = _Head->getPosition();
 	_Direction = Ogre::Vector3(0, 0, -100);
 
 	_CompassNode->attachObject(_SceneManager->getEntity("compass"));
@@ -96,8 +98,9 @@ void Snake::turnUp()
 {
 	if(!_IsTurning)
 	{
+		_AntiLeaning = _Head->getOrientation();
 		_IsTurning = 1;
-		_TurnSpeed = 200;
+		_TurnSpeed = TURN_SPEED;
 	}
 	else
 	{
@@ -109,8 +112,9 @@ void Snake::turnDown()
 {
 	if(!_IsTurning)
 	{
+		_AntiLeaning = _Head->getOrientation();
 		_IsTurning = 2;
-		_TurnSpeed = -200;
+		_TurnSpeed = -TURN_SPEED;
 	}
 	else
 	{
@@ -122,8 +126,9 @@ void Snake::turnRight()
 {
 	if(!_IsTurning)
 	{
+		_AntiLeaning = _Head->getOrientation();
 		_IsTurning = 3;
-		_TurnSpeed = -200;
+		_TurnSpeed = -TURN_SPEED;
 	}
 	else
 	{
@@ -135,8 +140,9 @@ void Snake::turnLeft()
 {
 	if(!_IsTurning)
 	{
+		_AntiLeaning = _Head->getOrientation();
 		_IsTurning = 4;
-		_TurnSpeed = 200;
+		_TurnSpeed = TURN_SPEED;
 	}
 	else
 	{
@@ -155,28 +161,23 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 
 		if(_ActualAngle >= 90 || _ActualAngle <= -90)
 		{
-			if(_ActualAngle >= 90)
+			_Head->setOrientation(_AntiLeaning);
+			switch(_IsTurning)
 			{
-				if(_IsTurning < 3)
-				{
-					_Head->pitch(Ogre::Degree((Ogre::Real)90 - _ActualAngle));
-				}
-				else
-				{
-					_Head->yaw(Ogre::Degree((Ogre::Real)90 - _ActualAngle));
-				}
+				case 1:
+					_Head->pitch(Ogre::Degree(90));
+					break;
+				case 2:
+					_Head->pitch(Ogre::Degree(-90));
+					break;
+				case 3:
+					_Head->yaw(Ogre::Degree(-90));
+					break;
+				case 4:
+					_Head->yaw(Ogre::Degree(90));
+					break;
 			}
-			else
-			{
-				if(_IsTurning < 3)
-				{
-					_Head->pitch(Ogre::Degree((Ogre::Real)90 + _ActualAngle));
-				}
-				else
-				{
-					_Head->yaw(Ogre::Degree((Ogre::Real)90 + _ActualAngle));
-				}
-			}
+
 			_ActualAngle = 0;
 			_IsTurning = 0;
 
@@ -240,7 +241,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 			}
 			_TailNode->attachObject(ent);
 			_TailNode->setPosition(_LastPosition);
-			_TailNode->setScale(10, 10, 10);
+			_TailNode->setScale(15, 15, 15);
 
 			_ListNode.push_back(_NbNode);
 			_TailNode = _SceneManager->getSceneNode("snakeNode" + Ogre::StringConverter::toString(_ListNode.front()));
@@ -249,7 +250,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 		{
 			_TailNode = _SceneManager->getSceneNode("snakeNode" + Ogre::StringConverter::toString(_ListNode.front()));
 			_TailNode->setPosition(_LastPosition);
-			_TailNode->setScale(10, 10, 10);
+			_TailNode->setScale(15, 15, 15);
 
 			_ListNode.push_back(_ListNode.front());
 			_ListNode.pop_front();
@@ -277,5 +278,12 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 		_SoundManager->playSound(rand() % 3 + 6);
 	}
 
+	_CompassNode->lookAt(_Bonus->getPosition(), Ogre::SceneNode::TS_WORLD, -Ogre::Vector3::UNIT_X);
+
 	return true;
+}
+
+int Snake::getSize()
+{
+	return _Size;
 }
