@@ -115,6 +115,11 @@ class GameListener
 		 */
         bool mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id);
 
+		/**
+		 * \brief Méthode pour sortir du jeu
+		 *
+		 * Méthode à appeler pour revenir sur le menu (remet la caméra dans sa bonne position)
+		 */
 		void stop();
 
 	protected :

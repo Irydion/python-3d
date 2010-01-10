@@ -35,6 +35,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include "bonus.h"
 #include "SoundManager.h"
 
+/** Vitesse de rotation du snake */
 #define TURN_SPEED 300
 
 /**
@@ -54,8 +55,8 @@ class Snake
 		 * \param sceneMgr : un pointeur vers le scene manager principal du jeu
 		 * \param head : node de la tete
 		 * \param cam : camera qui doit etre rattachée à la tete
-		 * \param size : taille initiale du serpent
 		 * \param b : un pointeur vers le bonus à prendre
+		 * \param soundMgr : un pointeur sur le sound manager
 		 */
 		Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, Bonus *b, SoundManager *soundMgr);
 		/**
@@ -65,7 +66,17 @@ class Snake
 		 */
 		~Snake();
 
+		/**
+		 * \brief Lancement de la partie
+		 *
+		 * Méthode à appeler pour réinitialiser ce qu'il faut pour relancer la partie
+		 */
 		void reInit();
+		/**
+		 * \brief Arret de la partie
+		 *
+		 * Méthode à appeler avant de revenir au menu
+		 */
 		void stop();
 
 		/**
@@ -101,6 +112,13 @@ class Snake
 		 * \remark méthode à appeler une fois par image
 		 */
 		bool update(Ogre::Real timeSinceLastFrame);
+
+		/**
+		 * \brief Accesseur get pour la taille
+		 *
+		 * Renvoie la taille actuelle du serpent
+		 * \return la taille du serpent
+		 */
 		int getSize();
 
 	public:
@@ -116,6 +134,7 @@ class Snake
 		int _IsTurning;
 		/** Indique, si on est en train de tourner, à quel angle on en est */
 		Ogre::Real _ActualAngle;
+		/** Quaternion indiquant l'orientation que le scene node du serpent doit avoir une fois qu'il a fini de tourner (pour éviter le leaning) */
 		Ogre::Quaternion _AntiLeaning;
 		/** Vitesse de rotation */
 		Ogre::Real _TurnSpeed;
@@ -129,6 +148,7 @@ class Snake
 		std::deque<int> _ListNode;
 		/** Dernier node de la queue du serpent (celui à faire "disparaître" au prochain changement dans la deque) */
 		Ogre::SceneNode *_TailNode;
+		/** Scene node pour l'indicateur de position du bonus */
 		Ogre::SceneNode *_CompassNode;
 
 		/** outil de MOC pour détecter les collisions */
@@ -140,6 +160,7 @@ class Snake
 		Bonus *_Bonus;
 		/** Scene manager principal */
 		Ogre::SceneManager *_SceneManager;
+		/** Sound manager */
 		SoundManager *_SoundManager;
 };
 

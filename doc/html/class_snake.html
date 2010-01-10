@@ -52,10 +52,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="class_snake-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a38886956eae80a8dd22315250382fac9">Snake</a> (Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size, <a class="el" href="class_bonus.html">Bonus</a> *b)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#a38886956eae80a8dd22315250382fac9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#acfa6c7977549a6ffc0ea522977452f71">Snake</a> (Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, <a class="el" href="class_bonus.html">Bonus</a> *b, <a class="el" href="class_sound_manager.html">SoundManager</a> *soundMgr)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#acfa6c7977549a6ffc0ea522977452f71"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a941fbaad96ee33ca3a7c30c28ca44ef8">~Snake</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructeur.  <a href="#a941fbaad96ee33ca3a7c30c28ca44ef8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a696f41bf0b58c0248731a2959a179332">reInit</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Lancement de la partie.  <a href="#a696f41bf0b58c0248731a2959a179332"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#ac9e1c19b55cb338406d5965ede68116d">stop</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Arret de la partie.  <a href="#ac9e1c19b55cb338406d5965ede68116d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#ac0ef4f6798ad0f4851f8110241b731e6">turnUp</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tourner vers le haut.  <a href="#ac0ef4f6798ad0f4851f8110241b731e6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#aac03ab94e6e6895abe121d8464cddb8f">turnDown</a> ()</td></tr>
@@ -64,8 +68,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tourner vers la droite.  <a href="#a9574cebf257afe6e2d7f1fc34143a46d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#af64b861030850c0f660d50fb0c58801f">turnLeft</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tourner vers la gauche.  <a href="#af64b861030850c0f660d50fb0c58801f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a46961cc0e69e7b0a2fa8dc061ff46a38">update</a> (Ogre::Real timeSinceLastFrame)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mise à jour du serpent.  <a href="#a46961cc0e69e7b0a2fa8dc061ff46a38"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a698146a846769c0ab80d3bf560cf4bc1">update</a> (Ogre::Real timeSinceLastFrame)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mise à jour du serpent.  <a href="#a698146a846769c0ab80d3bf560cf4bc1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a9f0bb3c380c36b7d4c0e20db2f90dc92">getSize</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Accesseur get pour la taille.  <a href="#a9f0bb3c380c36b7d4c0e20db2f90dc92"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::SceneNode *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a6f63c3b9afb33bea530af0295d8b8eff">_Head</a></td></tr>
 <tr><td colspan="2"><h2>Protected Attributes</h2></td></tr>
@@ -73,22 +79,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a371f47112049ef1588b5ce8f8919e7f2">_Size</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#ac0d7ad186a6e1890f3766d85a2178588">_IsTurning</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::Real&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#aaf79fcb5936ad59df2ba2cf75c3a7ae1">_ActualAngle</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Ogre::Quaternion&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a9f84eacdbf5957e40213db342a187343">_AntiLeaning</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::Real&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a0485e041821fac10e48fc268a4efdac0">_TurnSpeed</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a979acd66f20f0b6d1c178607b7e0c98b">_NextTurn</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::Real&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#ae7d65de713835495a2dc1dd6f57cfd6f">_NextEnt</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#aefab5774e722c572e59bc681a801a0c2">_NbNode</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::deque&lt; int &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a64522bba5ab4b1e00c6a97e66e37678d">_ListNode</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::SceneNode *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a79a762795b89849ca5be81cfc3e81959">_TailNode</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Ogre::SceneNode *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a8d8dc95fc338134b2a43a94b3b55210f">_CompassNode</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">MOC::CollisionTools *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a129ae498d204c13814c1a4ba8dac2237">_CollisionTools</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::Vector3&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#aba910de70c5d55fc67c2f6b261130719">_LastPosition</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bonus.html">Bonus</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a837cd882ee30af4efc6689b7eece4a15">_Bonus</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::SceneManager *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a1ebda9bef5de78e6859dc290614ac3c3">_SceneManager</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_sound_manager.html">SoundManager</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake.html#a319d0304c3325acc02dcbc50dbde8265">_SoundManager</a></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>le serpent </p>
 <p>Cette classe gère le serpent (position, taille, déplacement, etc.). </p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a38886956eae80a8dd22315250382fac9"></a><!-- doxytag: member="Snake::Snake" ref="a38886956eae80a8dd22315250382fac9" args="(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, unsigned int size, Bonus *b)" -->
+<a class="anchor" id="acfa6c7977549a6ffc0ea522977452f71"></a><!-- doxytag: member="Snake::Snake" ref="acfa6c7977549a6ffc0ea522977452f71" args="(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, Bonus *b, SoundManager *soundMgr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -113,14 +122,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&nbsp;</td>
-          <td class="paramname"> <em>size</em>, </td>
+          <td class="paramtype"><a class="el" href="class_bonus.html">Bonus</a> *&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_bonus.html">Bonus</a> *&nbsp;</td>
-          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+          <td class="paramtype"><a class="el" href="class_sound_manager.html">SoundManager</a> *&nbsp;</td>
+          <td class="paramname"> <em>soundMgr</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -138,8 +147,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <tr><td valign="top"></td><td valign="top"><em>sceneMgr</em>&nbsp;</td><td>: un pointeur vers le scene manager principal du jeu </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>head</em>&nbsp;</td><td>: node de la tete </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>cam</em>&nbsp;</td><td>: camera qui doit etre rattachée à la tete </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>: taille initiale du serpent </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>: un pointeur vers le bonus à prendre </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>soundMgr</em>&nbsp;</td><td>: un pointeur sur le sound manager </td></tr>
   </table>
   </dd>
 </dl>
@@ -167,6 +176,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9f0bb3c380c36b7d4c0e20db2f90dc92"></a><!-- doxytag: member="Snake::getSize" ref="a9f0bb3c380c36b7d4c0e20db2f90dc92" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Snake::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Accesseur get pour la taille. </p>
+<p>Renvoie la taille actuelle du serpent </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>la taille du serpent </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a696f41bf0b58c0248731a2959a179332"></a><!-- doxytag: member="Snake::reInit" ref="a696f41bf0b58c0248731a2959a179332" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Snake::reInit </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Lancement de la partie. </p>
+<p>Méthode à appeler pour réinitialiser ce qu'il faut pour relancer la partie </p>
+
+</div>
+</div>
+<a class="anchor" id="ac9e1c19b55cb338406d5965ede68116d"></a><!-- doxytag: member="Snake::stop" ref="ac9e1c19b55cb338406d5965ede68116d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Snake::stop </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Arret de la partie. </p>
+<p>Méthode à appeler avant de revenir au menu </p>
+
+</div>
+</div>
 <a class="anchor" id="aac03ab94e6e6895abe121d8464cddb8f"></a><!-- doxytag: member="Snake::turnDown" ref="aac03ab94e6e6895abe121d8464cddb8f" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -247,12 +317,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
-<a class="anchor" id="a46961cc0e69e7b0a2fa8dc061ff46a38"></a><!-- doxytag: member="Snake::update" ref="a46961cc0e69e7b0a2fa8dc061ff46a38" args="(Ogre::Real timeSinceLastFrame)" -->
+<a class="anchor" id="a698146a846769c0ab80d3bf560cf4bc1"></a><!-- doxytag: member="Snake::update" ref="a698146a846769c0ab80d3bf560cf4bc1" args="(Ogre::Real timeSinceLastFrame)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Snake::update </td>
+          <td class="memname">bool Snake::update </td>
           <td>(</td>
           <td class="paramtype">Ogre::Real&nbsp;</td>
           <td class="paramname"> <em>timeSinceLastFrame</em></td>
@@ -284,6 +354,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="a9f84eacdbf5957e40213db342a187343"></a><!-- doxytag: member="Snake::_AntiLeaning" ref="a9f84eacdbf5957e40213db342a187343" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ogre::Quaternion <a class="el" href="class_snake.html#a9f84eacdbf5957e40213db342a187343">Snake::_AntiLeaning</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Quaternion indiquant l'orientation que le scene node du serpent doit avoir une fois qu'il a fini de tourner (pour éviter le leaning) </p>
+
+</div>
+</div>
 <a class="anchor" id="a837cd882ee30af4efc6689b7eece4a15"></a><!-- doxytag: member="Snake::_Bonus" ref="a837cd882ee30af4efc6689b7eece4a15" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -309,6 +393,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 <p>outil de MOC pour détecter les collisions </p>
+
+</div>
+</div>
+<a class="anchor" id="a8d8dc95fc338134b2a43a94b3b55210f"></a><!-- doxytag: member="Snake::_CompassNode" ref="a8d8dc95fc338134b2a43a94b3b55210f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ogre::SceneNode* <a class="el" href="class_snake.html#a8d8dc95fc338134b2a43a94b3b55210f">Snake::_CompassNode</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Scene node pour l'indicateur de position du bonus </p>
 
 </div>
 </div>
@@ -452,6 +550,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="a319d0304c3325acc02dcbc50dbde8265"></a><!-- doxytag: member="Snake::_SoundManager" ref="a319d0304c3325acc02dcbc50dbde8265" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_sound_manager.html">SoundManager</a>* <a class="el" href="class_snake.html#a319d0304c3325acc02dcbc50dbde8265">Snake::_SoundManager</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sound manager </p>
+
+</div>
+</div>
 <a class="anchor" id="a79a762795b89849ca5be81cfc3e81959"></a><!-- doxytag: member="Snake::_TailNode" ref="a79a762795b89849ca5be81cfc3e81959" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -499,7 +611,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Fri Jan 1 23:25:45 2010 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Jan 10 13:07:54 2010 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

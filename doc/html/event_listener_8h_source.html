@@ -79,45 +79,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00048"></a><a class="code" href="class_event_listener.html">00048</a> <span class="keyword">class </span><a class="code" href="class_event_listener.html" title="frame listener principal">EventListener</a> : <span class="keyword">public</span> Ogre::FrameListener, <span class="keyword">public</span> OIS::KeyListener, <span class="keyword">public</span> OIS::MouseListener
 <a name="l00049"></a>00049 {
 <a name="l00050"></a>00050         <span class="keyword">public</span> :
-<a name="l00064"></a>00064                 <a class="code" href="class_event_listener.html#ac34ead9d74a9bb7e04dab28edebf0d5b" title="Constructeur.">EventListener</a>(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer, <a class="code" href="class_snake.html" title="le serpent">Snake</a> *snake);
-<a name="l00070"></a>00070         <a class="code" href="class_event_listener.html#a7cc493c3e3df36d14e33504d8a92c898" title="Destructeur.">~EventListener</a>();
-<a name="l00071"></a>00071 
-<a name="l00080"></a>00080                 <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#ac4462e33f186e33e91fe1148c002b9b3" title="Callback de début d&amp;#39;image.">frameStarted</a>(<span class="keyword">const</span> Ogre::FrameEvent &amp;evt);
-<a name="l00081"></a>00081 
-<a name="l00090"></a>00090                 <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#a0a9ed10fca20943ab32cb44d7f75fcc8" title="Une touche est appuyée.">keyPressed</a>(<span class="keyword">const</span> OIS::KeyEvent &amp;e);
-<a name="l00099"></a>00099         <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#a79c5137e4d499af18ea3dbb560de6dfc" title="Une touche est relachée.">keyReleased</a>(<span class="keyword">const</span> OIS::KeyEvent &amp;e);
-<a name="l00100"></a>00100 
-<a name="l00109"></a>00109         <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#aba710ac575d40e625f2bf81c91361106" title="La souris a bougé.">mouseMoved</a>(<span class="keyword">const</span> OIS::MouseEvent &amp;e);
-<a name="l00119"></a>00119         <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#afda3ec15bd966fd90c3f86b203a7ace1" title="Un bouton de la souris est cliqué.">mousePressed</a>(<span class="keyword">const</span> OIS::MouseEvent &amp;e, OIS::MouseButtonID <span class="keywordtype">id</span>);
-<a name="l00129"></a>00129         <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#a939680309ce0ff668ea1ac37044edc9c" title="Un bouton de la souris est relaché.">mouseReleased</a>(<span class="keyword">const</span> OIS::MouseEvent &amp;e, OIS::MouseButtonID <span class="keywordtype">id</span>);
-<a name="l00130"></a>00130 
-<a name="l00139"></a>00139                 CEGUI::MouseButton <a class="code" href="class_event_listener.html#a3aeb3f46ce048e419df6a845e89da11a" title="Conversion OIS-&amp;gt;CEGUI.">OISToCEGUI</a>(<span class="keywordtype">int</span> ois_button_id);
-<a name="l00140"></a>00140 
-<a name="l00141"></a>00141         <span class="keyword">protected</span> :
-<a name="l00143"></a><a class="code" href="class_event_listener.html#afc58aa6376388ff5d66b26fb14c13ad6">00143</a>                 Ogre::SceneManager *<a class="code" href="class_event_listener.html#afc58aa6376388ff5d66b26fb14c13ad6">_SceneManager</a>;
-<a name="l00145"></a><a class="code" href="class_event_listener.html#ac10a499ff8a5c40904379557a26bcddd">00145</a>                 Ogre::RenderWindow *<a class="code" href="class_event_listener.html#ac10a499ff8a5c40904379557a26bcddd">_RenderWindow</a>;
-<a name="l00146"></a>00146 
-<a name="l00148"></a><a class="code" href="class_event_listener.html#a8b45fb15de48393391f1bf8eecb1559c">00148</a>                 OIS::Keyboard *<a class="code" href="class_event_listener.html#a8b45fb15de48393391f1bf8eecb1559c">_Keyboard</a>;
-<a name="l00150"></a><a class="code" href="class_event_listener.html#a1f6735a7cd9313951650a20803888cae">00150</a>                 OIS::Mouse *<a class="code" href="class_event_listener.html#a1f6735a7cd9313951650a20803888cae">_Mouse</a>; 
-<a name="l00151"></a>00151 
-<a name="l00153"></a><a class="code" href="class_event_listener.html#a54ac17e00424221db383a7e0f28a4089">00153</a>                 CEGUI::System *<a class="code" href="class_event_listener.html#a54ac17e00424221db383a7e0f28a4089">_GUISystem</a>;
-<a name="l00155"></a><a class="code" href="class_event_listener.html#a1041a6329198229d94a6a8037b5bceee">00155</a>                 CEGUI::OgreCEGUIRenderer *<a class="code" href="class_event_listener.html#a1041a6329198229d94a6a8037b5bceee">_GUIRenderer</a>;
-<a name="l00157"></a><a class="code" href="class_event_listener.html#a60bd89da997c0f8bd19192f64052ffb0">00157</a>                 CEGUI::Window *<a class="code" href="class_event_listener.html#a60bd89da997c0f8bd19192f64052ffb0">_FPSWindow</a>;
-<a name="l00159"></a><a class="code" href="class_event_listener.html#afd62aa00abb1f447f64ca9013413c9df">00159</a>                 <span class="keywordtype">int</span> <a class="code" href="class_event_listener.html#afd62aa00abb1f447f64ca9013413c9df">_FPSUpdateFreq</a>;
-<a name="l00161"></a><a class="code" href="class_event_listener.html#a1a123f0130df6ce89cd6a58f029b2872">00161</a>                 <span class="keywordtype">int</span> <a class="code" href="class_event_listener.html#a1a123f0130df6ce89cd6a58f029b2872">_FPSSkippedFrames</a>;
-<a name="l00162"></a>00162 
-<a name="l00164"></a><a class="code" href="class_event_listener.html#a630f9240fd7d0b562b2c73334af3242a">00164</a>                 <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#a630f9240fd7d0b562b2c73334af3242a">_Continue</a>;
-<a name="l00165"></a>00165 
-<a name="l00167"></a><a class="code" href="class_event_listener.html#ac8a3efefc791a889bde8476ccd34e860">00167</a>                 <span class="keywordtype">int</span> <a class="code" href="class_event_listener.html#ac8a3efefc791a889bde8476ccd34e860">_Actif</a>;
-<a name="l00169"></a><a class="code" href="class_event_listener.html#aeb8c61dbe0791eafdf6c8a3fba9cd605">00169</a>                 <a class="code" href="class_game_listener.html" title="frame listener de jeu">GameListener</a> *<a class="code" href="class_event_listener.html#aeb8c61dbe0791eafdf6c8a3fba9cd605">_GameListener</a>;
-<a name="l00171"></a><a class="code" href="class_event_listener.html#afbca91d3cbea5c29d4e68a286d654731">00171</a>                 <a class="code" href="class_menu_listener.html" title="frame listener du menu">MenuListener</a> *<a class="code" href="class_event_listener.html#afbca91d3cbea5c29d4e68a286d654731">_MenuListener</a>;
-<a name="l00172"></a>00172                 
-<a name="l00174"></a><a class="code" href="class_event_listener.html#a9e6d12ae46ed795be0a3b2e8015de836">00174</a>                 <a class="code" href="class_sound_manager.html" title="gestionnaire de son">SoundManager</a> *<a class="code" href="class_event_listener.html#a9e6d12ae46ed795be0a3b2e8015de836">_SoundManager</a>;
-<a name="l00175"></a>00175 
-<a name="l00177"></a><a class="code" href="class_event_listener.html#a4612b941c77d2a4b1d0a98e02947a380">00177</a>                 <a class="code" href="class_snake.html" title="le serpent">Snake</a> *<a class="code" href="class_event_listener.html#a4612b941c77d2a4b1d0a98e02947a380">_Snake</a>;
-<a name="l00178"></a>00178 };
-<a name="l00179"></a>00179 
-<a name="l00180"></a>00180 <span class="preprocessor">#endif // EVENTLISTENER_H</span>
+<a name="l00063"></a>00063                 <a class="code" href="class_event_listener.html#a6f9a751fcc1dd59da3ad16a8f5c07217" title="Constructeur.">EventListener</a>(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer);
+<a name="l00069"></a>00069         <a class="code" href="class_event_listener.html#a7cc493c3e3df36d14e33504d8a92c898" title="Destructeur.">~EventListener</a>();
+<a name="l00070"></a>00070 
+<a name="l00079"></a>00079                 <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#ac4462e33f186e33e91fe1148c002b9b3" title="Callback de début d&amp;#39;image.">frameStarted</a>(<span class="keyword">const</span> Ogre::FrameEvent &amp;evt);
+<a name="l00080"></a>00080 
+<a name="l00089"></a>00089                 <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#a0a9ed10fca20943ab32cb44d7f75fcc8" title="Une touche est appuyée.">keyPressed</a>(<span class="keyword">const</span> OIS::KeyEvent &amp;e);
+<a name="l00098"></a>00098         <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#a79c5137e4d499af18ea3dbb560de6dfc" title="Une touche est relachée.">keyReleased</a>(<span class="keyword">const</span> OIS::KeyEvent &amp;e);
+<a name="l00099"></a>00099 
+<a name="l00108"></a>00108         <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#aba710ac575d40e625f2bf81c91361106" title="La souris a bougé.">mouseMoved</a>(<span class="keyword">const</span> OIS::MouseEvent &amp;e);
+<a name="l00118"></a>00118         <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#afda3ec15bd966fd90c3f86b203a7ace1" title="Un bouton de la souris est cliqué.">mousePressed</a>(<span class="keyword">const</span> OIS::MouseEvent &amp;e, OIS::MouseButtonID <span class="keywordtype">id</span>);
+<a name="l00128"></a>00128         <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#a939680309ce0ff668ea1ac37044edc9c" title="Un bouton de la souris est relaché.">mouseReleased</a>(<span class="keyword">const</span> OIS::MouseEvent &amp;e, OIS::MouseButtonID <span class="keywordtype">id</span>);
+<a name="l00129"></a>00129 
+<a name="l00138"></a>00138                 CEGUI::MouseButton <a class="code" href="class_event_listener.html#a3aeb3f46ce048e419df6a845e89da11a" title="Conversion OIS-&amp;gt;CEGUI.">OISToCEGUI</a>(<span class="keywordtype">int</span> ois_button_id);
+<a name="l00139"></a>00139 
+<a name="l00146"></a>00146                 <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#a9b3c46b9c47c734394ebafadae72d803" title="Callback pour quitter.">onQuit</a>(<span class="keyword">const</span> CEGUI::EventArgs&amp; e);
+<a name="l00153"></a>00153                 <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#aa18b11a5d259a27666b75ea19ecd7505" title="Callback pour jouer.">onPlay</a>(<span class="keyword">const</span> CEGUI::EventArgs&amp; e);
+<a name="l00154"></a>00154 
+<a name="l00160"></a>00160                 <span class="keywordtype">void</span> <a class="code" href="class_event_listener.html#a002a24c87ba1a71951546a72cde60ba6" title="Entrée dans le menu principal.">toMenu</a>();
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162         <span class="keyword">protected</span> :
+<a name="l00164"></a><a class="code" href="class_event_listener.html#afc58aa6376388ff5d66b26fb14c13ad6">00164</a>                 Ogre::SceneManager *<a class="code" href="class_event_listener.html#afc58aa6376388ff5d66b26fb14c13ad6">_SceneManager</a>;
+<a name="l00166"></a><a class="code" href="class_event_listener.html#ac10a499ff8a5c40904379557a26bcddd">00166</a>                 Ogre::RenderWindow *<a class="code" href="class_event_listener.html#ac10a499ff8a5c40904379557a26bcddd">_RenderWindow</a>;
+<a name="l00167"></a>00167 
+<a name="l00169"></a><a class="code" href="class_event_listener.html#a8b45fb15de48393391f1bf8eecb1559c">00169</a>                 OIS::Keyboard *<a class="code" href="class_event_listener.html#a8b45fb15de48393391f1bf8eecb1559c">_Keyboard</a>;
+<a name="l00171"></a><a class="code" href="class_event_listener.html#a1f6735a7cd9313951650a20803888cae">00171</a>                 OIS::Mouse *<a class="code" href="class_event_listener.html#a1f6735a7cd9313951650a20803888cae">_Mouse</a>; 
+<a name="l00172"></a>00172 
+<a name="l00174"></a><a class="code" href="class_event_listener.html#a54ac17e00424221db383a7e0f28a4089">00174</a>                 CEGUI::System *<a class="code" href="class_event_listener.html#a54ac17e00424221db383a7e0f28a4089">_GUISystem</a>;
+<a name="l00176"></a><a class="code" href="class_event_listener.html#a1041a6329198229d94a6a8037b5bceee">00176</a>                 CEGUI::OgreCEGUIRenderer *<a class="code" href="class_event_listener.html#a1041a6329198229d94a6a8037b5bceee">_GUIRenderer</a>;
+<a name="l00178"></a><a class="code" href="class_event_listener.html#a60bd89da997c0f8bd19192f64052ffb0">00178</a>                 CEGUI::Window *<a class="code" href="class_event_listener.html#a60bd89da997c0f8bd19192f64052ffb0">_FPSWindow</a>;
+<a name="l00180"></a><a class="code" href="class_event_listener.html#afd62aa00abb1f447f64ca9013413c9df">00180</a>                 <span class="keywordtype">int</span> <a class="code" href="class_event_listener.html#afd62aa00abb1f447f64ca9013413c9df">_FPSUpdateFreq</a>;
+<a name="l00182"></a><a class="code" href="class_event_listener.html#a1a123f0130df6ce89cd6a58f029b2872">00182</a>                 <span class="keywordtype">int</span> <a class="code" href="class_event_listener.html#a1a123f0130df6ce89cd6a58f029b2872">_FPSSkippedFrames</a>;
+<a name="l00184"></a><a class="code" href="class_event_listener.html#af4f9dcf8a87b7b966fea96292acf9de5">00184</a>                 CEGUI::Window *<a class="code" href="class_event_listener.html#af4f9dcf8a87b7b966fea96292acf9de5">_GameLayout</a>;
+<a name="l00186"></a><a class="code" href="class_event_listener.html#aca8e0a3fe70cfb0a84870151e6fce32e">00186</a>                 CEGUI::Window *<a class="code" href="class_event_listener.html#aca8e0a3fe70cfb0a84870151e6fce32e">_MenuLayout</a>;
+<a name="l00188"></a><a class="code" href="class_event_listener.html#a5854e89f799d18c9867ccc9e172ab3bd">00188</a>                 Ogre::Timer *<a class="code" href="class_event_listener.html#a5854e89f799d18c9867ccc9e172ab3bd">_Timer</a>;
+<a name="l00190"></a><a class="code" href="class_event_listener.html#a83cc6e9eff6c7664c0f9e123909ef88a">00190</a>                 CEGUI::Window *<a class="code" href="class_event_listener.html#a83cc6e9eff6c7664c0f9e123909ef88a">_TimerWindow</a>;
+<a name="l00192"></a><a class="code" href="class_event_listener.html#ae549b635d65eaaf08ff30dcb855f81ab">00192</a>                 <span class="keywordtype">int</span> <a class="code" href="class_event_listener.html#ae549b635d65eaaf08ff30dcb855f81ab">_Time</a>;
+<a name="l00193"></a>00193 
+<a name="l00195"></a><a class="code" href="class_event_listener.html#a630f9240fd7d0b562b2c73334af3242a">00195</a>                 <span class="keywordtype">bool</span> <a class="code" href="class_event_listener.html#a630f9240fd7d0b562b2c73334af3242a">_Continue</a>;
+<a name="l00196"></a>00196 
+<a name="l00198"></a><a class="code" href="class_event_listener.html#ac8a3efefc791a889bde8476ccd34e860">00198</a>                 <span class="keywordtype">int</span> <a class="code" href="class_event_listener.html#ac8a3efefc791a889bde8476ccd34e860">_Actif</a>;
+<a name="l00200"></a><a class="code" href="class_event_listener.html#aeb8c61dbe0791eafdf6c8a3fba9cd605">00200</a>                 <a class="code" href="class_game_listener.html" title="frame listener de jeu">GameListener</a> *<a class="code" href="class_event_listener.html#aeb8c61dbe0791eafdf6c8a3fba9cd605">_GameListener</a>;
+<a name="l00202"></a><a class="code" href="class_event_listener.html#afbca91d3cbea5c29d4e68a286d654731">00202</a>                 <a class="code" href="class_menu_listener.html" title="frame listener du menu">MenuListener</a> *<a class="code" href="class_event_listener.html#afbca91d3cbea5c29d4e68a286d654731">_MenuListener</a>;
+<a name="l00203"></a>00203                 
+<a name="l00205"></a><a class="code" href="class_event_listener.html#a9e6d12ae46ed795be0a3b2e8015de836">00205</a>                 <a class="code" href="class_sound_manager.html" title="gestionnaire de son">SoundManager</a> *<a class="code" href="class_event_listener.html#a9e6d12ae46ed795be0a3b2e8015de836">_SoundManager</a>;
+<a name="l00206"></a>00206 
+<a name="l00208"></a><a class="code" href="class_event_listener.html#a4612b941c77d2a4b1d0a98e02947a380">00208</a>                 <a class="code" href="class_snake.html" title="le serpent">Snake</a> *<a class="code" href="class_event_listener.html#a4612b941c77d2a4b1d0a98e02947a380">_Snake</a>;
+<a name="l00209"></a>00209 };
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211 <span class="preprocessor">#endif // EVENTLISTENER_H</span>
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -133,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Fri Jan 1 23:25:45 2010 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Jan 10 13:07:54 2010 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

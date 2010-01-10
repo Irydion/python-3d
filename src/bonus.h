@@ -64,6 +64,12 @@ class Bonus
 		 */
 		void changeBonus();
 
+		/**
+		 * \brief Accesseur de la position du bonus
+		 *
+		 * Renvoie la position actuelle du bonus
+		 * \return un vecteur3 qui indique la position
+		 */
 		Ogre::Vector3 getPosition();
 
 	protected:

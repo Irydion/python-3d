@@ -34,9 +34,9 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include <FMOD/fmod_errors.h>
 
 /** nombre de musiques pour le menu */
-#define TRACK_MENU 1
+#define TRACK_MENU 3
 /** nombre de musiques pour le jeu */
-#define TRACK_GAME 2
+#define TRACK_GAME 3
 /** nombre de sons */
 #define NB_SOUND 9
 
@@ -99,6 +99,8 @@ class SoundManager
 		 * Méthode à appeler une fois par image, elle sert à mettre à jour le système FMOD.
 		 */
 		void update();
+
+		int getNbTrack(std::string type);
 
 	protected:
 		/** Objet système FMOD */

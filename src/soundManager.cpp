@@ -194,3 +194,11 @@ void SoundManager::update()
 
 	_FMODSystem->update();
 }
+
+int SoundManager::getNbTrack(std::string type)
+{
+	if(type == "game")
+		return TRACK_GAME;
+	else
+		return TRACK_MENU;
+}

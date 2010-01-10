@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual C++ Express 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Python3D", "Python3D\Python3D.vcproj", "{104B6123-E232-4E0B-B2DB-CDDEF24C6D7A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Python3DConfig", "Python3DConfig\Python3DConfig.vcproj", "{5FBF2B85-B241-4F7C-91E6-5478452CD16E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{104B6123-E232-4E0B-B2DB-CDDEF24C6D7A}.Debug|Win32.Build.0 = Debug|Win32
 		{104B6123-E232-4E0B-B2DB-CDDEF24C6D7A}.Release|Win32.ActiveCfg = Release|Win32
 		{104B6123-E232-4E0B-B2DB-CDDEF24C6D7A}.Release|Win32.Build.0 = Release|Win32
+		{5FBF2B85-B241-4F7C-91E6-5478452CD16E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5FBF2B85-B241-4F7C-91E6-5478452CD16E}.Debug|Win32.Build.0 = Debug|Win32
+		{5FBF2B85-B241-4F7C-91E6-5478452CD16E}.Release|Win32.ActiveCfg = Release|Win32
+		{5FBF2B85-B241-4F7C-91E6-5478452CD16E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

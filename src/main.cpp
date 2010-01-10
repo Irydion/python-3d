@@ -43,6 +43,8 @@ using namespace std;
  */
 INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR strCmdLine, INT )
 {
+	srand(time(0));
+
     try
 	{
 		Python3D *game = new Python3D();
