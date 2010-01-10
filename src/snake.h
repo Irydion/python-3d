@@ -35,6 +35,8 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include "bonus.h"
 #include "SoundManager.h"
 
+#define TURN_SPEED 300
+
 /**
  * \class Snake
  * \brief le serpent
@@ -99,6 +101,7 @@ class Snake
 		 * \remark méthode à appeler une fois par image
 		 */
 		bool update(Ogre::Real timeSinceLastFrame);
+		int getSize();
 
 	public:
 		/** Node de la tête */
@@ -113,6 +116,7 @@ class Snake
 		int _IsTurning;
 		/** Indique, si on est en train de tourner, à quel angle on en est */
 		Ogre::Real _ActualAngle;
+		Ogre::Quaternion _AntiLeaning;
 		/** Vitesse de rotation */
 		Ogre::Real _TurnSpeed;
 		/** Prochain mouvement à effectuer */

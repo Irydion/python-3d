@@ -45,10 +45,10 @@ INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR strCmdLine, INT )
 {
     try
 	{
-		Python3D game;
-		game.start();
-		game.run();
-		game.exit();
+		Python3D *game = new Python3D();
+		game->start();
+		game->run();
+		delete game;
     }	
 	catch(Ogre::Exception &e)
 	{

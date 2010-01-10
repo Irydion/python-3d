@@ -1,4 +1,4 @@
-material SOLID/TEX/earth.jpg
+material SOLID/TEX/bonus.png
 {
 	technique
 	{
@@ -6,7 +6,7 @@ material SOLID/TEX/earth.jpg
 		{
 			texture_unit
 			{
-				texture earth.jpg
+				texture bonus.png
 			}
 		}
 	}

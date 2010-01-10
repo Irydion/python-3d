@@ -166,6 +166,9 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		int _FPSSkippedFrames;
 		CEGUI::Window *_GameLayout;
 		CEGUI::Window *_MenuLayout;
+		Ogre::Timer *_Timer;
+		CEGUI::Window *_TimerWindow;
+		int _Time;
 
 		/** True pour continuer, false pour sortir de la boucle de rendu */
 		bool _Continue;

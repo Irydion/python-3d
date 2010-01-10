@@ -1,4 +1,4 @@
-material SOLID/TEX/arrow.png
+material SOLID/TEX/Tex_gitter_color2.jpg
 {
 	technique
 	{
@@ -6,7 +6,7 @@ material SOLID/TEX/arrow.png
 		{
 			texture_unit
 			{
-				texture arrow.png
+				texture map2.png
 			}
 		}
 	}
