@@ -59,7 +59,6 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * \param mouse : souris initialisée dans Python3D
 		 * \param GUISystem : objet systeme CEGUI
 		 * \param GUIRenderer : Gestionnaire d'interface utilisateur CEGUI
-		 * \param snake : le serpent
 		 */
 		EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer);
 		/**
@@ -134,13 +133,30 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * Méthode pour convertir un identifiant de bouton de souris OIS en identifiant CEGUI
 		 *
 		 * \param ois_button_id : identifiant OIS du bouton de souris à convertir
-		 * \return CEGUI::LeftButton;CEGUI::RightButton;CEGUI::MiddleButton;CEGUI::X1Button;CEGUI::NoButton
+		 * \return CEGUI::LeftButton ; CEGUI::RightButton ; CEGUI::MiddleButton ; CEGUI::X1Button ; CEGUI::NoButton
 		 */
 		CEGUI::MouseButton OISToCEGUI(int ois_button_id);
 
+		/**
+		 * \brief Callback pour quitter
+		 *
+		 * Callback appelé par CEGUI lorsque le bouton "quitter" est cliqué
+		 * \return toujours true (nécessaire pour le callback)
+		 */
 		bool onQuit(const CEGUI::EventArgs& e);
-		bool onCredits(const CEGUI::EventArgs& e);
+		/**
+		 * \brief Callback pour jouer
+		 *
+		 * Callback appelé par CEGUI lorsque le bouton "jouer" est cliqué
+		 * \return toujours true (nécessaire pour le callback)
+		 */
 		bool onPlay(const CEGUI::EventArgs& e);
+
+		/**
+		 * \brief Entrée dans le menu principal
+		 *
+		 * Méthode qui gère l'entrée dans le menu principal, au lancement du jeu ou depuis le jeu
+		 */
 		void toMenu();
 
 	protected :
@@ -158,16 +174,21 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		CEGUI::System *_GUISystem;
 		/** Gestionnaire d'interface utilisateur CEGUI */
 		CEGUI::OgreCEGUIRenderer *_GUIRenderer;
-		/** DEBUG ONLY - la fenêtre d'affichage des FPS */
+		/** La fenêtre d'affichage des FPS */
 		CEGUI::Window *_FPSWindow;
-		/** DEBUG ONLY - la fréquence de rafraichissement de l'affichage des FPS */
+		/** La fréquence de rafraichissement de l'affichage des FPS */
 		int _FPSUpdateFreq;
-		/** DEBUG ONLY - compteur de frame avant rafraichissement de l'affichage des FPS */
+		/** Compteur de frame avant rafraichissement de l'affichage des FPS */
 		int _FPSSkippedFrames;
+		/** Layout CEGUI pendant le jeu (fenetres fps et stats) */
 		CEGUI::Window *_GameLayout;
+		/** Layout CEGUI pendant le menu (fond, boutons quitter et jouer) */
 		CEGUI::Window *_MenuLayout;
+		/** Timer pour calculer le temps de jeu */
 		Ogre::Timer *_Timer;
+		/** la fenetre dans laquelle on affiche le temps et la taille */
 		CEGUI::Window *_TimerWindow;
+		/** le nombre de secondes écoulées depuis le début de la partie */
 		int _Time;
 
 		/** True pour continuer, false pour sortir de la boucle de rendu */

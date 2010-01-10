@@ -52,8 +52,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a href="class_event_listener-members.html">List of all members.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#ac34ead9d74a9bb7e04dab28edebf0d5b">EventListener</a> (Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer, <a class="el" href="class_snake.html">Snake</a> *snake)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#ac34ead9d74a9bb7e04dab28edebf0d5b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a6f9a751fcc1dd59da3ad16a8f5c07217">EventListener</a> (Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur.  <a href="#a6f9a751fcc1dd59da3ad16a8f5c07217"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a7cc493c3e3df36d14e33504d8a92c898">~EventListener</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructeur.  <a href="#a7cc493c3e3df36d14e33504d8a92c898"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#ac4462e33f186e33e91fe1148c002b9b3">frameStarted</a> (const Ogre::FrameEvent &amp;evt)</td></tr>
@@ -70,6 +70,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Un bouton de la souris est relaché.  <a href="#a939680309ce0ff668ea1ac37044edc9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">CEGUI::MouseButton&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a3aeb3f46ce048e419df6a845e89da11a">OISToCEGUI</a> (int ois_button_id)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Conversion OIS-&gt;CEGUI.  <a href="#a3aeb3f46ce048e419df6a845e89da11a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a9b3c46b9c47c734394ebafadae72d803">onQuit</a> (const CEGUI::EventArgs &amp;e)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback pour quitter.  <a href="#a9b3c46b9c47c734394ebafadae72d803"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#aa18b11a5d259a27666b75ea19ecd7505">onPlay</a> (const CEGUI::EventArgs &amp;e)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback pour jouer.  <a href="#aa18b11a5d259a27666b75ea19ecd7505"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a002a24c87ba1a71951546a72cde60ba6">toMenu</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Entrée dans le menu principal.  <a href="#a002a24c87ba1a71951546a72cde60ba6"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::SceneManager *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#afc58aa6376388ff5d66b26fb14c13ad6">_SceneManager</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">Ogre::RenderWindow *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#ac10a499ff8a5c40904379557a26bcddd">_RenderWindow</a></td></tr>
@@ -80,6 +86,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">CEGUI::Window *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a60bd89da997c0f8bd19192f64052ffb0">_FPSWindow</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#afd62aa00abb1f447f64ca9013413c9df">_FPSUpdateFreq</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a1a123f0130df6ce89cd6a58f029b2872">_FPSSkippedFrames</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CEGUI::Window *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#af4f9dcf8a87b7b966fea96292acf9de5">_GameLayout</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CEGUI::Window *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#aca8e0a3fe70cfb0a84870151e6fce32e">_MenuLayout</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Ogre::Timer *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a5854e89f799d18c9867ccc9e172ab3bd">_Timer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">CEGUI::Window *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a83cc6e9eff6c7664c0f9e123909ef88a">_TimerWindow</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#ae549b635d65eaaf08ff30dcb855f81ab">_Time</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#a630f9240fd7d0b562b2c73334af3242a">_Continue</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#ac8a3efefc791a889bde8476ccd34e860">_Actif</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game_listener.html">GameListener</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_event_listener.html#aeb8c61dbe0791eafdf6c8a3fba9cd605">_GameListener</a></td></tr>
@@ -91,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>frame listener principal </p>
 <p>Cette classe s'occupe de récupérer les entrées clavier/souris et de les transferer au frame listener actif à chaque frame. </p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac34ead9d74a9bb7e04dab28edebf0d5b"></a><!-- doxytag: member="EventListener::EventListener" ref="ac34ead9d74a9bb7e04dab28edebf0d5b" args="(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer, Snake *snake)" -->
+<a class="anchor" id="a6f9a751fcc1dd59da3ad16a8f5c07217"></a><!-- doxytag: member="EventListener::EventListener" ref="a6f9a751fcc1dd59da3ad16a8f5c07217" args="(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *renderWindow, OIS::Keyboard *keyboard, OIS::Mouse *mouse, CEGUI::System *GUISystem, CEGUI::OgreCEGUIRenderer *GUIRenderer)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -129,13 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">CEGUI::OgreCEGUIRenderer *&nbsp;</td>
-          <td class="paramname"> <em>GUIRenderer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_snake.html">Snake</a> *&nbsp;</td>
-          <td class="paramname"> <em>snake</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>GUIRenderer</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -156,7 +161,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <tr><td valign="top"></td><td valign="top"><em>mouse</em>&nbsp;</td><td>: souris initialisée dans <a class="el" href="class_python3_d.html" title="classe principale du jeu">Python3D</a> </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>GUISystem</em>&nbsp;</td><td>: objet systeme CEGUI </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>GUIRenderer</em>&nbsp;</td><td>: Gestionnaire d'interface utilisateur CEGUI </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>snake</em>&nbsp;</td><td>: le serpent </td></tr>
   </table>
   </dd>
 </dl>
@@ -396,7 +400,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>CEGUI::LeftButton;CEGUI::RightButton;CEGUI::MiddleButton;CEGUI::X1Button;CEGUI::NoButton </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>CEGUI::LeftButton ; CEGUI::RightButton ; CEGUI::MiddleButton ; CEGUI::X1Button ; CEGUI::NoButton </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa18b11a5d259a27666b75ea19ecd7505"></a><!-- doxytag: member="EventListener::onPlay" ref="aa18b11a5d259a27666b75ea19ecd7505" args="(const CEGUI::EventArgs &amp;e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EventListener::onPlay </td>
+          <td>(</td>
+          <td class="paramtype">const CEGUI::EventArgs &amp;&nbsp;</td>
+          <td class="paramname"> <em>e</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback pour jouer. </p>
+<p>Callback appelé par CEGUI lorsque le bouton "jouer" est cliqué </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>toujours true (nécessaire pour le callback) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9b3c46b9c47c734394ebafadae72d803"></a><!-- doxytag: member="EventListener::onQuit" ref="a9b3c46b9c47c734394ebafadae72d803" args="(const CEGUI::EventArgs &amp;e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EventListener::onQuit </td>
+          <td>(</td>
+          <td class="paramtype">const CEGUI::EventArgs &amp;&nbsp;</td>
+          <td class="paramname"> <em>e</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Callback pour quitter. </p>
+<p>Callback appelé par CEGUI lorsque le bouton "quitter" est cliqué </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>toujours true (nécessaire pour le callback) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a002a24c87ba1a71951546a72cde60ba6"></a><!-- doxytag: member="EventListener::toMenu" ref="a002a24c87ba1a71951546a72cde60ba6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventListener::toMenu </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Entrée dans le menu principal. </p>
+<p>Méthode qui gère l'entrée dans le menu principal, au lancement du jeu ou depuis le jeu </p>
 
 </div>
 </div>
@@ -440,7 +508,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>DEBUG ONLY - compteur de frame avant rafraichissement de l'affichage des FPS </p>
+<p>Compteur de frame avant rafraichissement de l'affichage des FPS </p>
 
 </div>
 </div>
@@ -454,7 +522,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>DEBUG ONLY - la fréquence de rafraichissement de l'affichage des FPS </p>
+<p>La fréquence de rafraichissement de l'affichage des FPS </p>
 
 </div>
 </div>
@@ -468,7 +536,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>DEBUG ONLY - la fenêtre d'affichage des FPS </p>
+<p>La fenêtre d'affichage des FPS </p>
+
+</div>
+</div>
+<a class="anchor" id="af4f9dcf8a87b7b966fea96292acf9de5"></a><!-- doxytag: member="EventListener::_GameLayout" ref="af4f9dcf8a87b7b966fea96292acf9de5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CEGUI::Window* <a class="el" href="class_event_listener.html#af4f9dcf8a87b7b966fea96292acf9de5">EventListener::_GameLayout</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Layout CEGUI pendant le jeu (fenetres fps et stats) </p>
 
 </div>
 </div>
@@ -525,6 +607,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 <p>Clavier </p>
+
+</div>
+</div>
+<a class="anchor" id="aca8e0a3fe70cfb0a84870151e6fce32e"></a><!-- doxytag: member="EventListener::_MenuLayout" ref="aca8e0a3fe70cfb0a84870151e6fce32e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CEGUI::Window* <a class="el" href="class_event_listener.html#aca8e0a3fe70cfb0a84870151e6fce32e">EventListener::_MenuLayout</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Layout CEGUI pendant le menu (fond, boutons quitter et jouer) </p>
 
 </div>
 </div>
@@ -612,6 +708,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div>
 </div>
+<a class="anchor" id="ae549b635d65eaaf08ff30dcb855f81ab"></a><!-- doxytag: member="EventListener::_Time" ref="ae549b635d65eaaf08ff30dcb855f81ab" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_event_listener.html#ae549b635d65eaaf08ff30dcb855f81ab">EventListener::_Time</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>le nombre de secondes écoulées depuis le début de la partie </p>
+
+</div>
+</div>
+<a class="anchor" id="a5854e89f799d18c9867ccc9e172ab3bd"></a><!-- doxytag: member="EventListener::_Timer" ref="a5854e89f799d18c9867ccc9e172ab3bd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ogre::Timer* <a class="el" href="class_event_listener.html#a5854e89f799d18c9867ccc9e172ab3bd">EventListener::_Timer</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Timer pour calculer le temps de jeu </p>
+
+</div>
+</div>
+<a class="anchor" id="a83cc6e9eff6c7664c0f9e123909ef88a"></a><!-- doxytag: member="EventListener::_TimerWindow" ref="a83cc6e9eff6c7664c0f9e123909ef88a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CEGUI::Window* <a class="el" href="class_event_listener.html#a83cc6e9eff6c7664c0f9e123909ef88a">EventListener::_TimerWindow</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>la fenetre dans laquelle on affiche le temps et la taille </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Documents/Tahiti Bob/Bureau/Python3D/src/<a class="el" href="event_listener_8h_source.html">eventListener.h</a></li>
 <li>C:/Documents/Tahiti Bob/Bureau/Python3D/src/eventListener.cpp</li>
@@ -631,7 +769,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Fri Jan 1 23:25:45 2010 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Jan 10 13:07:54 2010 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

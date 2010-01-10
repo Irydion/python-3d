@@ -34,7 +34,7 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 	_GUIRenderer = GUIRenderer;
 
 	_SoundManager = new SoundManager();
-	_SoundManager->playStream("menu", 0);
+	_SoundManager->playStream("menu", rand() % _SoundManager->getNbTrack("menu"));
 
 	Bonus *bonus = new Bonus(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Bonus_Node"));
 	_Snake = new Snake(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Snake_HeadNode"), _SceneManager->getCamera("Camera"), bonus, _SoundManager);
@@ -116,7 +116,7 @@ bool EventListener::keyPressed(const OIS::KeyEvent &e)
 	{
 		case OIS::KC_SYSRQ:
 			_SoundManager->playSound(2);
-			_RenderWindow->writeContentsToFile("screenshot_" + Ogre::StringConverter::toString((int)time(NULL)) + ".png");
+			_RenderWindow->writeContentsToFile("../Screenshots/User/screenshot_" + Ogre::StringConverter::toString((int)time(NULL)) + ".png");
 			break;
 	}
 
@@ -241,7 +241,7 @@ bool EventListener::onPlay(const CEGUI::EventArgs& e)
 
 	_Snake->reInit();
 	_SoundManager->stopStream();
-	_SoundManager->playStream("game", 0);
+	_SoundManager->playStream("game", rand() % _SoundManager->getNbTrack("game"));
 
 	_Actif = 0;
 
@@ -256,8 +256,41 @@ void EventListener::toMenu()
 	_Snake->stop();
 	_GameListener->stop();
 
+	int taille = 0;
+	int temps = 0;
+	std::ifstream file;
+	file.open("data.p3d", std::fstream::binary | std::fstream::in);
+	if(file.is_open())
+	{
+		file.read((char *)(&taille), sizeof(int));
+		file.read((char *)(&temps), sizeof(int));
+		file.close();
+	}
+
+	if(_Snake->getSize() > taille)
+	{
+		Sleep(400);
+		_SoundManager->playSound(7);
+		Sleep(400);
+		_SoundManager->playSound(7);
+		Sleep(400);
+		_SoundManager->playSound(7);
+		Sleep(800);
+
+		taille = _Snake->getSize();
+		temps = _Time;
+		std::ofstream file;
+		file.open("data.p3d", std::fstream::binary | std::fstream::out | std::fstream::trunc);
+		file.write((char *)(&taille), sizeof(int));
+		file.write((char *)(&temps), sizeof(int));
+		file.close();
+		_SoundManager->playSound(2);
+		_RenderWindow->writeContentsToFile("../Screenshots/HighScores/highscore.png");
+		Sleep(800);
+	}
+
 	_SoundManager->stopStream();
-	_SoundManager->playStream("menu", 0);
+	_SoundManager->playStream("menu", rand() % _SoundManager->getNbTrack("menu"));
 
 	_GUISystem->setGUISheet(_MenuLayout);
 

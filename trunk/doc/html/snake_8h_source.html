@@ -70,43 +70,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033 <span class="preprocessor">#include &lt;CollisionTools.h&gt;</span>
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 <span class="preprocessor">#include &quot;<a class="code" href="bonus_8h.html" title="La classe bonus.">bonus.h</a>&quot;</span>
-<a name="l00036"></a>00036 
-<a name="l00043"></a><a class="code" href="class_snake.html">00043</a> <span class="keyword">class </span><a class="code" href="class_snake.html" title="le serpent">Snake</a>
-<a name="l00044"></a>00044 {
-<a name="l00045"></a>00045         <span class="keyword">public</span>:
-<a name="l00057"></a>00057                 <a class="code" href="class_snake.html#a38886956eae80a8dd22315250382fac9" title="Constructeur.">Snake</a>(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> size, <a class="code" href="class_bonus.html" title="la classe qui gère le bonus">Bonus</a> *b);
-<a name="l00063"></a>00063                 <a class="code" href="class_snake.html#a941fbaad96ee33ca3a7c30c28ca44ef8" title="Destructeur.">~Snake</a>();
-<a name="l00064"></a>00064 
-<a name="l00070"></a>00070                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#ac0ef4f6798ad0f4851f8110241b731e6" title="Tourner vers le haut.">turnUp</a>();
-<a name="l00076"></a>00076                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#aac03ab94e6e6895abe121d8464cddb8f" title="Tourner vers le bas.">turnDown</a>();
-<a name="l00082"></a>00082                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#a9574cebf257afe6e2d7f1fc34143a46d" title="Tourner vers la droite.">turnRight</a>();
-<a name="l00088"></a>00088                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#af64b861030850c0f660d50fb0c58801f" title="Tourner vers la gauche.">turnLeft</a>();
-<a name="l00089"></a>00089 
-<a name="l00097"></a>00097                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#a46961cc0e69e7b0a2fa8dc061ff46a38" title="Mise à jour du serpent.">update</a>(Ogre::Real timeSinceLastFrame);
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099         <span class="keyword">public</span>:
-<a name="l00101"></a><a class="code" href="class_snake.html#a6f63c3b9afb33bea530af0295d8b8eff">00101</a>                 Ogre::SceneNode *<a class="code" href="class_snake.html#a6f63c3b9afb33bea530af0295d8b8eff">_Head</a>;
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103         <span class="keyword">protected</span>:
-<a name="l00105"></a><a class="code" href="class_snake.html#aaba3ee11c41eaf21b112d1198f04761b">00105</a>                 Ogre::Vector3 <a class="code" href="class_snake.html#aaba3ee11c41eaf21b112d1198f04761b">_Direction</a>;
-<a name="l00107"></a><a class="code" href="class_snake.html#a371f47112049ef1588b5ce8f8919e7f2">00107</a>                 <span class="keywordtype">int</span> <a class="code" href="class_snake.html#a371f47112049ef1588b5ce8f8919e7f2">_Size</a>;
-<a name="l00109"></a><a class="code" href="class_snake.html#ac0d7ad186a6e1890f3766d85a2178588">00109</a>                 <span class="keywordtype">int</span> <a class="code" href="class_snake.html#ac0d7ad186a6e1890f3766d85a2178588">_IsTurning</a>;
-<a name="l00111"></a><a class="code" href="class_snake.html#aaf79fcb5936ad59df2ba2cf75c3a7ae1">00111</a>                 Ogre::Real <a class="code" href="class_snake.html#aaf79fcb5936ad59df2ba2cf75c3a7ae1">_ActualAngle</a>;
-<a name="l00113"></a><a class="code" href="class_snake.html#a0485e041821fac10e48fc268a4efdac0">00113</a>                 Ogre::Real <a class="code" href="class_snake.html#a0485e041821fac10e48fc268a4efdac0">_TurnSpeed</a>;
-<a name="l00115"></a><a class="code" href="class_snake.html#a979acd66f20f0b6d1c178607b7e0c98b">00115</a>                 <span class="keywordtype">int</span> <a class="code" href="class_snake.html#a979acd66f20f0b6d1c178607b7e0c98b">_NextTurn</a>;
-<a name="l00117"></a><a class="code" href="class_snake.html#ae7d65de713835495a2dc1dd6f57cfd6f">00117</a>                 Ogre::Real <a class="code" href="class_snake.html#ae7d65de713835495a2dc1dd6f57cfd6f">_NextEnt</a>;
-<a name="l00119"></a><a class="code" href="class_snake.html#aefab5774e722c572e59bc681a801a0c2">00119</a>                 <span class="keywordtype">int</span> <a class="code" href="class_snake.html#aefab5774e722c572e59bc681a801a0c2">_NbNode</a>;
-<a name="l00121"></a><a class="code" href="class_snake.html#a64522bba5ab4b1e00c6a97e66e37678d">00121</a>                 std::deque&lt;int&gt; <a class="code" href="class_snake.html#a64522bba5ab4b1e00c6a97e66e37678d">_ListNode</a>;
-<a name="l00123"></a><a class="code" href="class_snake.html#a79a762795b89849ca5be81cfc3e81959">00123</a>                 Ogre::SceneNode *<a class="code" href="class_snake.html#a79a762795b89849ca5be81cfc3e81959">_TailNode</a>;
-<a name="l00124"></a>00124 
-<a name="l00126"></a><a class="code" href="class_snake.html#a129ae498d204c13814c1a4ba8dac2237">00126</a>                 MOC::CollisionTools *<a class="code" href="class_snake.html#a129ae498d204c13814c1a4ba8dac2237">_CollisionTools</a>;
-<a name="l00128"></a><a class="code" href="class_snake.html#aba910de70c5d55fc67c2f6b261130719">00128</a>                 Ogre::Vector3 <a class="code" href="class_snake.html#aba910de70c5d55fc67c2f6b261130719">_LastPosition</a>;
-<a name="l00129"></a>00129 
-<a name="l00131"></a><a class="code" href="class_snake.html#a837cd882ee30af4efc6689b7eece4a15">00131</a>                 <a class="code" href="class_bonus.html" title="la classe qui gère le bonus">Bonus</a> *<a class="code" href="class_snake.html#a837cd882ee30af4efc6689b7eece4a15">_Bonus</a>;
-<a name="l00133"></a><a class="code" href="class_snake.html#a1ebda9bef5de78e6859dc290614ac3c3">00133</a>                 Ogre::SceneManager *<a class="code" href="class_snake.html#a1ebda9bef5de78e6859dc290614ac3c3">_SceneManager</a>;
-<a name="l00134"></a>00134 };
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136 <span class="preprocessor">#endif // SNAKE_H</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#include &quot;<a class="code" href="sound_manager_8h.html" title="SoundManager : le gestionnaire de son.">SoundManager.h</a>&quot;</span>
+<a name="l00037"></a>00037 
+<a name="l00039"></a><a class="code" href="snake_8h.html#afa9188776d909e94ead6cf6ffbbdd1e8">00039</a> <span class="preprocessor">#define TURN_SPEED 300</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span>
+<a name="l00047"></a><a class="code" href="class_snake.html">00047</a> <span class="keyword">class </span><a class="code" href="class_snake.html" title="le serpent">Snake</a>
+<a name="l00048"></a>00048 {
+<a name="l00049"></a>00049         <span class="keyword">public</span>:
+<a name="l00061"></a>00061                 <a class="code" href="class_snake.html#acfa6c7977549a6ffc0ea522977452f71" title="Constructeur.">Snake</a>(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *cam, <a class="code" href="class_bonus.html" title="la classe qui gère le bonus">Bonus</a> *b, <a class="code" href="class_sound_manager.html" title="gestionnaire de son">SoundManager</a> *soundMgr);
+<a name="l00067"></a>00067                 <a class="code" href="class_snake.html#a941fbaad96ee33ca3a7c30c28ca44ef8" title="Destructeur.">~Snake</a>();
+<a name="l00068"></a>00068 
+<a name="l00074"></a>00074                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#a696f41bf0b58c0248731a2959a179332" title="Lancement de la partie.">reInit</a>();
+<a name="l00080"></a>00080                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#ac9e1c19b55cb338406d5965ede68116d" title="Arret de la partie.">stop</a>();
+<a name="l00081"></a>00081 
+<a name="l00087"></a>00087                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#ac0ef4f6798ad0f4851f8110241b731e6" title="Tourner vers le haut.">turnUp</a>();
+<a name="l00093"></a>00093                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#aac03ab94e6e6895abe121d8464cddb8f" title="Tourner vers le bas.">turnDown</a>();
+<a name="l00099"></a>00099                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#a9574cebf257afe6e2d7f1fc34143a46d" title="Tourner vers la droite.">turnRight</a>();
+<a name="l00105"></a>00105                 <span class="keywordtype">void</span> <a class="code" href="class_snake.html#af64b861030850c0f660d50fb0c58801f" title="Tourner vers la gauche.">turnLeft</a>();
+<a name="l00106"></a>00106 
+<a name="l00114"></a>00114                 <span class="keywordtype">bool</span> <a class="code" href="class_snake.html#a698146a846769c0ab80d3bf560cf4bc1" title="Mise à jour du serpent.">update</a>(Ogre::Real timeSinceLastFrame);
+<a name="l00115"></a>00115 
+<a name="l00122"></a>00122                 <span class="keywordtype">int</span> <a class="code" href="class_snake.html#a9f0bb3c380c36b7d4c0e20db2f90dc92" title="Accesseur get pour la taille.">getSize</a>();
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124         <span class="keyword">public</span>:
+<a name="l00126"></a><a class="code" href="class_snake.html#a6f63c3b9afb33bea530af0295d8b8eff">00126</a>                 Ogre::SceneNode *<a class="code" href="class_snake.html#a6f63c3b9afb33bea530af0295d8b8eff">_Head</a>;
+<a name="l00127"></a>00127 
+<a name="l00128"></a>00128         <span class="keyword">protected</span>:
+<a name="l00130"></a><a class="code" href="class_snake.html#aaba3ee11c41eaf21b112d1198f04761b">00130</a>                 Ogre::Vector3 <a class="code" href="class_snake.html#aaba3ee11c41eaf21b112d1198f04761b">_Direction</a>;
+<a name="l00132"></a><a class="code" href="class_snake.html#a371f47112049ef1588b5ce8f8919e7f2">00132</a>                 <span class="keywordtype">int</span> <a class="code" href="class_snake.html#a371f47112049ef1588b5ce8f8919e7f2">_Size</a>;
+<a name="l00134"></a><a class="code" href="class_snake.html#ac0d7ad186a6e1890f3766d85a2178588">00134</a>                 <span class="keywordtype">int</span> <a class="code" href="class_snake.html#ac0d7ad186a6e1890f3766d85a2178588">_IsTurning</a>;
+<a name="l00136"></a><a class="code" href="class_snake.html#aaf79fcb5936ad59df2ba2cf75c3a7ae1">00136</a>                 Ogre::Real <a class="code" href="class_snake.html#aaf79fcb5936ad59df2ba2cf75c3a7ae1">_ActualAngle</a>;
+<a name="l00138"></a><a class="code" href="class_snake.html#a9f84eacdbf5957e40213db342a187343">00138</a>                 Ogre::Quaternion <a class="code" href="class_snake.html#a9f84eacdbf5957e40213db342a187343">_AntiLeaning</a>;
+<a name="l00140"></a><a class="code" href="class_snake.html#a0485e041821fac10e48fc268a4efdac0">00140</a>                 Ogre::Real <a class="code" href="class_snake.html#a0485e041821fac10e48fc268a4efdac0">_TurnSpeed</a>;
+<a name="l00142"></a><a class="code" href="class_snake.html#a979acd66f20f0b6d1c178607b7e0c98b">00142</a>                 <span class="keywordtype">int</span> <a class="code" href="class_snake.html#a979acd66f20f0b6d1c178607b7e0c98b">_NextTurn</a>;
+<a name="l00144"></a><a class="code" href="class_snake.html#ae7d65de713835495a2dc1dd6f57cfd6f">00144</a>                 Ogre::Real <a class="code" href="class_snake.html#ae7d65de713835495a2dc1dd6f57cfd6f">_NextEnt</a>;
+<a name="l00146"></a><a class="code" href="class_snake.html#aefab5774e722c572e59bc681a801a0c2">00146</a>                 <span class="keywordtype">int</span> <a class="code" href="class_snake.html#aefab5774e722c572e59bc681a801a0c2">_NbNode</a>;
+<a name="l00148"></a><a class="code" href="class_snake.html#a64522bba5ab4b1e00c6a97e66e37678d">00148</a>                 std::deque&lt;int&gt; <a class="code" href="class_snake.html#a64522bba5ab4b1e00c6a97e66e37678d">_ListNode</a>;
+<a name="l00150"></a><a class="code" href="class_snake.html#a79a762795b89849ca5be81cfc3e81959">00150</a>                 Ogre::SceneNode *<a class="code" href="class_snake.html#a79a762795b89849ca5be81cfc3e81959">_TailNode</a>;
+<a name="l00152"></a><a class="code" href="class_snake.html#a8d8dc95fc338134b2a43a94b3b55210f">00152</a>                 Ogre::SceneNode *<a class="code" href="class_snake.html#a8d8dc95fc338134b2a43a94b3b55210f">_CompassNode</a>;
+<a name="l00153"></a>00153 
+<a name="l00155"></a><a class="code" href="class_snake.html#a129ae498d204c13814c1a4ba8dac2237">00155</a>                 MOC::CollisionTools *<a class="code" href="class_snake.html#a129ae498d204c13814c1a4ba8dac2237">_CollisionTools</a>;
+<a name="l00157"></a><a class="code" href="class_snake.html#aba910de70c5d55fc67c2f6b261130719">00157</a>                 Ogre::Vector3 <a class="code" href="class_snake.html#aba910de70c5d55fc67c2f6b261130719">_LastPosition</a>;
+<a name="l00158"></a>00158 
+<a name="l00160"></a><a class="code" href="class_snake.html#a837cd882ee30af4efc6689b7eece4a15">00160</a>                 <a class="code" href="class_bonus.html" title="la classe qui gère le bonus">Bonus</a> *<a class="code" href="class_snake.html#a837cd882ee30af4efc6689b7eece4a15">_Bonus</a>;
+<a name="l00162"></a><a class="code" href="class_snake.html#a1ebda9bef5de78e6859dc290614ac3c3">00162</a>                 Ogre::SceneManager *<a class="code" href="class_snake.html#a1ebda9bef5de78e6859dc290614ac3c3">_SceneManager</a>;
+<a name="l00164"></a><a class="code" href="class_snake.html#a319d0304c3325acc02dcbc50dbde8265">00164</a>                 <a class="code" href="class_sound_manager.html" title="gestionnaire de son">SoundManager</a> *<a class="code" href="class_snake.html#a319d0304c3325acc02dcbc50dbde8265">_SoundManager</a>;
+<a name="l00165"></a>00165 };
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167 <span class="preprocessor">#endif // SNAKE_H</span>
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -122,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Fri Jan 1 23:25:45 2010 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Jan 10 13:07:54 2010 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

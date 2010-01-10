@@ -273,7 +273,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 	}
 	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 20, 0, BONUS_QUERY_FLAG))
 	{
-		_Size += _Size/5;
+		_Size += _Size/10;
 		_Bonus->changeBonus();
 		_SoundManager->playSound(rand() % 3 + 6);
 	}

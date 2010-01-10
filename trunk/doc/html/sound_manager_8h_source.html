@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00038"></a>00038 <span class="preprocessor"></span>
 <a name="l00039"></a><a class="code" href="sound_manager_8h.html#aa83491a943b3649ac5033e4490f148b5">00039</a> <span class="preprocessor">#define TRACK_GAME 2</span>
 <a name="l00040"></a>00040 <span class="preprocessor"></span>
-<a name="l00041"></a><a class="code" href="sound_manager_8h.html#adc7f5969e9caea1d7e0cb0298bbcecb1">00041</a> <span class="preprocessor">#define NB_SOUND 2</span>
+<a name="l00041"></a><a class="code" href="sound_manager_8h.html#adc7f5969e9caea1d7e0cb0298bbcecb1">00041</a> <span class="preprocessor">#define NB_SOUND 9</span>
 <a name="l00042"></a>00042 <span class="preprocessor"></span>
 <a name="l00049"></a><a class="code" href="class_sound_manager.html">00049</a> <span class="keyword">class </span><a class="code" href="class_sound_manager.html" title="gestionnaire de son">SoundManager</a>
 <a name="l00050"></a>00050 {
@@ -86,22 +86,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00071"></a>00071 
 <a name="l00079"></a>00079                 <span class="keywordtype">void</span> <a class="code" href="class_sound_manager.html#a5b67249c855a6e25fc0bfbe26263efa4" title="Jouer un son.">playSound</a>(<span class="keywordtype">int</span> sound);
 <a name="l00088"></a>00088                 <span class="keywordtype">void</span> <a class="code" href="class_sound_manager.html#a9d20bf67e82af818acd7f992da7635b2" title="Jouer une musique.">playStream</a>(std::string type, <span class="keywordtype">int</span> track);
-<a name="l00097"></a>00097                 <span class="keywordtype">void</span> <a class="code" href="class_sound_manager.html#a56d3b77165e5273b8814afc7844650e8" title="Stopper une musique.">stopStream</a>(std::string type, <span class="keywordtype">int</span> track);
-<a name="l00098"></a>00098 
-<a name="l00104"></a>00104                 <span class="keywordtype">void</span> <a class="code" href="class_sound_manager.html#a05cb0697f1a993704821098883a291f5" title="Mettre à jour le gestionnaire de son.">update</a>();
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106         <span class="keyword">protected</span>:
-<a name="l00108"></a><a class="code" href="class_sound_manager.html#ab7e51991749f997ddf0b68aef40e654b">00108</a>                 FMOD::System *<a class="code" href="class_sound_manager.html#ab7e51991749f997ddf0b68aef40e654b">_FMODSystem</a>;
-<a name="l00110"></a><a class="code" href="class_sound_manager.html#af9ed6609e13a0f4b6481e6d1dbb4cbc2">00110</a>                 FMOD::Sound *<a class="code" href="class_sound_manager.html#af9ed6609e13a0f4b6481e6d1dbb4cbc2">_GameMusic</a>[<a class="code" href="sound_manager_8h.html#aa83491a943b3649ac5033e4490f148b5">TRACK_GAME</a>];
-<a name="l00112"></a><a class="code" href="class_sound_manager.html#a22f076e4bbe9894c43141521eab13ecc">00112</a>                 FMOD::Sound *<a class="code" href="class_sound_manager.html#a22f076e4bbe9894c43141521eab13ecc">_MenuMusic</a>[<a class="code" href="sound_manager_8h.html#a4350b0fd0eb6b4bdb73bb3df751a8e0b">TRACK_MENU</a>];
-<a name="l00114"></a><a class="code" href="class_sound_manager.html#ab2dabc91c0437126acb89272498b306d">00114</a>                 FMOD::Channel *<a class="code" href="class_sound_manager.html#ab2dabc91c0437126acb89272498b306d">_GameMusicChan</a>[<a class="code" href="sound_manager_8h.html#aa83491a943b3649ac5033e4490f148b5">TRACK_GAME</a>];
-<a name="l00116"></a><a class="code" href="class_sound_manager.html#af1521b9c9d217912aed64b0f0bea764b">00116</a>                 FMOD::Channel *<a class="code" href="class_sound_manager.html#af1521b9c9d217912aed64b0f0bea764b">_MenuMusicChan</a>[<a class="code" href="sound_manager_8h.html#a4350b0fd0eb6b4bdb73bb3df751a8e0b">TRACK_MENU</a>];
-<a name="l00118"></a><a class="code" href="class_sound_manager.html#a44b9961c3a526bfd6eefb6183c81f37f">00118</a>                 FMOD::Sound *<a class="code" href="class_sound_manager.html#a44b9961c3a526bfd6eefb6183c81f37f">_Sound</a>[<a class="code" href="sound_manager_8h.html#adc7f5969e9caea1d7e0cb0298bbcecb1">NB_SOUND</a>];
-<a name="l00120"></a><a class="code" href="class_sound_manager.html#af3e87d7734cb620ef26c150f8491ded4">00120</a>                 <span class="keywordtype">int</span> <a class="code" href="class_sound_manager.html#af3e87d7734cb620ef26c150f8491ded4">_Track</a>;
-<a name="l00122"></a><a class="code" href="class_sound_manager.html#aa3442849ff827656dc454e90378e1955">00122</a>                 std::string <a class="code" href="class_sound_manager.html#aa3442849ff827656dc454e90378e1955">_Type</a>;
-<a name="l00123"></a>00123 };
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125 <span class="preprocessor">#endif // SOUNDMANAGER_H</span>
+<a name="l00094"></a>00094                 <span class="keywordtype">void</span> <a class="code" href="class_sound_manager.html#a007254ea42c6e2f14274dbdf64276852" title="Stopper une musique.">stopStream</a>();
+<a name="l00095"></a>00095 
+<a name="l00101"></a>00101                 <span class="keywordtype">void</span> <a class="code" href="class_sound_manager.html#a05cb0697f1a993704821098883a291f5" title="Mettre à jour le gestionnaire de son.">update</a>();
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103         <span class="keyword">protected</span>:
+<a name="l00105"></a><a class="code" href="class_sound_manager.html#ab7e51991749f997ddf0b68aef40e654b">00105</a>                 FMOD::System *<a class="code" href="class_sound_manager.html#ab7e51991749f997ddf0b68aef40e654b">_FMODSystem</a>;
+<a name="l00107"></a><a class="code" href="class_sound_manager.html#af9ed6609e13a0f4b6481e6d1dbb4cbc2">00107</a>                 FMOD::Sound *<a class="code" href="class_sound_manager.html#af9ed6609e13a0f4b6481e6d1dbb4cbc2">_GameMusic</a>[<a class="code" href="sound_manager_8h.html#aa83491a943b3649ac5033e4490f148b5">TRACK_GAME</a>];
+<a name="l00109"></a><a class="code" href="class_sound_manager.html#a22f076e4bbe9894c43141521eab13ecc">00109</a>                 FMOD::Sound *<a class="code" href="class_sound_manager.html#a22f076e4bbe9894c43141521eab13ecc">_MenuMusic</a>[<a class="code" href="sound_manager_8h.html#a4350b0fd0eb6b4bdb73bb3df751a8e0b">TRACK_MENU</a>];
+<a name="l00111"></a><a class="code" href="class_sound_manager.html#ab2dabc91c0437126acb89272498b306d">00111</a>                 FMOD::Channel *<a class="code" href="class_sound_manager.html#ab2dabc91c0437126acb89272498b306d">_GameMusicChan</a>[<a class="code" href="sound_manager_8h.html#aa83491a943b3649ac5033e4490f148b5">TRACK_GAME</a>];
+<a name="l00113"></a><a class="code" href="class_sound_manager.html#af1521b9c9d217912aed64b0f0bea764b">00113</a>                 FMOD::Channel *<a class="code" href="class_sound_manager.html#af1521b9c9d217912aed64b0f0bea764b">_MenuMusicChan</a>[<a class="code" href="sound_manager_8h.html#a4350b0fd0eb6b4bdb73bb3df751a8e0b">TRACK_MENU</a>];
+<a name="l00115"></a><a class="code" href="class_sound_manager.html#a44b9961c3a526bfd6eefb6183c81f37f">00115</a>                 FMOD::Sound *<a class="code" href="class_sound_manager.html#a44b9961c3a526bfd6eefb6183c81f37f">_Sound</a>[<a class="code" href="sound_manager_8h.html#adc7f5969e9caea1d7e0cb0298bbcecb1">NB_SOUND</a>];
+<a name="l00117"></a><a class="code" href="class_sound_manager.html#af3e87d7734cb620ef26c150f8491ded4">00117</a>                 <span class="keywordtype">int</span> <a class="code" href="class_sound_manager.html#af3e87d7734cb620ef26c150f8491ded4">_Track</a>;
+<a name="l00119"></a><a class="code" href="class_sound_manager.html#aa3442849ff827656dc454e90378e1955">00119</a>                 std::string <a class="code" href="class_sound_manager.html#aa3442849ff827656dc454e90378e1955">_Type</a>;
+<a name="l00120"></a>00120 };
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122 <span class="preprocessor">#endif // SOUNDMANAGER_H</span>
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Fri Jan 1 23:25:45 2010 for Python3D by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Jan 10 13:07:54 2010 for Python3D by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

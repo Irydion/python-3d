@@ -39,6 +39,36 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 #include "bonus.h"
 
 /**
+ * \class WinListener
+ * \brief classe pour la gestion des evenements de la fenetre
+ *
+ * Cette classe s'occupe de gérer les evenements de la fenetre comme le click sur la croix
+ */
+class WinListener : public Ogre::WindowEventListener
+{
+	public:
+		/**
+		 * \brief Constructeur
+		 *
+		 * Constructeur de la classe WinListener
+		 */
+		WinListener()
+		{
+		}
+
+		/**
+		 * \brief Gestion de la fermeture de la fenetre
+		 *
+		 * Méthode qui permet d'empecher la fermeture de la fenetre avec altf4 ou en cliquant sur la croix
+		 * \return toujours false
+		 */
+		bool windowClosing(Ogre::RenderWindow* rw)
+		{
+			return false;
+		}
+};
+
+/**
  * \class Python3D
  * \brief classe principale du jeu
  *

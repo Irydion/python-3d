@@ -22,19 +22,6 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 
 #include "python3d.h"
 
-class WinListener : public Ogre::WindowEventListener
-{
-	public:
-		WinListener()
-		{
-		}
-
-		bool windowClosing(Ogre::RenderWindow* rw)
-		{
-			return false;
-		}
-};
-
 Python3D::Python3D()
 {
 	_Root = 0;
@@ -69,7 +56,7 @@ void Python3D::run()
 void Python3D::start()
 {
 	_Root = new Ogre::Root();
-	if(!_Root->showConfigDialog())
+	if(!_Root->restoreConfig() && !_Root->showConfigDialog())
 		std::exit(0);
 
 	loadResources();
