@@ -42,7 +42,7 @@ Snake::Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *
 	_Head->attachObject(cam);
 	_Head->setPosition(Ogre::Vector3(0, 0, 0));
 
-	_Direction = Ogre::Vector3(0, 0, -150);
+	_Direction = Ogre::Vector3(0, 0, -200);
 
 	_CompassNode = _Head->createChildSceneNode("snakeNodeCompass");
 	Ogre::Entity *ent = _SceneManager->createEntity("compass", "compass.mesh");
@@ -69,12 +69,12 @@ void Snake::reInit()
 
 	_SceneManager->getCamera("Camera")->setPosition(0, 0, 0);
 	_SceneManager->getCamera("Camera")->setOrientation(Ogre::Quaternion::IDENTITY);
-	_Head->setPosition(Ogre::Vector3(0, 200, 100));
+	_Head->setPosition(Ogre::Vector3(0, 400, 400));
 	_Head->setOrientation(Ogre::Quaternion::IDENTITY);
 
 
 	_LastPosition = _Head->getPosition();
-	_Direction = Ogre::Vector3(0, 0, -100);
+	_Direction = Ogre::Vector3(0, 0, -200);
 
 	_CompassNode->attachObject(_SceneManager->getEntity("compass"));
 
@@ -153,6 +153,7 @@ void Snake::turnLeft()
 bool Snake::update(Ogre::Real timeSinceLastFrame)
 {
 	_LastPosition = _Head->getPosition();
+	//_Head->setOrientation(_SceneManager->getCamera("Camera")->getOrientation());
 	_Head->translate(_Direction * timeSinceLastFrame, Ogre::Node::TS_LOCAL);
 
 	if(_IsTurning)
@@ -215,7 +216,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 
 	if(_NextEnt <= 0)
 	{
-		_NextEnt = 0.25;
+		_NextEnt = 0.1;
 		if(_NbNode < _Size)
 		{
 			++_NbNode;
@@ -263,7 +264,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 	}
 	_NextEnt -= timeSinceLastFrame;
 
-	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 15, 0, MAP_QUERY_FLAG | SNAKE_QUERY_FLAG))
+	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 20, 0, MAP_QUERY_FLAG | SNAKE_QUERY_FLAG))
 	{
 		_SoundManager->playSound(5);
 		Sleep(800);
@@ -271,7 +272,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 		Sleep(1000);
 		return false;
 	}
-	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 20, 0, BONUS_QUERY_FLAG))
+	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 30, 0, BONUS_QUERY_FLAG))
 	{
 		_Size += _Size/10;
 		_Bonus->changeBonus();

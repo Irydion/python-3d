@@ -237,6 +237,7 @@ bool EventListener::onPlay(const CEGUI::EventArgs& e)
 {
 	_SoundManager->playSound(0);
 	_GUISystem->setGUISheet(_GameLayout);
+	_GUISystem->setDefaultMouseCursor(0);
 	_SceneManager->getCamera("Camera")->setPosition(0, 0, 0);
 
 	_Snake->reInit();
@@ -293,6 +294,7 @@ void EventListener::toMenu()
 	_SoundManager->playStream("menu", rand() % _SoundManager->getNbTrack("menu"));
 
 	_GUISystem->setGUISheet(_MenuLayout);
+	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
 
 	_Actif = 1;
 }

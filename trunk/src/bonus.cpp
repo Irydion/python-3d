@@ -29,7 +29,7 @@ Bonus::Bonus(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *node)
 
 	_Node = node;
 	_Node->attachObject(_Entity);
-	_Node->setPosition(Ogre::Vector3(0, 0, 0));
+	_Node->setPosition(Ogre::Vector3(0, 100, 0));
 	_Node->setScale(20, 20, 20);
 
 	_CollisionTool = new MOC::CollisionTools(sceneMgr);
@@ -45,7 +45,7 @@ void Bonus::changeBonus()
 	int direction;
 	Ogre::Vector3 next;
 	Ogre::Vector3 pos;
-	for(int i = 0; i < 60; ++i)
+	for(int i = 0; i < 84; ++i)
 	{
 		pos = _Node->getPosition();
 		next = pos;
@@ -53,24 +53,24 @@ void Bonus::changeBonus()
 		switch(direction)
 		{
 			case 0:
-				next.x += 20;
+				next.x += 50;
 				break;
 			case 1:
-				next.y += 20;
+				next.y += 50;
 				break;
 			case 2:
-				next.z += 20;
+				next.z += 50;
 				break;
 			case 3:
-				next.x -= 20;
+				next.x -= 50;
 				break;
 			case 4:
-				next.y -= 20;
+				next.y -= 50;
 				break;
 			case 5:
-				next.z -= 20;
+				next.z -= 50;
 		}
-		if(!_CollisionTool->collidesWithEntity(pos, next, 10, 0, MAP_QUERY_FLAG))
+		if(!_CollisionTool->collidesWithEntity(pos, next, 20, 0, MAP_QUERY_FLAG | SNAKE_QUERY_FLAG))
 			_Node->setPosition(next);
 	}
 }
