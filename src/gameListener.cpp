@@ -77,6 +77,11 @@ bool GameListener::mouseMoved(const OIS::MouseEvent &e)
 		yaw += e.state.X.rel * 0.1;
 		pitch += e.state.Y.rel * 0.1;
 	}
+	else
+	{
+		_Snake->_Head->yaw(Ogre::Degree(e.state.X.rel * -0.1));
+		_Snake->_Head->pitch(Ogre::Degree(e.state.Y.rel * -0.1));
+	}
 
 	return true;
 }
