@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout >
+    <Window Type="DefaultWindow" Name="root3" >
+        <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+        <Property Name="UnifiedAreaRect" Value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Window Type="TaharezLook/StaticText" Name="StatsWindowGO" >
+            <Property Name="Text" >Taille : 999999
+Temps : 99:99:99</Property>
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.00979,0},{0.014027,0},{0.166188,0},{0.0994231,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="Rejouer" >
+            <Property Name="Text" Value="Rejouer" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.625,0},{0.6,0},{0.675,0}}" />
+        </Window>
+        <Window Type="TaharezLook/Button" Name="Retour_au_menu" >
+            <Property Name="Text" Value="Retour au menu" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.4,0},{0.725,0},{0.6,0},{0.775,0}}" />
+        </Window>
+        <Window Type="TaharezLook/StaticText" Name="GameOver" >
+			<Property Name="Font" Value="soloBig" />
+            <Property Name="Text" Value="      Game Over" />
+            <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.35,0},{0.015251,0},{0.65,0},{0.157124,0}}" />
+        </Window>
+    </Window>
+</GUILayout>

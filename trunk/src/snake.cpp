@@ -266,6 +266,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 
 	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 20, 0, MAP_QUERY_FLAG | SNAKE_QUERY_FLAG))
 	{
+		_SoundManager->stopStream();
 		_SoundManager->playSound(5);
 		Sleep(800);
 		_SoundManager->playSound(4);

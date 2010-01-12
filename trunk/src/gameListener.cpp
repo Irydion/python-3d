@@ -112,7 +112,10 @@ bool GameListener::mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id
 
 void GameListener::stop()
 {
-	_RightMouse = false;
-	_Camera->yaw(Ogre::Degree(yaw));
-	_Camera->pitch(Ogre::Degree(pitch));
+	if(_RightMouse)
+	{
+		_RightMouse = false;
+		_Camera->yaw(Ogre::Degree(yaw));
+		_Camera->pitch(Ogre::Degree(pitch));
+	}
 }

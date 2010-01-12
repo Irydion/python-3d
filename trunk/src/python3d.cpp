@@ -129,6 +129,7 @@ void Python3D::initCEGUI()
 	_GUIRenderer = new CEGUI::OgreCEGUIRenderer(_RenderWindow, Ogre::RENDER_QUEUE_OVERLAY, false, 3000, _SceneManager);
 	_GUISystem = new CEGUI::System(_GUIRenderer);
 	CEGUI::SchemeManager::getSingleton().loadScheme((CEGUI::utf8*)"TaharezLookSkin.scheme");
+	CEGUI::FontManager::getSingleton().createFont( "soloBig.font" );
 	_GUISystem->setDefaultFont((CEGUI::utf8*)"solo");
 
 	CEGUI::Logger::getSingleton().setLoggingLevel(CEGUI::Insane);

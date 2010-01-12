@@ -46,11 +46,14 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
     _Mouse->setEventCallback(this);
 
 	_Continue = true;
+	_FromMenu = true;
 	_Actif = 1;
 
 	_SceneManager->getCamera("Camera")->setPosition(-10000, 0, 0);
 	_MenuLayout = CEGUI::WindowManager::getSingleton().loadWindowLayout((CEGUI::utf8*)"menu.layout");
 	_GameLayout = CEGUI::WindowManager::getSingleton().loadWindowLayout((CEGUI::utf8*)"game.layout");
+	_GameOverLayout = CEGUI::WindowManager::getSingleton().loadWindowLayout((CEGUI::utf8*)"gameover.layout");
+
 	_GUISystem->setGUISheet(_MenuLayout);
 	CEGUI::ImagesetManager::getSingleton().createImagesetFromImageFile("image_fond", "fond.png");
 	_MenuLayout->getChild("fond")->setProperty("Image", "set:image_fond image:full_image");
@@ -60,6 +63,11 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::onPlay, this));
 
 	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
+
+	b = (CEGUI::PushButton *)_GameOverLayout->getChild("Rejouer");
+	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::onPlay, this));
+	b = (CEGUI::PushButton *)_GameOverLayout->getChild("Retour_au_menu");
+	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::toMenu, this));
 
 	_FPSWindow = CEGUI::WindowManager::getSingleton().getWindow("FPSWindow");
 	_FPSUpdateFreq = 50;
@@ -85,7 +93,7 @@ bool EventListener::frameStarted(const Ogre::FrameEvent &evt)
 	{
 		case 0:
 			if(!_GameListener->frameStarted(evt))
-				toMenu();
+				gameOver();
 			break;
 		case 1:
 			_MenuListener->frameStarted(evt);
@@ -252,10 +260,34 @@ bool EventListener::onPlay(const CEGUI::EventArgs& e)
 	return true;
 }
 
+bool EventListener::toMenu(const CEGUI::EventArgs& e)
+{
+	toMenu();
+	return true;
+}
+
 void EventListener::toMenu()
 {
 	_Snake->stop();
 	_GameListener->stop();
+
+	_SoundManager->stopStream();
+	_SoundManager->playStream("menu", rand() % _SoundManager->getNbTrack("menu"));
+
+	_GUISystem->setGUISheet(_MenuLayout);
+	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
+
+	_Actif = 1;
+}
+
+void EventListener::gameOver()
+{
+	_Snake->stop();
+	_GameListener->stop();
+
+	_GUISystem->setGUISheet(_GameOverLayout);
+	CEGUI::WindowManager::getSingleton().getWindow("StatsWindowGO")->setText(_TimerWindow->getText());
+	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
 
 	int taille = 0;
 	int temps = 0;
@@ -268,15 +300,13 @@ void EventListener::toMenu()
 		file.close();
 	}
 
+	CEGUI::WindowManager::getSingleton().getWindow("GameOver")->setText("       Game Over");
+
 	if(_Snake->getSize() > taille)
 	{
-		Sleep(400);
-		_SoundManager->playSound(7);
-		Sleep(400);
-		_SoundManager->playSound(7);
-		Sleep(400);
-		_SoundManager->playSound(7);
-		Sleep(800);
+		_SoundManager->playSound(9);
+
+		CEGUI::WindowManager::getSingleton().getWindow("GameOver")->setText("       Game Over\n Nouveau record !");
 
 		taille = _Snake->getSize();
 		temps = _Time;
@@ -285,16 +315,10 @@ void EventListener::toMenu()
 		file.write((char *)(&taille), sizeof(int));
 		file.write((char *)(&temps), sizeof(int));
 		file.close();
-		_SoundManager->playSound(2);
 		_RenderWindow->writeContentsToFile("../Screenshots/HighScores/highscore.png");
-		Sleep(800);
 	}
 
-	_SoundManager->stopStream();
 	_SoundManager->playStream("menu", rand() % _SoundManager->getNbTrack("menu"));
-
-	_GUISystem->setGUISheet(_MenuLayout);
-	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
 
 	_Actif = 1;
 }
