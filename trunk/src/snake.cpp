@@ -42,13 +42,13 @@ Snake::Snake(Ogre::SceneManager *sceneMgr, Ogre::SceneNode *head, Ogre::Camera *
 	_Head->attachObject(cam);
 	_Head->setPosition(Ogre::Vector3(0, 0, 0));
 
-	_Direction = Ogre::Vector3(0, 0, -200);
+	_Direction = Ogre::Vector3(0, 0, 0);
 
 	_CompassNode = _Head->createChildSceneNode("snakeNodeCompass");
 	Ogre::Entity *ent = _SceneManager->createEntity("compass", "compass.mesh");
-	ent->setQueryFlags(COMPASS_QUERY_FLAG);
-	_CompassNode->scale(0.6, 0.1, 0.1);
-	_CompassNode->setPosition(0, -3, -10);
+	ent->setQueryFlags(NOC_QUERY_FLAG);
+	_CompassNode->scale(0.15, 0.025, 0.025);
+	_CompassNode->setPosition(0, -0.6, -2);
 }
 
 Snake::~Snake()
@@ -66,6 +66,7 @@ void Snake::reInit()
 	_NextEnt = 0;
 	_NbNode = -1;
 	_ListNode.empty();
+	_ScaleSpeed = 10 / (20 / _Speed);
 
 	_SceneManager->getCamera("Camera")->setPosition(0, 0, 0);
 	_SceneManager->getCamera("Camera")->setOrientation(Ogre::Quaternion::IDENTITY);
@@ -74,7 +75,7 @@ void Snake::reInit()
 
 
 	_LastPosition = _Head->getPosition();
-	_Direction = Ogre::Vector3(0, 0, -200);
+	_Direction = Ogre::Vector3(0, 0, -_Speed);
 
 	_CompassNode->attachObject(_SceneManager->getEntity("compass"));
 
@@ -153,7 +154,6 @@ void Snake::turnLeft()
 bool Snake::update(Ogre::Real timeSinceLastFrame)
 {
 	_LastPosition = _Head->getPosition();
-	//_Head->setOrientation(_SceneManager->getCamera("Camera")->getOrientation());
 	_Head->translate(_Direction * timeSinceLastFrame, Ogre::Node::TS_LOCAL);
 
 	if(_IsTurning)
@@ -216,7 +216,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 
 	if(_NextEnt <= 0)
 	{
-		_NextEnt = 0.1;
+		_NextEnt = 20 / _Speed;
 		if(_NbNode < _Size)
 		{
 			++_NbNode;
@@ -260,7 +260,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 	}
 	else if(_NbNode == _Size)
 	{
-		_TailNode->setScale(_TailNode->getScale().x - 40 * timeSinceLastFrame, _TailNode->getScale().y - 40 * timeSinceLastFrame, _TailNode->getScale().z - 40 * timeSinceLastFrame);
+		_TailNode->setScale(_TailNode->getScale().x - _ScaleSpeed * timeSinceLastFrame, _TailNode->getScale().y - _ScaleSpeed * timeSinceLastFrame, _TailNode->getScale().z - _ScaleSpeed * timeSinceLastFrame);
 	}
 	_NextEnt -= timeSinceLastFrame;
 
@@ -288,4 +288,14 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 int Snake::getSize()
 {
 	return _Size;
+}
+
+void Snake::setSpeed(int speed)
+{
+	_Speed = speed;
+}
+
+int Snake::getSpeed()
+{
+	return _Speed;
 }

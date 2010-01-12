@@ -45,34 +45,44 @@ void Bonus::changeBonus()
 	int direction;
 	Ogre::Vector3 next;
 	Ogre::Vector3 pos;
-	for(int i = 0; i < 84; ++i)
+	int i = 84;
+
+	do
 	{
-		pos = _Node->getPosition();
-		next = pos;
-		direction = rand() % 6;
-		switch(direction)
+		for(int j = 0; j < i; ++j)
 		{
-			case 0:
-				next.x += 50;
-				break;
-			case 1:
-				next.y += 50;
-				break;
-			case 2:
-				next.z += 50;
-				break;
-			case 3:
-				next.x -= 50;
-				break;
-			case 4:
-				next.y -= 50;
-				break;
-			case 5:
-				next.z -= 50;
+			pos = _Node->getPosition();
+			next = pos;
+			direction = rand() % 6;
+			switch(direction)
+			{
+				case 0:
+					next.x += 50;
+					break;
+				case 1:
+					next.y += 50;
+					break;
+				case 2:
+					next.z += 50;
+					break;
+				case 3:
+					next.x -= 50;
+					break;
+				case 4:
+					next.y -= 50;
+					break;
+				case 5:
+					next.z -= 50;
+			}
+			if(!_CollisionTool->collidesWithEntity(pos, next, 20, 0, MAP_QUERY_FLAG))
+				_Node->setPosition(next);
 		}
-		if(!_CollisionTool->collidesWithEntity(pos, next, 20, 0, MAP_QUERY_FLAG | SNAKE_QUERY_FLAG))
-			_Node->setPosition(next);
+		if(i > 1)
+			i /= 2;
+		else
+			i = 1;
 	}
+	while(_CollisionTool->collidesWithEntity(pos, next, 20, 0, MAP_QUERY_FLAG | SNAKE_QUERY_FLAG));
 }
 
 Ogre::Vector3 Bonus::getPosition()

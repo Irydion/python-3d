@@ -151,6 +151,12 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * \return toujours true (nécessaire pour le callback)
 		 */
 		bool onPlay(const CEGUI::EventArgs& e);
+		/**
+		 * \brief Entrée dans le jeu
+		 *
+		 * Méthode qui lance une nouvelle partie
+		 */
+		void onPlay();
 
 		/**
 		 * \brief Entrée dans le menu principal
@@ -172,6 +178,37 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * Méthode gère l'affichage du menu lorsque la partie est perdue
 		 */
 		void gameOver();
+
+		/**
+		 * \brief Callback pour aller dans le menu du choix de vitesse
+		 *
+		 *	Callback CEGUI qui active le menu de choix de la vitesse de jeu
+		 * \return toujours true (nécessaire pour le callback)
+		 */
+		bool EventListener::toSpeed(const CEGUI::EventArgs& e);
+		/**
+		 * \brief Callback pour le choix de la vitesse
+		 * 
+		 * Callback CEGUI appelé lorsque le bouton de choix de la vitesse normale est cliqué
+		 * \return toujours true (nécessaire pour le callback)
+		 */
+		bool toNormalSpeed(const CEGUI::EventArgs& e);
+		/**
+		 * \brief Callback pour le choix de la vitesse
+		 * 
+		 * Callback CEGUI appelé lorsque le bouton de choix de la vitesse rapide est cliqué
+		 * \return toujours true (nécessaire pour le callback)
+		 */
+		bool toHighSpeed(const CEGUI::EventArgs& e);
+		/**
+		 * \brief Callback pour le choix de la vitesse
+		 * 
+		 * Callback CEGUI appelé lorsque le bouton de choix de la vitesse insane est cliqué
+		 * \return toujours true (nécessaire pour le callback)
+		 */
+		bool toInsaneSpeed(const CEGUI::EventArgs& e);
+
+		bool EventListener::onClear(const CEGUI::EventArgs &e);
 
 	protected :
 		/** Scene manager principal */
@@ -198,6 +235,8 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		CEGUI::Window *_GameLayout;
 		/** Layout CEGUI pendant le menu (fond, boutons quitter et jouer) */
 		CEGUI::Window *_MenuLayout;
+		/** Layout CEGUI pour le choix de la vitesse de jeu */
+		CEGUI::Window *_MenuSpeedLayout;
 		/** Layout CEGUI pendant pour le menu de fin de partie (boutons rejouer et retour au menu) */
 		CEGUI::Window *_GameOverLayout;
 		/** Timer pour calculer le temps de jeu */

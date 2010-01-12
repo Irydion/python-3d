@@ -1,205 +1,265 @@
-12/01/2010 02:11:55 (InfL2)	---- Beginning loading of GUI layout from 'menu.layout' ----
-12/01/2010 02:11:55 (InfL2)	Window 'root2' of type 'DefaultWindow' has been created.
-12/01/2010 02:11:55 (InfL2)	Window 'fond' of type 'TaharezLook/StaticImage' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/StaticImage' to the window 'fond'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticImage' to window 'fond'.
-12/01/2010 02:11:55 (InfL2)	Window 'jouer' of type 'TaharezLook/Button' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'jouer'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'jouer'.
-12/01/2010 02:11:55 (InfL2)	Window 'quitter' of type 'TaharezLook/Button' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'quitter'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'quitter'.
-12/01/2010 02:11:55 (InfL1)	---- Successfully completed loading of GUI layout from 'menu.layout' ----
-12/01/2010 02:11:55 (InfL2)	---- Beginning loading of GUI layout from 'game.layout' ----
-12/01/2010 02:11:55 (InfL2)	Window 'root' of type 'DefaultWindow' has been created.
-12/01/2010 02:11:55 (InfL2)	Window 'FPSWindow' of type 'TaharezLook/StaticText' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'FPSWindow'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'FPSWindow'.
-12/01/2010 02:11:55 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'FPSWindow__auto_hscrollbar__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'FPSWindow__auto_hscrollbar__'.
-12/01/2010 02:11:55 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_hscrollbar____auto_incbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_hscrollbar____auto_incbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_hscrollbar____auto_decbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_hscrollbar____auto_decbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_hscrollbar____auto_thumb__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'FPSWindow__auto_hscrollbar____auto_thumb__'.
-12/01/2010 02:11:55 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'FPSWindow__auto_vscrollbar__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'FPSWindow__auto_vscrollbar__'.
-12/01/2010 02:11:55 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_vscrollbar____auto_incbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_vscrollbar____auto_incbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_vscrollbar____auto_decbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_vscrollbar____auto_decbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_vscrollbar____auto_thumb__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'FPSWindow__auto_vscrollbar____auto_thumb__'.
-12/01/2010 02:11:55 (InfL1)	Attempting to create Imageset 'solo_auto_glyph_images_ ' with texture only.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindow' of type 'TaharezLook/StaticText' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'StatsWindow'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'StatsWindow'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindow__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'StatsWindow__auto_hscrollbar__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'StatsWindow__auto_hscrollbar__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_hscrollbar____auto_incbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindow__auto_hscrollbar____auto_incbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_hscrollbar____auto_decbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindow__auto_hscrollbar____auto_decbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_hscrollbar____auto_thumb__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'StatsWindow__auto_hscrollbar____auto_thumb__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindow__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'StatsWindow__auto_vscrollbar__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'StatsWindow__auto_vscrollbar__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_vscrollbar____auto_incbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindow__auto_vscrollbar____auto_incbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_vscrollbar____auto_decbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindow__auto_vscrollbar____auto_decbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_vscrollbar____auto_thumb__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'StatsWindow__auto_vscrollbar____auto_thumb__'.
-12/01/2010 02:11:55 (InfL1)	---- Successfully completed loading of GUI layout from 'game.layout' ----
-12/01/2010 02:11:55 (InfL2)	---- Beginning loading of GUI layout from 'gameover.layout' ----
-12/01/2010 02:11:55 (InfL2)	Window 'root3' of type 'DefaultWindow' has been created.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindowGO' of type 'TaharezLook/StaticText' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'StatsWindowGO'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'StatsWindowGO'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'StatsWindowGO__auto_hscrollbar__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'StatsWindowGO__auto_hscrollbar__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_hscrollbar____auto_incbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindowGO__auto_hscrollbar____auto_incbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_hscrollbar____auto_decbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindowGO__auto_hscrollbar____auto_decbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_hscrollbar____auto_thumb__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'StatsWindowGO__auto_hscrollbar____auto_thumb__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'StatsWindowGO__auto_vscrollbar__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'StatsWindowGO__auto_vscrollbar__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_vscrollbar____auto_incbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindowGO__auto_vscrollbar____auto_incbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_vscrollbar____auto_decbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindowGO__auto_vscrollbar____auto_decbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_vscrollbar____auto_thumb__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'StatsWindowGO__auto_vscrollbar____auto_thumb__'.
-12/01/2010 02:11:55 (InfL2)	Window 'Rejouer' of type 'TaharezLook/Button' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'Rejouer'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'Rejouer'.
-12/01/2010 02:11:55 (InfL2)	Window 'Retour_au_menu' of type 'TaharezLook/Button' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'Retour_au_menu'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'Retour_au_menu'.
-12/01/2010 02:11:55 (InfL2)	Window 'GameOver' of type 'TaharezLook/StaticText' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'GameOver'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'GameOver'.
-12/01/2010 02:11:55 (InfL2)	Window 'GameOver__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'GameOver__auto_hscrollbar__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'GameOver__auto_hscrollbar__'.
-12/01/2010 02:11:55 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_hscrollbar____auto_incbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'GameOver__auto_hscrollbar____auto_incbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_hscrollbar____auto_decbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'GameOver__auto_hscrollbar____auto_decbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_hscrollbar____auto_thumb__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'GameOver__auto_hscrollbar____auto_thumb__'.
-12/01/2010 02:11:55 (InfL2)	Window 'GameOver__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'GameOver__auto_vscrollbar__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'GameOver__auto_vscrollbar__'.
-12/01/2010 02:11:55 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_vscrollbar____auto_incbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'GameOver__auto_vscrollbar____auto_incbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_vscrollbar____auto_decbtn__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'GameOver__auto_vscrollbar____auto_decbtn__'.
-12/01/2010 02:11:55 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
-12/01/2010 02:11:55 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_vscrollbar____auto_thumb__'
-12/01/2010 02:11:55 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'GameOver__auto_vscrollbar____auto_thumb__'.
-12/01/2010 02:11:55 (InfL1)	Attempting to create Imageset 'soloBig_auto_glyph_images_ ' with texture only.
-12/01/2010 02:11:55 (InfL1)	---- Successfully completed loading of GUI layout from 'gameover.layout' ----
-12/01/2010 02:11:55 (InfL1)	Attempting to create Imageset 'image_fond' using image file 'fond.png'.
-12/01/2010 02:12:47 (InfL1)	---- Begining CEGUI System destruction ----
-12/01/2010 02:12:47 (InfL2)	Window 'jouer' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'quitter' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'fond' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'FPSWindow' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_thumb__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindow__auto_hscrollbar__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_thumb__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindow__auto_vscrollbar__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindow' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'root' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'root2' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_thumb__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_thumb__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'StatsWindowGO' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'Rejouer' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'Retour_au_menu' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_thumb__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'GameOver__auto_hscrollbar__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_thumb__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'GameOver__auto_vscrollbar__' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'GameOver' has been added to dead pool.
-12/01/2010 02:12:47 (InfL2)	Window 'root3' has been added to dead pool.
-12/01/2010 02:12:47 (InfL1)	---- Begining cleanup of GUI Scheme system ----
-12/01/2010 02:12:47 (InfL2)	---- Begining resource cleanup for GUI scheme 'TaharezLook' ----
-12/01/2010 02:12:47 (InfL2)	Imageset 'solo_auto_glyph_images_ ' has been destroyed.
-12/01/2010 02:12:47 (InfL1)	Font 'solo' has been destroyed.
-12/01/2010 02:12:47 (InfL2)	Imageset 'TaharezLook' has been destroyed.
-12/01/2010 02:12:47 (InfL2)	---- Resource cleanup for GUI scheme 'TaharezLook' completed ----
-12/01/2010 02:12:47 (InfL2)	GUI scheme 'TaharezLook' has been unloaded.
-12/01/2010 02:12:47 (InfL1)	Scheme 'TaharezLook' has been unloaded.
-12/01/2010 02:12:47 (InfL1)	CEGUI::SchemeManager singleton destroyed.
-12/01/2010 02:12:47 (InfL1)	CEGUI::WindowManager singleton destroyed
-12/01/2010 02:12:47 (InfL1)	CEGUI::WindowFactoryManager singleton destroyed
-12/01/2010 02:12:47 (InfL1)	CEGUI::WidgetLookManager singleton destroyed.
-12/01/2010 02:12:47 (InfL1)	CEGUI::WindowRendererManager singleton destroyed
-12/01/2010 02:12:47 (InfL1)	---- Begining cleanup of Font system ----
-12/01/2010 02:12:47 (InfL2)	Imageset 'soloBig_auto_glyph_images_ ' has been destroyed.
-12/01/2010 02:12:47 (InfL1)	Font 'soloBig' has been destroyed.
-12/01/2010 02:12:47 (InfL1)	CEGUI::FontManager singleton destroyed.
-12/01/2010 02:12:47 (InfL1)	CEGUI::MouseCursor singleton destroyed.
-12/01/2010 02:12:47 (InfL1)	---- Begining cleanup of Imageset system ----
-12/01/2010 02:12:47 (InfL2)	Imageset 'image_fond' has been destroyed.
-12/01/2010 02:12:47 (InfL1)	CEGUI::ImagesetManager singleton destroyed
-12/01/2010 02:12:47 (InfL1)	CEGUI::GlobalEventSet singleton destroyed.
-12/01/2010 02:12:47 (InfL1)	CEGUI::System singleton destroyed.
-12/01/2010 02:12:47 (InfL1)	---- CEGUI System destruction completed ----
-12/01/2010 02:12:47 (InfL1)	CEGUI::Logger singleton destroyed.
+13/01/2010 00:53:31 (InfL2)	---- Beginning loading of GUI layout from 'menu.layout' ----
+13/01/2010 00:53:31 (InfL2)	Window 'root2' of type 'DefaultWindow' has been created.
+13/01/2010 00:53:31 (InfL2)	Window 'fond' of type 'TaharezLook/StaticImage' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/StaticImage' to the window 'fond'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticImage' to window 'fond'.
+13/01/2010 00:53:31 (InfL2)	Window 'jouer' of type 'TaharezLook/Button' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'jouer'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'jouer'.
+13/01/2010 00:53:31 (InfL2)	Window 'quitter' of type 'TaharezLook/Button' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'quitter'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'quitter'.
+13/01/2010 00:53:31 (InfL2)	Window 'clear' of type 'TaharezLook/Button' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'clear'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'clear'.
+13/01/2010 00:53:31 (InfL1)	---- Successfully completed loading of GUI layout from 'menu.layout' ----
+13/01/2010 00:53:31 (InfL2)	---- Beginning loading of GUI layout from 'menuspeed.layout' ----
+13/01/2010 00:53:31 (InfL2)	Window 'root4' of type 'DefaultWindow' has been created.
+13/01/2010 00:53:31 (InfL2)	Window 'fond2' of type 'TaharezLook/StaticImage' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/StaticImage' to the window 'fond2'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticImage' to window 'fond2'.
+13/01/2010 00:53:31 (InfL2)	Window 'normale' of type 'TaharezLook/Button' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'normale'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'normale'.
+13/01/2010 00:53:31 (InfL2)	Window 'rapide' of type 'TaharezLook/Button' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'rapide'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'rapide'.
+13/01/2010 00:53:31 (InfL2)	Window 'insane' of type 'TaharezLook/Button' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'insane'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'insane'.
+13/01/2010 00:53:31 (InfL2)	Window 'vitesse' of type 'TaharezLook/StaticText' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'vitesse'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'vitesse'.
+13/01/2010 00:53:31 (InfL2)	Window 'vitesse__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'vitesse__auto_hscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'vitesse__auto_hscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'vitesse__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'vitesse__auto_hscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'vitesse__auto_hscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'vitesse__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'vitesse__auto_hscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'vitesse__auto_hscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'vitesse__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'vitesse__auto_hscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'vitesse__auto_hscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL2)	Window 'vitesse__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'vitesse__auto_vscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'vitesse__auto_vscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'vitesse__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'vitesse__auto_vscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'vitesse__auto_vscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'vitesse__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'vitesse__auto_vscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'vitesse__auto_vscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'vitesse__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'vitesse__auto_vscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'vitesse__auto_vscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL1)	Attempting to create Imageset 'soloBig_auto_glyph_images_ ' with texture only.
+13/01/2010 00:53:31 (InfL1)	---- Successfully completed loading of GUI layout from 'menuspeed.layout' ----
+13/01/2010 00:53:31 (InfL2)	---- Beginning loading of GUI layout from 'game.layout' ----
+13/01/2010 00:53:31 (InfL2)	Window 'root' of type 'DefaultWindow' has been created.
+13/01/2010 00:53:31 (InfL2)	Window 'FPSWindow' of type 'TaharezLook/StaticText' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'FPSWindow'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'FPSWindow'.
+13/01/2010 00:53:31 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'FPSWindow__auto_hscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'FPSWindow__auto_hscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_hscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_hscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_hscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_hscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_hscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'FPSWindow__auto_hscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'FPSWindow__auto_vscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'FPSWindow__auto_vscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_vscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_vscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_vscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'FPSWindow__auto_vscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'FPSWindow__auto_vscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'FPSWindow__auto_vscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL1)	Attempting to create Imageset 'solo_auto_glyph_images_ ' with texture only.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindow' of type 'TaharezLook/StaticText' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'StatsWindow'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'StatsWindow'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindow__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'StatsWindow__auto_hscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'StatsWindow__auto_hscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_hscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindow__auto_hscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_hscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindow__auto_hscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_hscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'StatsWindow__auto_hscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindow__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'StatsWindow__auto_vscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'StatsWindow__auto_vscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_vscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindow__auto_vscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_vscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindow__auto_vscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindow__auto_vscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'StatsWindow__auto_vscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL1)	---- Successfully completed loading of GUI layout from 'game.layout' ----
+13/01/2010 00:53:31 (InfL2)	---- Beginning loading of GUI layout from 'gameover.layout' ----
+13/01/2010 00:53:31 (InfL2)	Window 'root3' of type 'DefaultWindow' has been created.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindowGO' of type 'TaharezLook/StaticText' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'StatsWindowGO'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'StatsWindowGO'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'StatsWindowGO__auto_hscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'StatsWindowGO__auto_hscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_hscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindowGO__auto_hscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_hscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindowGO__auto_hscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_hscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'StatsWindowGO__auto_hscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'StatsWindowGO__auto_vscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'StatsWindowGO__auto_vscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_vscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindowGO__auto_vscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_vscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'StatsWindowGO__auto_vscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'StatsWindowGO__auto_vscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'StatsWindowGO__auto_vscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL2)	Window 'Rejouer' of type 'TaharezLook/Button' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'Rejouer'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'Rejouer'.
+13/01/2010 00:53:31 (InfL2)	Window 'Retour_au_menu' of type 'TaharezLook/Button' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'Retour_au_menu'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/Button' to window 'Retour_au_menu'.
+13/01/2010 00:53:31 (InfL2)	Window 'GameOver' of type 'TaharezLook/StaticText' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/StaticText' to the window 'GameOver'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/StaticText' to window 'GameOver'.
+13/01/2010 00:53:31 (InfL2)	Window 'GameOver__auto_hscrollbar__' of type 'TaharezLook/HorizontalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'GameOver__auto_hscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbar' to window 'GameOver__auto_hscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_hscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'GameOver__auto_hscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_hscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'GameOver__auto_hscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_thumb__' of type 'TaharezLook/HorizontalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_hscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/HorizontalScrollbarThumb' to window 'GameOver__auto_hscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL2)	Window 'GameOver__auto_vscrollbar__' of type 'TaharezLook/VerticalScrollbar' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Scrollbar' to the window 'GameOver__auto_vscrollbar__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbar' to window 'GameOver__auto_vscrollbar__'.
+13/01/2010 00:53:31 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_incbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_vscrollbar____auto_incbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'GameOver__auto_vscrollbar____auto_incbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_decbtn__' of type 'TaharezLook/ImageButton' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_vscrollbar____auto_decbtn__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/ImageButton' to window 'GameOver__auto_vscrollbar____auto_decbtn__'.
+13/01/2010 00:53:31 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_thumb__' of type 'TaharezLook/VerticalScrollbarThumb' has been created.
+13/01/2010 00:53:31 (InfL2)	Assigning the window renderer 'Falagard/Button' to the window 'GameOver__auto_vscrollbar____auto_thumb__'
+13/01/2010 00:53:31 (InfL2)	Assigning LookNFeel 'TaharezLook/VerticalScrollbarThumb' to window 'GameOver__auto_vscrollbar____auto_thumb__'.
+13/01/2010 00:53:31 (InfL1)	---- Successfully completed loading of GUI layout from 'gameover.layout' ----
+13/01/2010 00:53:31 (InfL1)	Attempting to create Imageset 'image_fond' using image file 'fond.png'.
+13/01/2010 00:54:22 (InfL1)	---- Begining CEGUI System destruction ----
+13/01/2010 00:54:22 (InfL2)	Window 'jouer' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'quitter' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'clear' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'fond' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'FPSWindow__auto_hscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'FPSWindow__auto_hscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'FPSWindow__auto_vscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'FPSWindow__auto_vscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'FPSWindow' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindow__auto_hscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindow__auto_hscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindow__auto_vscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindow__auto_vscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindow' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'root' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'normale' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'rapide' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'insane' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'vitesse__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'vitesse__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'vitesse__auto_hscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'vitesse__auto_hscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'vitesse__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'vitesse__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'vitesse__auto_vscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'vitesse__auto_vscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'vitesse' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'fond2' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'root2' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindowGO__auto_hscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindowGO__auto_vscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'StatsWindowGO' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'Rejouer' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'Retour_au_menu' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'GameOver__auto_hscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'GameOver__auto_hscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_incbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_decbtn__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'GameOver__auto_vscrollbar____auto_thumb__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'GameOver__auto_vscrollbar__' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'GameOver' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'root3' has been added to dead pool.
+13/01/2010 00:54:22 (InfL2)	Window 'root4' has been added to dead pool.
+13/01/2010 00:54:22 (InfL1)	---- Begining cleanup of GUI Scheme system ----
+13/01/2010 00:54:22 (InfL2)	---- Begining resource cleanup for GUI scheme 'TaharezLook' ----
+13/01/2010 00:54:22 (InfL2)	Imageset 'solo_auto_glyph_images_ ' has been destroyed.
+13/01/2010 00:54:22 (InfL1)	Font 'solo' has been destroyed.
+13/01/2010 00:54:22 (InfL2)	Imageset 'TaharezLook' has been destroyed.
+13/01/2010 00:54:22 (InfL2)	---- Resource cleanup for GUI scheme 'TaharezLook' completed ----
+13/01/2010 00:54:22 (InfL2)	GUI scheme 'TaharezLook' has been unloaded.
+13/01/2010 00:54:22 (InfL1)	Scheme 'TaharezLook' has been unloaded.
+13/01/2010 00:54:22 (InfL1)	CEGUI::SchemeManager singleton destroyed.
+13/01/2010 00:54:22 (InfL1)	CEGUI::WindowManager singleton destroyed
+13/01/2010 00:54:22 (InfL1)	CEGUI::WindowFactoryManager singleton destroyed
+13/01/2010 00:54:22 (InfL1)	CEGUI::WidgetLookManager singleton destroyed.
+13/01/2010 00:54:22 (InfL1)	CEGUI::WindowRendererManager singleton destroyed
+13/01/2010 00:54:22 (InfL1)	---- Begining cleanup of Font system ----
+13/01/2010 00:54:22 (InfL2)	Imageset 'soloBig_auto_glyph_images_ ' has been destroyed.
+13/01/2010 00:54:22 (InfL1)	Font 'soloBig' has been destroyed.
+13/01/2010 00:54:22 (InfL1)	CEGUI::FontManager singleton destroyed.
+13/01/2010 00:54:22 (InfL1)	CEGUI::MouseCursor singleton destroyed.
+13/01/2010 00:54:22 (InfL1)	---- Begining cleanup of Imageset system ----
+13/01/2010 00:54:22 (InfL2)	Imageset 'image_fond' has been destroyed.
+13/01/2010 00:54:22 (InfL1)	CEGUI::ImagesetManager singleton destroyed
+13/01/2010 00:54:22 (InfL1)	CEGUI::GlobalEventSet singleton destroyed.
+13/01/2010 00:54:22 (InfL1)	CEGUI::System singleton destroyed.
+13/01/2010 00:54:22 (InfL1)	---- CEGUI System destruction completed ----
+13/01/2010 00:54:22 (InfL1)	CEGUI::Logger singleton destroyed.
