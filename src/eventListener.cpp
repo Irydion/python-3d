@@ -51,16 +51,27 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 
 	_SceneManager->getCamera("Camera")->setPosition(-10000, 0, 0);
 	_MenuLayout = CEGUI::WindowManager::getSingleton().loadWindowLayout((CEGUI::utf8*)"menu.layout");
+	_MenuSpeedLayout = CEGUI::WindowManager::getSingleton().loadWindowLayout((CEGUI::utf8*)"menuspeed.layout");
 	_GameLayout = CEGUI::WindowManager::getSingleton().loadWindowLayout((CEGUI::utf8*)"game.layout");
 	_GameOverLayout = CEGUI::WindowManager::getSingleton().loadWindowLayout((CEGUI::utf8*)"gameover.layout");
 
 	_GUISystem->setGUISheet(_MenuLayout);
 	CEGUI::ImagesetManager::getSingleton().createImagesetFromImageFile("image_fond", "fond.png");
 	_MenuLayout->getChild("fond")->setProperty("Image", "set:image_fond image:full_image");
+	_MenuSpeedLayout->getChild("fond2")->setProperty("Image", "set:image_fond image:full_image");
 	CEGUI::PushButton *b = (CEGUI::PushButton *)_MenuLayout->getChild("fond")->getChild("quitter");
 	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::onQuit, this));
 	b = (CEGUI::PushButton *)_MenuLayout->getChild("fond")->getChild("jouer");
-	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::onPlay, this));
+	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::toSpeed, this));
+	b = (CEGUI::PushButton *)_MenuLayout->getChild("fond")->getChild("clear");
+	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::onClear, this));
+
+	b = (CEGUI::PushButton *)_MenuSpeedLayout->getChild("fond2")->getChild("normale");
+	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::toNormalSpeed, this));
+	b = (CEGUI::PushButton *)_MenuSpeedLayout->getChild("fond2")->getChild("rapide");
+	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::toHighSpeed, this));
+	b = (CEGUI::PushButton *)_MenuSpeedLayout->getChild("fond2")->getChild("insane");
+	b->subscribeEvent(CEGUI::PushButton::EventClicked, CEGUI::SubscriberSlot(&EventListener::toInsaneSpeed, this));
 
 	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
 
@@ -243,6 +254,12 @@ bool EventListener::onQuit(const CEGUI::EventArgs& e)
 
 bool EventListener::onPlay(const CEGUI::EventArgs& e)
 {
+	onPlay();
+	return true;
+}
+
+void EventListener::onPlay()
+{
 	_SoundManager->playSound(0);
 	_GUISystem->setGUISheet(_GameLayout);
 	_GUISystem->setDefaultMouseCursor(0);
@@ -256,12 +273,11 @@ bool EventListener::onPlay(const CEGUI::EventArgs& e)
 
 	_Timer->reset();
 	_Time = 0;
-
-	return true;
 }
 
 bool EventListener::toMenu(const CEGUI::EventArgs& e)
 {
+	_SoundManager->playSound(0);
 	toMenu();
 	return true;
 }
@@ -280,6 +296,13 @@ void EventListener::toMenu()
 	_Actif = 1;
 }
 
+bool EventListener::toSpeed(const CEGUI::EventArgs& e)
+{
+	_SoundManager->playSound(0);
+	_GUISystem->setGUISheet(_MenuSpeedLayout);
+	return true;
+}
+
 void EventListener::gameOver()
 {
 	_Snake->stop();
@@ -289,36 +312,91 @@ void EventListener::gameOver()
 	CEGUI::WindowManager::getSingleton().getWindow("StatsWindowGO")->setText(_TimerWindow->getText());
 	_GUISystem->setDefaultMouseCursor((CEGUI::utf8*)"TaharezLook", (CEGUI::utf8*)"MouseArrow");
 
-	int taille = 0;
-	int temps = 0;
+	int taille[3] = {0};
+	int temps[3] = {0};
+
 	std::ifstream file;
 	file.open("data.p3d", std::fstream::binary | std::fstream::in);
 	if(file.is_open())
 	{
-		file.read((char *)(&taille), sizeof(int));
-		file.read((char *)(&temps), sizeof(int));
+		for(int i = 0; i < 3; ++i)
+		{
+			file.read((char *)(&taille[i]), sizeof(int));
+			file.read((char *)(&temps[i]), sizeof(int));
+		}
+
 		file.close();
 	}
 
 	CEGUI::WindowManager::getSingleton().getWindow("GameOver")->setText("       Game Over");
 
-	if(_Snake->getSize() > taille)
+	int d;
+	if(_Snake->getSpeed() == 100)
+		d = 0;
+	else if(_Snake->getSpeed() == 200)
+		d = 1;
+	else
+		d = 2;
+
+	if(_Snake->getSize() > taille[d])
 	{
 		_SoundManager->playSound(9);
 
 		CEGUI::WindowManager::getSingleton().getWindow("GameOver")->setText("       Game Over\n Nouveau record !");
 
-		taille = _Snake->getSize();
-		temps = _Time;
+		taille[d] = _Snake->getSize();
+		temps[d] = _Time;
 		std::ofstream file;
 		file.open("data.p3d", std::fstream::binary | std::fstream::out | std::fstream::trunc);
-		file.write((char *)(&taille), sizeof(int));
-		file.write((char *)(&temps), sizeof(int));
+
+		for(int i = 0; i < 3; ++i)
+		{
+			file.write((char *)(&taille[i]), sizeof(int));
+			file.write((char *)(&temps[i]), sizeof(int));
+		}
+
 		file.close();
-		_RenderWindow->writeContentsToFile("../Screenshots/HighScores/highscore.png");
+
+		if(d == 0)
+			_RenderWindow->writeContentsToFile("../Screenshots/HighScores/highscore_normal.png");
+		else if(d == 1)
+			_RenderWindow->writeContentsToFile("../Screenshots/HighScores/highscore_rapide.png");
+		else
+			_RenderWindow->writeContentsToFile("../Screenshots/HighScores/highscore_insane.png");
 	}
 
 	_SoundManager->playStream("menu", rand() % _SoundManager->getNbTrack("menu"));
 
 	_Actif = 1;
+}
+
+bool EventListener::toNormalSpeed(const CEGUI::EventArgs &e)
+{
+	_Snake->setSpeed(100);
+	onPlay();
+	return true;
+}
+
+bool EventListener::toHighSpeed(const CEGUI::EventArgs &e)
+{
+	_Snake->setSpeed(200);
+	onPlay();
+	return true;
+}
+
+bool EventListener::toInsaneSpeed(const CEGUI::EventArgs &e)
+{
+	_Snake->setSpeed(400);
+	onPlay();
+	return true;
+}
+
+bool EventListener::onClear(const CEGUI::EventArgs &e)
+{
+	std::ofstream file;
+
+	file.open("data.p3d", std::fstream::binary | std::fstream::out | std::fstream::trunc);
+	file.close();
+
+	return true;
 }

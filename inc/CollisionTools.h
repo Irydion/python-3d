@@ -32,7 +32,7 @@ THE SOFTWARE.
 #define MAP_QUERY_FLAG 1<<0
 #define BONUS_QUERY_FLAG 1<<1
 #define SNAKE_QUERY_FLAG 1<<2
-#define COMPASS_QUERY_FLAG 1<<3
+#define NOC_QUERY_FLAG 1<<3
 
 // uncomment if you want to use ETM as terrainmanager
 //#define ETM_TERRAIN

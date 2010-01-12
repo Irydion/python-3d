@@ -65,12 +65,20 @@ void Python3D::start()
 	_SceneManager = _Root->createSceneManager(Ogre::ST_INTERIOR, "MainSceneManager");
 
 	_Camera = _SceneManager->createCamera("Camera");
+	_Camera2 = _SceneManager->createCamera("Camera2");
 	_Camera->setNearClipDistance(1);
+	_Camera2->setNearClipDistance(1);
 
 	if (_Root->getRenderSystem()->getCapabilities()->hasCapability(Ogre::RSC_INFINITE_FAR_PLANE))
+	{
         _Camera->setFarClipDistance(0);
+		_Camera2->setFarClipDistance(0);
+	}
 	else
+	{
 		_Camera->setFarClipDistance(5000);
+		_Camera2->setFarClipDistance(0);
+	}
 
 	_Viewport = _RenderWindow->addViewport(_Camera);
 

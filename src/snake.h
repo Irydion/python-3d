@@ -121,6 +121,22 @@ class Snake
 		 */
 		int getSize();
 
+		/**
+		 * \brief Accesseur set pour la vitesse
+		 *
+		 * Permet de changer la vitesse de déplacement du serpent
+		 * \param speed : la nouvelle vitesse du serpent
+		 */
+		void setSpeed(int speed);
+
+		/**
+		 * \brief Accesseur get pour la vitesse
+		 *
+		 * Renvoie la vitesse actuelle du serpent
+		 * \return la vitesse du serpent
+		 */
+		int getSpeed();
+
 	public:
 		/** Node de la tête */
 		Ogre::SceneNode *_Head;
@@ -128,8 +144,10 @@ class Snake
 	protected:
 		/** Direction actuelle du serpent */
 		Ogre::Vector3 _Direction;
+		/** La vitesse de déplacement du serpent */
+		Ogre::Real _Speed;
 		/** Taille */
-		int _Size;
+		long int _Size;
 		/** 0 si le snake tourne pas ; 1:haut 2:bas 3:droite 4:gauche */
 		int _IsTurning;
 		/** Indique, si on est en train de tourner, à quel angle on en est */
@@ -142,6 +160,7 @@ class Snake
 		int _NextTurn;
 		/** Temps restant avant l'apparition de la prochaine entité pour la queue du serpent */
 		Ogre::Real _NextEnt;
+		Ogre::Real _ScaleSpeed;
 		/** Nombre de node actuels pour la queue du serpent */
 		int _NbNode;
 		/** L'ordre des nodes dans la queue du serpent */
