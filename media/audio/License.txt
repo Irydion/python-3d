@@ -1,0 +1,9 @@
+
+ Track     | Title               | Artist         | License URL
+---------------------------------------------------------------------------------
+ game0     | Goof                | Binärpilot     | http://creativecommons.org/licenses/by-nc-nd/2.5/
+ game1     | Tokyomatrix 3000    | Binärpilot     | http://creativecommons.org/licenses/by-nc-nd/3.0/
+ game2     | A New Galaxy        | Binärpilot     | http://creativecommons.org/licenses/by-nc-nd/3.0/
+ menu0     | La nuit             | Silence        | http://artlibre.org/licence/lal
+ menu1     | Atmosphère          | Silence        | http://artlibre.org/licence/lal
+ menu2     | Mother Earth Behind | Binary Mind    | http://creativecommons.org/licenses/by-nc-nd/2.0/

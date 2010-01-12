@@ -90,6 +90,7 @@ void SoundManager::loadResources()
 	ERRCHECK(_FMODSystem->createSound("../media/audio/bip1.wav", FMOD_DEFAULT, 0, &_Sound[6]));
 	ERRCHECK(_FMODSystem->createSound("../media/audio/bip2.wav", FMOD_DEFAULT, 0, &_Sound[7]));
 	ERRCHECK(_FMODSystem->createSound("../media/audio/bip3.wav", FMOD_DEFAULT, 0, &_Sound[8]));
+	ERRCHECK(_FMODSystem->createSound("../media/audio/bip4.wav", FMOD_DEFAULT, 0, &_Sound[9]));
 
 	std::string filename;
 	for(int i = 0; i < TRACK_MENU; ++i)

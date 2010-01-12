@@ -158,6 +158,20 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		 * Méthode qui gère l'entrée dans le menu principal, au lancement du jeu ou depuis le jeu
 		 */
 		void toMenu();
+		/**
+		 * \brief Callback pour retourner au menu
+		 *
+		 * Callback CEGUI qui appelle toMenu pour retourner au menu principal
+		 * \return toujours true (nécessaire pour le callback)
+		 */
+		bool toMenu(const CEGUI::EventArgs& e);
+
+		/**
+		 * \brief Gestion du menu de game over
+		 *
+		 * Méthode gère l'affichage du menu lorsque la partie est perdue
+		 */
+		void gameOver();
 
 	protected :
 		/** Scene manager principal */
@@ -184,6 +198,8 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		CEGUI::Window *_GameLayout;
 		/** Layout CEGUI pendant le menu (fond, boutons quitter et jouer) */
 		CEGUI::Window *_MenuLayout;
+		/** Layout CEGUI pendant pour le menu de fin de partie (boutons rejouer et retour au menu) */
+		CEGUI::Window *_GameOverLayout;
 		/** Timer pour calculer le temps de jeu */
 		Ogre::Timer *_Timer;
 		/** la fenetre dans laquelle on affiche le temps et la taille */
@@ -193,6 +209,8 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 
 		/** True pour continuer, false pour sortir de la boucle de rendu */
 		bool _Continue;
+		/** True si onPlay est appelé depuis le menu principal, false si il est appelé depuis le game over (bouton rejouer) */
+		bool _FromMenu;
 
 		/** détermine quel sous-frameListener est actif \remark 0 : GameListener ; 1 : MenuListener*/
 		int _Actif;
