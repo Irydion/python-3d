@@ -255,8 +255,6 @@ class EventListener : public Ogre::FrameListener, public OIS::KeyListener, publi
 		int _Actif;
 		/** frame listener du jeu */
 		GameListener *_GameListener;
-		/** frame listener du menu */
-		MenuListener *_MenuListener;
 		
 		/** gestionnaire de son */
 		SoundManager *_SoundManager;

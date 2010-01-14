@@ -113,16 +113,22 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="3"
+				InlineFunctionExpansion="2"
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				AdditionalIncludeDirectories="&quot;C:\Documents\Tahiti Bob\Bureau\Python3D\inc&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
+				StringPooling="true"
 				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
+				BufferSecurityCheck="false"
+				EnableFunctionLevelLinking="false"
+				RuntimeTypeInfo="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="3"
+				CallingConvention="0"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -139,7 +145,7 @@
 				AdditionalDependencies="OgreMain.lib OIS.lib CEGUIBase.lib OgreGUIRenderer.lib fmodex_vc.lib"
 				LinkIncremental="1"
 				AdditionalLibraryDirectories="&quot;C:\Documents\Tahiti Bob\Bureau\Python3D\lib&quot;"
-				GenerateDebugInformation="true"
+				GenerateDebugInformation="false"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -256,6 +262,10 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath=".\ressources.rc"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>

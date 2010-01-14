@@ -40,7 +40,6 @@ EventListener::EventListener(Ogre::SceneManager *sceneMgr, Ogre::RenderWindow *r
 	_Snake = new Snake(_SceneManager, _SceneManager->getRootSceneNode()->createChildSceneNode("Snake_HeadNode"), _SceneManager->getCamera("Camera"), bonus, _SoundManager);
 
 	_GameListener = new GameListener(_Snake);
-	_MenuListener = new MenuListener();
 
     _Keyboard->setEventCallback(this);
     _Mouse->setEventCallback(this);
@@ -92,7 +91,6 @@ EventListener::~EventListener()
 {
 	delete _SoundManager;
 	delete _GameListener;
-	delete _MenuListener;
 }
 
 bool EventListener::frameStarted(const Ogre::FrameEvent &evt)
@@ -100,16 +98,9 @@ bool EventListener::frameStarted(const Ogre::FrameEvent &evt)
 	_Keyboard->capture();
 	_Mouse->capture();
 
-	switch(_Actif)
-	{
-		case 0:
-			if(!_GameListener->frameStarted(evt))
+	if(!_Actif)
+		if(!_GameListener->frameStarted(evt))
 				gameOver();
-			break;
-		case 1:
-			_MenuListener->frameStarted(evt);
-			break;
-	}
 
 	++_FPSSkippedFrames;
 	if(_FPSSkippedFrames >= _FPSUpdateFreq)
@@ -134,20 +125,13 @@ bool EventListener::keyPressed(const OIS::KeyEvent &e)
 	switch(e.key)
 	{
 		case OIS::KC_SYSRQ:
-			_SoundManager->playSound(2);
+			_SoundManager->playSound(1);
 			_RenderWindow->writeContentsToFile("../Screenshots/User/screenshot_" + Ogre::StringConverter::toString((int)time(NULL)) + ".png");
 			break;
 	}
 
-	switch(_Actif)
-	{
-		case 0:
-			_Continue = _GameListener->keyPressed(e);
-			break;
-		case 1:
-			_Continue = _MenuListener->keyPressed(e);
-			break;
-	}
+	if(!_Actif)
+		_Continue = _GameListener->keyPressed(e);
 
     _GUISystem->injectKeyDown(e.key);
 	_GUISystem->injectChar(e.text);
@@ -165,15 +149,9 @@ bool EventListener::keyReleased(const OIS::KeyEvent &e)
 			break;
 	}
 
-	switch(_Actif)
-	{
-		case 0:
-			_Continue = _GameListener->keyReleased(e);
-			break;
-		case 1:
-			_Continue = _MenuListener->keyReleased(e);
-			break;
-	}
+	if(!_Actif)
+		_Continue = _GameListener->keyReleased(e);
+
 
 	_GUISystem->injectKeyUp(e.key);
 
@@ -182,15 +160,8 @@ bool EventListener::keyReleased(const OIS::KeyEvent &e)
 
 bool EventListener::mouseMoved(const OIS::MouseEvent &e)
 {
-	switch(_Actif)
-	{
-		case 0:
-			_Continue = _GameListener->mouseMoved(e);
-			break;
-		case 1:
-			_Continue = _MenuListener->mouseMoved(e);
-			break;
-	}
+	if(!_Actif)
+		_Continue = _GameListener->mouseMoved(e);
 
 	_GUISystem->injectMouseMove(e.state.X.rel, e.state.Y.rel);
 	_GUISystem->injectMouseWheelChange(e.state.Z.rel);
@@ -200,15 +171,8 @@ bool EventListener::mouseMoved(const OIS::MouseEvent &e)
 
 bool EventListener::mousePressed(const OIS::MouseEvent &e, OIS::MouseButtonID id)
 {
-	switch(_Actif)
-	{
-		case 0:
-			_Continue = _GameListener->mousePressed(e, id);
-			break;
-		case 1:
-			_Continue = _MenuListener->mousePressed(e, id);
-			break;
-	}
+	if(!_Actif)
+		_Continue = _GameListener->mousePressed(e, id);
 
 	_GUISystem->injectMouseButtonDown(OISToCEGUI(id));
 
@@ -217,15 +181,8 @@ bool EventListener::mousePressed(const OIS::MouseEvent &e, OIS::MouseButtonID id
 
 bool EventListener::mouseReleased(const OIS::MouseEvent &e, OIS::MouseButtonID id)
 {
-	switch(_Actif)
-	{
-		case 0:
-			_Continue = _GameListener->mouseReleased(e, id);
-			break;
-		case 1:
-			_Continue = _MenuListener->mouseReleased(e, id);
-			break;
-	}
+	if(!_Actif)
+		_Continue = _GameListener->mouseReleased(e, id);
 
 	_GUISystem->injectMouseButtonUp(OISToCEGUI(id));
 
@@ -340,7 +297,7 @@ void EventListener::gameOver()
 
 	if(_Snake->getSize() > taille[d])
 	{
-		_SoundManager->playSound(9);
+		_SoundManager->playSound(8);
 
 		CEGUI::WindowManager::getSingleton().getWindow("GameOver")->setText("       Game Over\n Nouveau record !");
 
