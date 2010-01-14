@@ -38,7 +38,7 @@ along with Python3D. If not, see <http://www.gnu.org/licenses/>.
 /** nombre de musiques pour le jeu */
 #define TRACK_GAME 3
 /** nombre de sons */
-#define NB_SOUND 10
+#define NB_SOUND 9
 
 /**
  * \class SoundManager

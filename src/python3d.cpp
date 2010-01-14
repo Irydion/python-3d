@@ -40,6 +40,7 @@ Python3D::Python3D()
 
 Python3D::~Python3D()
 {
+
 	delete _Listener;
 
 	delete _GUISystem;
@@ -100,6 +101,7 @@ void Python3D::start()
 
 void Python3D::exit()
 {
+	MessageBoxA( NULL, "Unknown exception !", "An exception has occurred!", MB_OK | MB_ICONERROR | MB_TASKMODAL);
 }
 
 void Python3D::loadResources()
