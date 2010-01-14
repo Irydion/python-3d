@@ -79,7 +79,7 @@ void Snake::reInit()
 
 	_CompassNode->attachObject(_SceneManager->getEntity("compass"));
 
-	_SoundManager->playSound(3);
+	_SoundManager->playSound(2);
 	Sleep(1000);
 }
 
@@ -267,9 +267,9 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 	if(_CollisionTools->collidesWithEntity(_LastPosition, _Head->getPosition(), 20, 0, MAP_QUERY_FLAG | SNAKE_QUERY_FLAG))
 	{
 		_SoundManager->stopStream();
-		_SoundManager->playSound(5);
-		Sleep(800);
 		_SoundManager->playSound(4);
+		Sleep(800);
+		_SoundManager->playSound(3);
 		Sleep(1000);
 		return false;
 	}
@@ -277,7 +277,7 @@ bool Snake::update(Ogre::Real timeSinceLastFrame)
 	{
 		_Size += _Size/10;
 		_Bonus->changeBonus();
-		_SoundManager->playSound(rand() % 3 + 6);
+		_SoundManager->playSound(rand() % 3 + 5);
 	}
 
 	_CompassNode->lookAt(_Bonus->getPosition(), Ogre::SceneNode::TS_WORLD, -Ogre::Vector3::UNIT_X);

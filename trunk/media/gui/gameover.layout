@@ -8,7 +8,7 @@
             <Property Name="Text" >Taille : 999999
 Temps : 99:99:99</Property>
             <Property Name="UnifiedMaxSize" Value="{{1,0},{1,0}}" />
-            <Property Name="UnifiedAreaRect" Value="{{0.00979,0},{0.014027,0},{0.166188,0},{0.0994231,0}}" />
+            <Property Name="UnifiedAreaRect" Value="{{0.00979,0},{0.014027,0},{0.2,0},{0.0994231,0}}" />
         </Window>
         <Window Type="TaharezLook/Button" Name="Rejouer" >
             <Property Name="Text" Value="Rejouer" />
